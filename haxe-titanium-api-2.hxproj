@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{116E40F2-8ACE-431F-B360-1F9BE8D722A4}</ProjectGuid>
+    <TargetHXMLFile>build.hxml</TargetHXMLFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="build.hxml" />
+    <Compile Include="src\Main.hx" />
+    <Compile Include="src\TitaniumApiJsonParser.hx" />
+    <Compile Include="..\buildhx\buildhx\BuildHX.hx">
+      <Link>buildhx\buildhx\BuildHX.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\data\ClassDefinition.hx">
+      <Link>buildhx\buildhx\data\ClassDefinition.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\data\ClassMethod.hx">
+      <Link>buildhx\buildhx\data\ClassMethod.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\data\ClassProperty.hx">
+      <Link>buildhx\buildhx\data\ClassProperty.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\parsers\AbstractParser.hx">
+      <Link>buildhx\buildhx\parsers\AbstractParser.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\parsers\CPPParser.hx">
+      <Link>buildhx\buildhx\parsers\CPPParser.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\parsers\JSDuckParser.hx">
+      <Link>buildhx\buildhx\parsers\JSDuckParser.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\parsers\SimpleParser.hx">
+      <Link>buildhx\buildhx\parsers\SimpleParser.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\parsers\YUIDocParser.hx">
+      <Link>buildhx\buildhx\parsers\YUIDocParser.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\writers\CPPWriter.hx">
+      <Link>buildhx\buildhx\writers\CPPWriter.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\writers\HaxeCFFIWriter.hx">
+      <Link>buildhx\buildhx\writers\HaxeCFFIWriter.hx</Link>
+    </Compile>
+    <Compile Include="..\buildhx\buildhx\writers\HaxeExternWriter.hx">
+      <Link>buildhx\buildhx\writers\HaxeExternWriter.hx</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="buildhx\" />
+  </ItemGroup>
+</Project>

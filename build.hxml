@@ -1,0 +1,6 @@
+-main Main
+-cpp bin
+-cp src
+-cp ../buildhx
+-lib hxjson2
+-lib casalib
