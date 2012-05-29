@@ -19,32 +19,32 @@ extern class CloudPush {
 	public static var focusAppOnPush:Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Asynchronously retrieves the application specific device token. */
-	@:require(titanium-android) public static function retrieveDeviceToken (config:CloudPushNotificationConfig):Void;
+	public static function retrieveDeviceToken (config:CloudPushNotificationConfig):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the enabled property. */
-	@:require(titanium-android) public static function getEnabled ():Void;
+	public static function getEnabled ():Void;
 	/** Gets the value of the focusAppOnPush property. */
-	@:require(titanium-android) public static function getFocusAppOnPush ():Void;
+	public static function getFocusAppOnPush ():Void;
 	/** Gets the value of the showAppOnTrayClick property. */
-	@:require(titanium-android) public static function getShowAppOnTrayClick ():Void;
+	public static function getShowAppOnTrayClick ():Void;
 	/** Gets the value of the showTrayNotification property. */
-	@:require(titanium-android) public static function getShowTrayNotification ():Void;
+	public static function getShowTrayNotification ():Void;
 	/** Gets the value of the showTrayNotificationsWhenFocused property. */
-	@:require(titanium-android) public static function getShowTrayNotificationsWhenFocused ():Void;
+	public static function getShowTrayNotificationsWhenFocused ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the enabled property. */
-	@:require(titanium-android) public static function setEnabled (enabled:Bool):Void;
+	public static function setEnabled (enabled:Bool):Void;
 	/** Sets the value of the focusAppOnPush property. */
-	@:require(titanium-android) public static function setFocusAppOnPush (focusAppOnPush:Bool):Void;
+	public static function setFocusAppOnPush (focusAppOnPush:Bool):Void;
 	/** Sets the value of the showAppOnTrayClick property. */
-	@:require(titanium-android) public static function setShowAppOnTrayClick (showAppOnTrayClick:Bool):Void;
+	public static function setShowAppOnTrayClick (showAppOnTrayClick:Bool):Void;
 	/** Sets the value of the showTrayNotification property. */
-	@:require(titanium-android) public static function setShowTrayNotification (showTrayNotification:Bool):Void;
+	public static function setShowTrayNotification (showTrayNotification:Bool):Void;
 	/** Sets the value of the showTrayNotificationsWhenFocused property. */
-	@:require(titanium-android) public static function setShowTrayNotificationsWhenFocused (showTrayNotificationsWhenFocused:Bool):Void;
+	public static function setShowTrayNotificationsWhenFocused (showTrayNotificationsWhenFocused:Bool):Void;
 
 }

@@ -46,18 +46,18 @@ extern class Calendar {
 	public static var METHOD_SMS(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the calendar with the specified identifier. */
-	@:require(titanium-android) public static function getCalendarById (id:Float):Calendar;
+	public static function getCalendarById (id:Float):Calendar;
 	/** Gets the value of the allAlerts property. */
-	@:require(titanium-android) public static function getAllAlerts ():Void;
+	public static function getAllAlerts ():Void;
 	/** Gets the value of the allCalendars property. */
-	@:require(titanium-android) public static function getAllCalendars ():Void;
+	public static function getAllCalendars ():Void;
 	/** Gets the value of the selectableCalendars property. */
-	@:require(titanium-android) public static function getSelectableCalendars ():Void;
+	public static function getSelectableCalendars ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

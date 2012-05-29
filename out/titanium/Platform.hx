@@ -58,58 +58,58 @@ iPad will return ipad, Android will return android and Mobile Web will return mo
 	public static var netmask(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates a globally-unique identifier. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createUUID ():String;
+	public static function createUUID ():String;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the address property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getAddress ():Void;
+	public static function getAddress ():Void;
 	/** Gets the value of the architecture property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getArchitecture ():Void;
+	public static function getArchitecture ():Void;
 	/** Gets the value of the availableMemory property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getAvailableMemory ():Void;
+	public static function getAvailableMemory ():Void;
 	/** Gets the value of the batteryLevel property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getBatteryLevel ():Void;
+	public static function getBatteryLevel ():Void;
 	/** Gets the value of the batteryMonitoring property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getBatteryMonitoring ():Void;
+	public static function getBatteryMonitoring ():Void;
 	/** Gets the value of the batteryState property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getBatteryState ():Void;
+	public static function getBatteryState ():Void;
 	/** Gets the value of the displayCaps property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getDisplayCaps ():Void;
+	public static function getDisplayCaps ():Void;
 	/** Gets the value of the id property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getId ():Void;
+	public static function getId ():Void;
 	/** Gets the value of the locale property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getLocale ():Void;
+	public static function getLocale ():Void;
 	/** Gets the value of the macaddress property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getMacaddress ():Void;
+	public static function getMacaddress ():Void;
 	/** Gets the value of the model property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getModel ():Void;
+	public static function getModel ():Void;
 	/** Gets the value of the name property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getName ():Void;
+	public static function getName ():Void;
 	/** Gets the value of the netmask property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getNetmask ():Void;
+	public static function getNetmask ():Void;
 	/** Gets the value of the osname property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getOsname ():Void;
+	public static function getOsname ():Void;
 	/** Gets the value of the ostype property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getOstype ():Void;
+	public static function getOstype ():Void;
 	/** Gets the value of the processorCount property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getProcessorCount ():Void;
+	public static function getProcessorCount ():Void;
 	/** Gets the value of the runtime property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getRuntime ():Void;
+	public static function getRuntime ():Void;
 	/** Gets the value of the username property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getUsername ():Void;
+	public static function getUsername ():Void;
 	/** Gets the value of the version property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getVersion ():Void;
+	public static function getVersion ():Void;
 	/** Opens this URL using the system's default application for its protocol. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function openURL (url:String):Bool;
+	public static function openURL (url:String):Bool;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns whether the system is configured with a default application to handle the URL's protocol. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function canOpenURL (url:String):Bool;
+	public static function canOpenURL (url:String):Bool;
 	/** Returns whether the system settings are configured to show times in 24-hour format. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function is24HourTimeFormat ():Bool;
+	public static function is24HourTimeFormat ():Bool;
 	/** Sets the value of the batteryMonitoring property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function setBatteryMonitoring (batteryMonitoring:Bool):Void;
+	public static function setBatteryMonitoring (batteryMonitoring:Bool):Void;
 
 }

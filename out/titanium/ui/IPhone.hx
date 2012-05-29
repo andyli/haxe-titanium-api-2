@@ -1,6 +1,5 @@
 package titanium.ui;
 
-import dictionary<titanium.ui.iphone.NavigationGroup>;
 import titanium.ui.iphone.NavigationGroup;
 
 
@@ -44,32 +43,32 @@ the screen. */
 	public static var MODAL_PRESENTATION_FORMSHEET(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iPhone.NavigationGroup. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createNavigationGroup (?parameters:NavigationGroup>):NavigationGroup;
+	public static function createNavigationGroup (?parameters:Dynamic<NavigationGroup>):NavigationGroup;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the appBadge property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAppBadge ():Void;
+	public static function getAppBadge ():Void;
 	/** Gets the value of the appSupportsShakeToEdit property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAppSupportsShakeToEdit ():Void;
+	public static function getAppSupportsShakeToEdit ():Void;
 	/** Gets the value of the statusBarHidden property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getStatusBarHidden ():Void;
+	public static function getStatusBarHidden ():Void;
 	/** Gets the value of the statusBarStyle property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getStatusBarStyle ():Void;
+	public static function getStatusBarStyle ():Void;
 	/** Hides the status bar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function hideStatusBar (?params:HideStatusBarParams):Void;
+	public static function hideStatusBar (?params:HideStatusBarParams):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the appBadge property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAppBadge (appBadge:Float):Void;
+	public static function setAppBadge (appBadge:Float):Void;
 	/** Sets the value of the appSupportsShakeToEdit property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAppSupportsShakeToEdit (appSupportsShakeToEdit:Bool):Void;
+	public static function setAppSupportsShakeToEdit (appSupportsShakeToEdit:Bool):Void;
 	/** Sets the value of the statusBarHidden property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setStatusBarHidden (statusBarHidden:Bool):Void;
+	public static function setStatusBarHidden (statusBarHidden:Bool):Void;
 	/** Sets the value of the statusBarStyle property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setStatusBarStyle (statusBarStyle:Float):Void;
+	public static function setStatusBarStyle (statusBarStyle:Float):Void;
 	/** Shows the status bar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function showStatusBar (?params:ShowStatusBarParams):Void;
+	public static function showStatusBar (?params:ShowStatusBarParams):Void;
 
 }

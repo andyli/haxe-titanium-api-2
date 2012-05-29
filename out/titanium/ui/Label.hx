@@ -1,373 +1,370 @@
 package titanium.ui;
 
-import [titanium.ui.2dmatrix, titanium.ui.ios.3DMatrix];
-import [titanium.ui.animation, dictionary<titanium.ui.Animation>];
 import array<titanium.ui.View>;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Font;
 import titanium.Gradient;
 import titanium.Point;
-import titanium.Proxy;
 import titanium.ui.View;
 
 
 /** A text label, with optional background image. */
 @:native ("Titanium.UI.Label")
-extern class Label extends Proxy {
+extern class Label {
 
 	/** A background gradient for the view. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var backgroundGradient:Gradient;
+	public var backgroundGradient:Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var anchorPoint:Point;
+	public var anchorPoint:Point;
 	/** Array of this view's child views. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var children(default,null):View>;
+	public var children(default,null):View>;
 	/** Automatically convert certain text items in the label to clickable links. */
-	@:require(titanium-android) public var autoLink:Float;
+	public var autoLink:Float;
 	/** Background color of the view, as a color name or hex triplet. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var backgroundColor:String;
+	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var backgroundImage:String;
+	public var backgroundImage:String;
 	/** Boolean value indicating whether the view is visible. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var visible:Bool;
+	public var visible:Bool;
 	/** Border color of the view, as a color name or hex triplet. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var borderColor:String;
+	public var borderColor:String;
 	/** Border radius of the view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var borderRadius:Float;
+	public var borderRadius:Float;
 	/** Border width of the view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var borderWidth:Float;
+	public var borderWidth:Float;
 	/** Color of the label text, as a color name or hex triplet. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var color:String;
+	public var color:String;
 	/** Color of the label when in the highlighted state, as a color name or hex triplet. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public var highlightedColor:String;
+	public var highlightedColor:String;
 	/** Current position of the view during an animation. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):Point;
 	/** Determines keyboard behavior when this view is focused. */
-	@:require(titanium-android) public var softKeyboardOnFocus:Float;
+	public var softKeyboardOnFocus:Float;
 	/** Disabled background color of the view, as a color name or hex triplet. */
-	@:require(titanium-android) public var backgroundDisabledColor:String;
+	public var backgroundDisabledColor:String;
 	/** Disabled background image for the view, specified as a local file path or URL. */
-	@:require(titanium-android) public var backgroundDisabledImage:String;
+	public var backgroundDisabledImage:String;
 	/** Enable or disable word wrapping in the label. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public var wordWrap:Bool;
+	public var wordWrap:Bool;
 	/** Focused background color of the view, as a color name or hex triplet. */
-	@:require(titanium-android) public var backgroundFocusedColor:String;
+	public var backgroundFocusedColor:String;
 	/** Focused background image for the view, specified as a local file path or URL. */
-	@:require(titanium-android) public var backgroundFocusedImage:String;
+	public var backgroundFocusedImage:String;
 	/** Font to use for the label text. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var font:Font;
+	public var font:Font;
 	/** Key identifying a string from the locale file to use for the label text. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var textid:String;
+	public var textid:String;
 	/** Label text. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var text:String;
+	public var text:String;
 	/** Minimum font size when the font is sized based on the contents. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var minimumFontSize:Float;
+	public var minimumFontSize:Float;
 	/** Number of pixels to extend the background image past the label on the bottom. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundPaddingBottom:Float;
+	public var backgroundPaddingBottom:Float;
 	/** Number of pixels to extend the background image past the label on the left. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundPaddingLeft:Float;
+	public var backgroundPaddingLeft:Float;
 	/** Number of pixels to extend the background image past the label on the right. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundPaddingRight:Float;
+	public var backgroundPaddingRight:Float;
 	/** Number of pixels to extend the background image past the label on the top. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundPaddingTop:Float;
+	public var backgroundPaddingTop:Float;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var opacity:Float;
+	public var opacity:Float;
 	/** Selected background color of the view, as a color name or hex triplet. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public var backgroundSelectedColor:String;
+	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public var backgroundSelectedImage:String;
+	public var backgroundSelectedImage:String;
 	/** Shadow offset as a dictionary with the properties x and y. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var shadowOffset:Dynamic;
+	public var shadowOffset:Dynamic;
 	/** Simple HTML formatting. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public var html:String;
+	public var html:String;
 	/** Size of the left end cap. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundLeftCap:Float;
+	public var backgroundLeftCap:Float;
 	/** Size of the top end cap. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var backgroundTopCap:Float;
+	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
 One of: 'absolute', 'vertical', or 'horizontal'. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var layout:String;
+	public var layout:String;
 	/** Text alignment. One of Titanium.UI text alignment constants, 
 TEXT_ALIGNMENT_LEFT, 
 TEXT_ALIGNMENT_CENTER, 
 or TEXT_ALIGNMENT_RIGHT. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var textAlign:[String, Number];
+	public var textAlign:Dynamic;
 	/** Text shadow color, as a color name or hex triplet. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var shadowColor:String;
+	public var shadowColor:String;
 	/** The bounds of the view in system units. x and y properties are always 0. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var size(default,null):Dimension;
+	public var size(default,null):Dimension;
 	/** The frame of the view (position relative to parent bounds) in system units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var rect(default,null):Dimension;
+	public var rect(default,null):Dimension;
 	/** The view's top position. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var top:[Number, String];
+	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public var backgroundRepeat:Bool;
+	public var backgroundRepeat:Bool;
 	/** Transformation matrix to apply to the view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var transform:3DMatrix];
+	public var transform:Dynamic;
 	/** Turn on/off the addition of ellipses at the end of the label if the text is too large to fit. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public var ellipsize:Bool;
+	public var ellipsize:Bool;
 	/** Vertical text alignment, specified using one of the 
 vertical alignment constants from Titanium.UI: 
 TEXT_VERTICAL_ALIGNMENT_BOTTOM, 
 TEXT_VERTICAL_ALIGNMENT_CENTER, or 
 TEXT_VERTICAL_ALIGNMENT_TOP. */
-	@:require(titanium-mobileweb) public var verticalAlign:[Number, String];
+	public var verticalAlign:Dynamic;
 	/** View height, in platform-specific units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var height:[Number, String];
+	public var height:Dynamic;
 	/** View's bottom position, in platform-specific units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var bottom:[Number, String];
+	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var center:Point;
+	public var center:Point;
 	/** View's left position, in platform-specific units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var left:[Number, String];
+	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var right:[Number, String];
+	public var right:Dynamic;
 	/** View's width, in platform-specific units. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var width:[Number, String];
+	public var width:Dynamic;
 	/** Whether to keep the device screen on. */
-	@:require(titanium-android) public var keepScreenOn:Bool;
+	public var keepScreenOn:Bool;
 	/** Whether view should be focusable while navigating with the trackball. */
-	@:require(titanium-android) public var focusable:Bool;
+	public var focusable:Bool;
 	/** Whether view should receive touch events. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var touchEnabled:Bool;
+	public var touchEnabled:Bool;
 	/** Z index position relative to other sibling views. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public var zIndex:Float;
+	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function add (view:View):Void;
+	public function add (view:View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Animates this view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function animate (obj:Animation>], _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function finishLayout ():Void;
+	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function fireEvent (name:String, event:Dynamic):Void;
+	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the anchorPoint property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getAnchorPoint ():Void;
+	public function getAnchorPoint ():Void;
 	/** Gets the value of the animatedCenterPoint property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function getAnimatedCenterPoint ():Void;
+	public function getAnimatedCenterPoint ():Void;
 	/** Gets the value of the autoLink property. */
-	@:require(titanium-android) public function getAutoLink ():Void;
+	public function getAutoLink ():Void;
 	/** Gets the value of the backgroundColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBackgroundColor ():Void;
+	public function getBackgroundColor ():Void;
 	/** Gets the value of the backgroundDisabledColor property. */
-	@:require(titanium-android) public function getBackgroundDisabledColor ():Void;
+	public function getBackgroundDisabledColor ():Void;
 	/** Gets the value of the backgroundDisabledImage property. */
-	@:require(titanium-android) public function getBackgroundDisabledImage ():Void;
+	public function getBackgroundDisabledImage ():Void;
 	/** Gets the value of the backgroundFocusedColor property. */
-	@:require(titanium-android) public function getBackgroundFocusedColor ():Void;
+	public function getBackgroundFocusedColor ():Void;
 	/** Gets the value of the backgroundFocusedImage property. */
-	@:require(titanium-android) public function getBackgroundFocusedImage ():Void;
+	public function getBackgroundFocusedImage ():Void;
 	/** Gets the value of the backgroundGradient property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBackgroundGradient ():Void;
+	public function getBackgroundGradient ():Void;
 	/** Gets the value of the backgroundImage property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBackgroundImage ():Void;
+	public function getBackgroundImage ():Void;
 	/** Gets the value of the backgroundLeftCap property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundLeftCap ():Void;
+	public function getBackgroundLeftCap ():Void;
 	/** Gets the value of the backgroundPaddingBottom property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundPaddingBottom ():Void;
+	public function getBackgroundPaddingBottom ():Void;
 	/** Gets the value of the backgroundPaddingLeft property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundPaddingLeft ():Void;
+	public function getBackgroundPaddingLeft ():Void;
 	/** Gets the value of the backgroundPaddingRight property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundPaddingRight ():Void;
+	public function getBackgroundPaddingRight ():Void;
 	/** Gets the value of the backgroundPaddingTop property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundPaddingTop ():Void;
+	public function getBackgroundPaddingTop ():Void;
 	/** Gets the value of the backgroundRepeat property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundRepeat ():Void;
+	public function getBackgroundRepeat ():Void;
 	/** Gets the value of the backgroundSelectedColor property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function getBackgroundSelectedColor ():Void;
+	public function getBackgroundSelectedColor ():Void;
 	/** Gets the value of the backgroundSelectedImage property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function getBackgroundSelectedImage ():Void;
+	public function getBackgroundSelectedImage ():Void;
 	/** Gets the value of the backgroundTopCap property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getBackgroundTopCap ():Void;
+	public function getBackgroundTopCap ():Void;
 	/** Gets the value of the borderColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBorderColor ():Void;
+	public function getBorderColor ():Void;
 	/** Gets the value of the borderRadius property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBorderRadius ():Void;
+	public function getBorderRadius ():Void;
 	/** Gets the value of the borderWidth property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBorderWidth ():Void;
+	public function getBorderWidth ():Void;
 	/** Gets the value of the bottom property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getBottom ():Void;
+	public function getBottom ():Void;
 	/** Gets the value of the center property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getCenter ():Void;
+	public function getCenter ():Void;
 	/** Gets the value of the children property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getChildren ():Void;
+	public function getChildren ():Void;
 	/** Gets the value of the color property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getColor ():Void;
+	public function getColor ():Void;
 	/** Gets the value of the ellipsize property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function getEllipsize ():Void;
+	public function getEllipsize ():Void;
 	/** Gets the value of the focusable property. */
-	@:require(titanium-android) public function getFocusable ():Void;
+	public function getFocusable ():Void;
 	/** Gets the value of the font property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getFont ():Void;
+	public function getFont ():Void;
 	/** Gets the value of the height property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getHeight ():Void;
+	public function getHeight ():Void;
 	/** Gets the value of the highlightedColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function getHighlightedColor ():Void;
+	public function getHighlightedColor ():Void;
 	/** Gets the value of the html property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function getHtml ():Void;
+	public function getHtml ():Void;
 	/** Gets the value of the keepScreenOn property. */
-	@:require(titanium-android) public function getKeepScreenOn ():Void;
+	public function getKeepScreenOn ():Void;
 	/** Gets the value of the layout property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getLayout ():Void;
+	public function getLayout ():Void;
 	/** Gets the value of the left property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getLeft ():Void;
+	public function getLeft ():Void;
 	/** Gets the value of the minimumFontSize property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function getMinimumFontSize ():Void;
+	public function getMinimumFontSize ():Void;
 	/** Gets the value of the opacity property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getOpacity ():Void;
+	public function getOpacity ():Void;
 	/** Gets the value of the rect property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getRect ():Void;
+	public function getRect ():Void;
 	/** Gets the value of the right property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getRight ():Void;
+	public function getRight ():Void;
 	/** Gets the value of the shadowColor property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getShadowColor ():Void;
+	public function getShadowColor ():Void;
 	/** Gets the value of the shadowOffset property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getShadowOffset ():Void;
+	public function getShadowOffset ():Void;
 	/** Gets the value of the size property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getSize ():Void;
+	public function getSize ():Void;
 	/** Gets the value of the softKeyboardOnFocus property. */
-	@:require(titanium-android) public function getSoftKeyboardOnFocus ():Void;
+	public function getSoftKeyboardOnFocus ():Void;
 	/** Gets the value of the text property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getText ():Void;
+	public function getText ():Void;
 	/** Gets the value of the textAlign property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getTextAlign ():Void;
+	public function getTextAlign ():Void;
 	/** Gets the value of the textid property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getTextid ():Void;
+	public function getTextid ():Void;
 	/** Gets the value of the top property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getTop ():Void;
+	public function getTop ():Void;
 	/** Gets the value of the touchEnabled property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getTouchEnabled ():Void;
+	public function getTouchEnabled ():Void;
 	/** Gets the value of the transform property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getTransform ():Void;
+	public function getTransform ():Void;
 	/** Gets the value of the verticalAlign property. */
-	@:require(titanium-mobileweb) public function getVerticalAlign ():Void;
+	public function getVerticalAlign ():Void;
 	/** Gets the value of the visible property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getVisible ():Void;
+	public function getVisible ():Void;
 	/** Gets the value of the width property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getWidth ():Void;
+	public function getWidth ():Void;
 	/** Gets the value of the wordWrap property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function getWordWrap ():Void;
+	public function getWordWrap ():Void;
 	/** Gets the value of the zIndex property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function getZIndex ():Void;
+	public function getZIndex ():Void;
 	/** Hides this view. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function hide ():Void;
+	public function hide ():Void;
 	/** Makes this view visible. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function show ():Void;
+	public function show ():Void;
 	/** Performs a batch update of all supplied layout properties and schedules a
 layout pass after they have been updated. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function updateLayout (params:Dynamic):Void;
+	public function updateLayout (params:Dynamic):Void;
 	/** Removes a child view from this view's hierarchy. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function remove (view:View):Void;
+	public function remove (view:View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
 	/** Sets the value of the anchorPoint property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:Point):Void;
 	/** Sets the value of the autoLink property. */
-	@:require(titanium-android) public function setAutoLink (autoLink:Float):Void;
+	public function setAutoLink (autoLink:Float):Void;
 	/** Sets the value of the backgroundColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBackgroundColor (backgroundColor:String):Void;
+	public function setBackgroundColor (backgroundColor:String):Void;
 	/** Sets the value of the backgroundDisabledColor property. */
-	@:require(titanium-android) public function setBackgroundDisabledColor (backgroundDisabledColor:String):Void;
+	public function setBackgroundDisabledColor (backgroundDisabledColor:String):Void;
 	/** Sets the value of the backgroundDisabledImage property. */
-	@:require(titanium-android) public function setBackgroundDisabledImage (backgroundDisabledImage:String):Void;
+	public function setBackgroundDisabledImage (backgroundDisabledImage:String):Void;
 	/** Sets the value of the backgroundFocusedColor property. */
-	@:require(titanium-android) public function setBackgroundFocusedColor (backgroundFocusedColor:String):Void;
+	public function setBackgroundFocusedColor (backgroundFocusedColor:String):Void;
 	/** Sets the value of the backgroundFocusedImage property. */
-	@:require(titanium-android) public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
+	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBackgroundImage (backgroundImage:String):Void;
+	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundLeftCap (backgroundLeftCap:Float):Void;
+	public function setBackgroundLeftCap (backgroundLeftCap:Float):Void;
 	/** Sets the value of the backgroundPaddingBottom property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundPaddingBottom (backgroundPaddingBottom:Float):Void;
+	public function setBackgroundPaddingBottom (backgroundPaddingBottom:Float):Void;
 	/** Sets the value of the backgroundPaddingLeft property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundPaddingLeft (backgroundPaddingLeft:Float):Void;
+	public function setBackgroundPaddingLeft (backgroundPaddingLeft:Float):Void;
 	/** Sets the value of the backgroundPaddingRight property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundPaddingRight (backgroundPaddingRight:Float):Void;
+	public function setBackgroundPaddingRight (backgroundPaddingRight:Float):Void;
 	/** Sets the value of the backgroundPaddingTop property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundPaddingTop (backgroundPaddingTop:Float):Void;
+	public function setBackgroundPaddingTop (backgroundPaddingTop:Float):Void;
 	/** Sets the value of the backgroundRepeat property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundRepeat (backgroundRepeat:Bool):Void;
+	public function setBackgroundRepeat (backgroundRepeat:Bool):Void;
 	/** Sets the value of the backgroundSelectedColor property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function setBackgroundSelectedColor (backgroundSelectedColor:String):Void;
+	public function setBackgroundSelectedColor (backgroundSelectedColor:String):Void;
 	/** Sets the value of the backgroundSelectedImage property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function setBackgroundSelectedImage (backgroundSelectedImage:String):Void;
+	public function setBackgroundSelectedImage (backgroundSelectedImage:String):Void;
 	/** Sets the value of the backgroundTopCap property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setBackgroundTopCap (backgroundTopCap:Float):Void;
+	public function setBackgroundTopCap (backgroundTopCap:Float):Void;
 	/** Sets the value of the borderColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBorderColor (borderColor:String):Void;
+	public function setBorderColor (borderColor:String):Void;
 	/** Sets the value of the borderRadius property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBorderRadius (borderRadius:Float):Void;
+	public function setBorderRadius (borderRadius:Float):Void;
 	/** Sets the value of the borderWidth property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBorderWidth (borderWidth:Float):Void;
+	public function setBorderWidth (borderWidth:Float):Void;
 	/** Sets the value of the bottom property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setBottom (bottom:[Number, String]):Void;
+	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setCenter (center:Point):Void;
+	public function setCenter (center:Point):Void;
 	/** Sets the value of the color property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setColor (color:String):Void;
+	public function setColor (color:String):Void;
 	/** Sets the value of the ellipsize property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function setEllipsize (ellipsize:Bool):Void;
+	public function setEllipsize (ellipsize:Bool):Void;
 	/** Sets the value of the focusable property. */
-	@:require(titanium-android) public function setFocusable (focusable:Bool):Void;
+	public function setFocusable (focusable:Bool):Void;
 	/** Sets the value of the font property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setFont (font:Font):Void;
+	public function setFont (font:Font):Void;
 	/** Sets the value of the height property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setHeight (height:[Number, String]):Void;
+	public function setHeight (height:Dynamic):Void;
 	/** Sets the value of the highlightedColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function setHighlightedColor (highlightedColor:String):Void;
+	public function setHighlightedColor (highlightedColor:String):Void;
 	/** Sets the value of the html property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function setHtml (html:String):Void;
+	public function setHtml (html:String):Void;
 	/** Sets the value of the keepScreenOn property. */
-	@:require(titanium-android) public function setKeepScreenOn (keepScreenOn:Bool):Void;
+	public function setKeepScreenOn (keepScreenOn:Bool):Void;
 	/** Sets the value of the layout property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setLayout (layout:String):Void;
+	public function setLayout (layout:String):Void;
 	/** Sets the value of the left property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setLeft (left:[Number, String]):Void;
+	public function setLeft (left:Dynamic):Void;
 	/** Sets the value of the minimumFontSize property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public function setMinimumFontSize (minimumFontSize:Float):Void;
+	public function setMinimumFontSize (minimumFontSize:Float):Void;
 	/** Sets the value of the opacity property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setOpacity (opacity:Float):Void;
+	public function setOpacity (opacity:Float):Void;
 	/** Sets the value of the right property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setRight (right:[Number, String]):Void;
+	public function setRight (right:Dynamic):Void;
 	/** Sets the value of the shadowColor property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setShadowColor (shadowColor:String):Void;
+	public function setShadowColor (shadowColor:String):Void;
 	/** Sets the value of the shadowOffset property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setShadowOffset (shadowOffset:Dynamic):Void;
+	public function setShadowOffset (shadowOffset:Dynamic):Void;
 	/** Sets the value of the softKeyboardOnFocus property. */
-	@:require(titanium-android) public function setSoftKeyboardOnFocus (softKeyboardOnFocus:Float):Void;
+	public function setSoftKeyboardOnFocus (softKeyboardOnFocus:Float):Void;
 	/** Sets the value of the text property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setText (text:String):Void;
+	public function setText (text:String):Void;
 	/** Sets the value of the textAlign property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTextAlign (textAlign:[String, Number]):Void;
+	public function setTextAlign (textAlign:Dynamic):Void;
 	/** Sets the value of the textid property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTextid (textid:String):Void;
+	public function setTextid (textid:String):Void;
 	/** Sets the value of the top property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTop (top:[Number, String]):Void;
+	public function setTop (top:Dynamic):Void;
 	/** Sets the value of the touchEnabled property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTouchEnabled (touchEnabled:Bool):Void;
+	public function setTouchEnabled (touchEnabled:Bool):Void;
 	/** Sets the value of the transform property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTransform (transform:3DMatrix]):Void;
+	public function setTransform (transform:Dynamic):Void;
 	/** Sets the value of the verticalAlign property. */
-	@:require(titanium-mobileweb) public function setVerticalAlign (verticalAlign:[Number, String]):Void;
+	public function setVerticalAlign (verticalAlign:Dynamic):Void;
 	/** Sets the value of the visible property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setVisible (visible:Bool):Void;
+	public function setVisible (visible:Bool):Void;
 	/** Sets the value of the width property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setWidth (width:[Number, String]):Void;
+	public function setWidth (width:Dynamic):Void;
 	/** Sets the value of the wordWrap property. */
-	@:require(titanium-android) @:require(titanium-mobileweb) public function setWordWrap (wordWrap:Bool):Void;
+	public function setWordWrap (wordWrap:Bool):Void;
 	/** Sets the value of the zIndex property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setZIndex (zIndex:Float):Void;
+	public function setZIndex (zIndex:Float):Void;
 	/** Starts a batch update of this view's layout properties. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function startLayout ():Void;
+	public function startLayout ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:Point, destinationView:View):Point;
 
 }

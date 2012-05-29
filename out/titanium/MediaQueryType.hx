@@ -1,29 +1,27 @@
 package titanium;
 
-import titanium.Proxy;
-
 
 /** A specifier for a media library query. By default, filters perform an exact match. */
 @:native ("MediaQueryType")
-extern class MediaQueryType extends Proxy {
+extern class MediaQueryType {
 
 	/** A constant that specifies the ordering of the result array. One of the MUSIC_MEDIA_GROUP_* constants specified on the Titanium.Media module. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var grouping:Float;
+	public var grouping:Float;
 	/** Filter by whether or not the item is a compilation. Value should be a Boolean. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var isCompilation:[MediaQueryInfoType, Boolean];
+	public var isCompilation:Dynamic;
 	/** The album artist to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var albumArtist:[MediaQueryInfoType, String];
+	public var albumArtist:Dynamic;
 	/** The album title to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var albumTitle:[MediaQueryInfoType, String];
+	public var albumTitle:Dynamic;
 	/** The artist to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var artist:[MediaQueryInfoType, String];
+	public var artist:Dynamic;
 	/** The composer to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var composer:[MediaQueryInfoType, String];
+	public var composer:Dynamic;
 	/** The genre to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var genre:[MediaQueryInfoType, String];
+	public var genre:Dynamic;
 	/** The media type to filter on. Value should be one of the MUSIC_MEDIA_TYPE_ constants on Titanium.Media. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var mediaType:[MediaQueryInfoType, Number];
+	public var mediaType:Dynamic;
 	/** The title to filter on. Value should be a String. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public var title:[MediaQueryInfoType, String];
+	public var title:Dynamic;
 
 }

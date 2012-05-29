@@ -1,12 +1,5 @@
 package titanium;
 
-import [titanium.blob, titanium.filesystem.File];
-import dictionary<titanium.media.AudioPlayer>;
-import dictionary<titanium.media.AudioRecorder>;
-import dictionary<titanium.media.Item>;
-import dictionary<titanium.media.MusicPlayer>;
-import dictionary<titanium.media.Sound>;
-import dictionary<titanium.media.VideoPlayer>;
 import titanium.CameraOptionsType;
 import titanium.media.AudioPlayer;
 import titanium.media.AudioRecorder;
@@ -250,88 +243,88 @@ extern class Media {
 	public static var VIDEO_SOURCE_TYPE_UNKNOWN(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns an instance of Titanium.Media.AudioPlayer. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function createAudioPlayer (?parameters:AudioPlayer>):AudioPlayer;
+	public static function createAudioPlayer (?parameters:Dynamic<AudioPlayer>):AudioPlayer;
 	/** Creates and returns an instance of Titanium.Media.AudioRecorder. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createAudioRecorder (?parameters:AudioRecorder>):AudioRecorder;
+	public static function createAudioRecorder (?parameters:Dynamic<AudioRecorder>):AudioRecorder;
 	/** Creates and returns an instance of Titanium.Media.Item. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createItem (?parameters:Item>):Item;
+	public static function createItem (?parameters:Dynamic<Item>):Item;
 	/** Creates and returns an instance of Titanium.Media.MusicPlayer. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createMusicPlayer (?parameters:MusicPlayer>):MusicPlayer;
+	public static function createMusicPlayer (?parameters:Dynamic<MusicPlayer>):MusicPlayer;
 	/** Creates and returns an instance of Titanium.Media.Sound. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function createSound (?parameters:Sound>):Sound;
+	public static function createSound (?parameters:Dynamic<Sound>):Sound;
 	/** Creates and returns an instance of Titanium.Media.VideoPlayer. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createVideoPlayer (?parameters:VideoPlayer>):VideoPlayer;
+	public static function createVideoPlayer (?parameters:Dynamic<VideoPlayer>):VideoPlayer;
 	/** Displays the given image. */
-	@:require(titanium-android) public static function previewImage (options:Dictionary<PreviewImageOptions>):Void;
+	public static function previewImage (options:Dynamic<PreviewImageOptions>):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the appMusicPlayer property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAppMusicPlayer ():Void;
+	public static function getAppMusicPlayer ():Void;
 	/** Gets the value of the audioLineType property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAudioLineType ():Void;
+	public static function getAudioLineType ():Void;
 	/** Gets the value of the audioPlaying property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAudioPlaying ():Void;
+	public static function getAudioPlaying ():Void;
 	/** Gets the value of the audioSessionMode property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAudioSessionMode ():Void;
+	public static function getAudioSessionMode ():Void;
 	/** Gets the value of the availableCameraMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAvailableCameraMediaTypes ():Void;
+	public static function getAvailableCameraMediaTypes ():Void;
 	/** Gets the value of the availablePhotoGalleryMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAvailablePhotoGalleryMediaTypes ():Void;
+	public static function getAvailablePhotoGalleryMediaTypes ():Void;
 	/** Gets the value of the availablePhotoMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAvailablePhotoMediaTypes ():Void;
+	public static function getAvailablePhotoMediaTypes ():Void;
 	/** Gets the value of the averageMicrophonePower property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getAverageMicrophonePower ():Void;
+	public static function getAverageMicrophonePower ():Void;
 	/** Gets the value of the canRecord property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getCanRecord ():Void;
+	public static function getCanRecord ():Void;
 	/** Gets the value of the isCameraSupported property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) public static function getIsCameraSupported ():Void;
+	public static function getIsCameraSupported ():Void;
 	/** Gets the value of the peakMicrophonePower property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getPeakMicrophonePower ():Void;
+	public static function getPeakMicrophonePower ():Void;
 	/** Gets the value of the systemMusicPlayer property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getSystemMusicPlayer ():Void;
+	public static function getSystemMusicPlayer ():Void;
 	/** Gets the value of the volume property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getVolume ():Void;
+	public static function getVolume ():Void;
 	/** Hides the device camera UI. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function hideCamera ():Void;
+	public static function hideCamera ():Void;
 	/** Hides the music library. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function hideMusicLibrary ():Void;
+	public static function hideMusicLibrary ():Void;
 	/** Makes the device vibrate. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) @:require(titanium-mobileweb) public static function vibrate (?pattern:Array<Number>):Void;
+	public static function vibrate (?pattern:Array<Number>):Void;
 	/** Opens the photo gallery image picker. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) public static function openPhotoGallery (options:PhotoGalleryOptionsType):Void;
+	public static function openPhotoGallery (options:PhotoGalleryOptionsType):Void;
 	/** Plays a device beep notification. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function beep ():Void;
+	public static function beep ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns true if the source supports the specified media type. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function isMediaTypeSupported (source:String, type:String):Bool;
+	public static function isMediaTypeSupported (source:String, type:String):Bool;
 	/** Saves media to the device's photo gallery / camera roll. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function saveToPhotoGallery (media:File], callbacks:Dynamic):Void;
+	public static function saveToPhotoGallery (media:Dynamic, callbacks:Dynamic):Void;
 	/** Searches the music library for items matching the specified search predicates. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function queryMusicLibrary (query:MediaQueryType):Array<MediaItemType>;
+	public static function queryMusicLibrary (query:MediaQueryType):Array<MediaItemType>;
 	/** Sets the value of the audioSessionMode property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAudioSessionMode (audioSessionMode:Float):Void;
+	public static function setAudioSessionMode (audioSessionMode:Float):Void;
 	/** Sets the value of the availableCameraMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAvailableCameraMediaTypes (availableCameraMediaTypes:Array<Object>):Void;
+	public static function setAvailableCameraMediaTypes (availableCameraMediaTypes:Array<Object>):Void;
 	/** Sets the value of the availablePhotoGalleryMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAvailablePhotoGalleryMediaTypes (availablePhotoGalleryMediaTypes:Array<Object>):Void;
+	public static function setAvailablePhotoGalleryMediaTypes (availablePhotoGalleryMediaTypes:Array<Object>):Void;
 	/** Sets the value of the availablePhotoMediaTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAvailablePhotoMediaTypes (availablePhotoMediaTypes:Array<Object>):Void;
+	public static function setAvailablePhotoMediaTypes (availablePhotoMediaTypes:Array<Object>):Void;
 	/** Sets the value of the averageMicrophonePower property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setAverageMicrophonePower (averageMicrophonePower:Float):Void;
+	public static function setAverageMicrophonePower (averageMicrophonePower:Float):Void;
 	/** Shows the camera. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) public static function showCamera (options:CameraOptionsType):Void;
+	public static function showCamera (options:CameraOptionsType):Void;
 	/** Shows the music library and allows the user to select one or more tracks. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function showMusicLibrary (options:MusicLibraryOptionsType):Void;
+	public static function showMusicLibrary (options:MusicLibraryOptionsType):Void;
 	/** Starts monitoring the microphone sound level. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function startMicrophoneMonitor ():Void;
+	public static function startMicrophoneMonitor ():Void;
 	/** Stops monitoring the microphone sound level. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function stopMicrophoneMonitor ():Void;
+	public static function stopMicrophoneMonitor ():Void;
 	/** Takes a screen shot of the visible UI on the device. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) public static function takeScreenshot (_callback:ScreenshotResult->Dynamic):Void;
+	public static function takeScreenshot (_callback:ScreenshotResult->Dynamic):Void;
 	/** Uses the device camera to capture a photo. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-android) public static function takePicture ():Void;
+	public static function takePicture ():Void;
 
 }

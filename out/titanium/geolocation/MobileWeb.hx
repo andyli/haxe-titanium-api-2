@@ -17,30 +17,30 @@ extern class MobileWeb {
 	public static var reverseGeocoderTimeout:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the forwardGeocoderTimeout property. */
-	@:require(titanium-mobileweb) public static function getForwardGeocoderTimeout ():Void;
+	public static function getForwardGeocoderTimeout ():Void;
 	/** Gets the value of the locationTimeout property. */
-	@:require(titanium-mobileweb) public static function getLocationTimeout ():Void;
+	public static function getLocationTimeout ():Void;
 	/** Gets the value of the maximumHeadingAge property. */
-	@:require(titanium-mobileweb) public static function getMaximumHeadingAge ():Void;
+	public static function getMaximumHeadingAge ():Void;
 	/** Gets the value of the maximumLocationAge property. */
-	@:require(titanium-mobileweb) public static function getMaximumLocationAge ():Void;
+	public static function getMaximumLocationAge ():Void;
 	/** Gets the value of the reverseGeocoderTimeout property. */
-	@:require(titanium-mobileweb) public static function getReverseGeocoderTimeout ():Void;
+	public static function getReverseGeocoderTimeout ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the forwardGeocoderTimeout property. */
-	@:require(titanium-mobileweb) public static function setForwardGeocoderTimeout (forwardGeocoderTimeout:Float):Void;
+	public static function setForwardGeocoderTimeout (forwardGeocoderTimeout:Float):Void;
 	/** Sets the value of the locationTimeout property. */
-	@:require(titanium-mobileweb) public static function setLocationTimeout (locationTimeout:Float):Void;
+	public static function setLocationTimeout (locationTimeout:Float):Void;
 	/** Sets the value of the maximumHeadingAge property. */
-	@:require(titanium-mobileweb) public static function setMaximumHeadingAge (maximumHeadingAge:Float):Void;
+	public static function setMaximumHeadingAge (maximumHeadingAge:Float):Void;
 	/** Sets the value of the maximumLocationAge property. */
-	@:require(titanium-mobileweb) public static function setMaximumLocationAge (maximumLocationAge:Float):Void;
+	public static function setMaximumLocationAge (maximumLocationAge:Float):Void;
 	/** Sets the value of the reverseGeocoderTimeout property. */
-	@:require(titanium-mobileweb) public static function setReverseGeocoderTimeout (reverseGeocoderTimeout:Float):Void;
+	public static function setReverseGeocoderTimeout (reverseGeocoderTimeout:Float):Void;
 
 }

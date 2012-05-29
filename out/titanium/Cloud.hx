@@ -17,20 +17,20 @@ extern class Cloud {
 	public static var useSecure:Bool;
 
 	/** Gets the value of the debug property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getDebug ():Void;
+	public static function getDebug ():Void;
 	/** Gets the value of the ondatastream property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getOndatastream ():Void;
+	public static function getOndatastream ():Void;
 	/** Gets the value of the onsendstream property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getOnsendstream ():Void;
+	public static function getOnsendstream ():Void;
 	/** Gets the value of the useSecure property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getUseSecure ():Void;
+	public static function getUseSecure ():Void;
 	/** Sets the value of the debug property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function setDebug (debug:Bool):Void;
+	public static function setDebug (debug:Bool):Void;
 	/** Sets the value of the ondatastream property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function setOndatastream (ondatastream:CloudStreamProgress->Dynamic):Void;
+	public static function setOndatastream (ondatastream:CloudStreamProgress->Dynamic):Void;
 	/** Sets the value of the onsendstream property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function setOnsendstream (onsendstream:CloudStreamProgress->Dynamic):Void;
+	public static function setOnsendstream (onsendstream:CloudStreamProgress->Dynamic):Void;
 	/** Sets the value of the useSecure property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function setUseSecure (useSecure:Bool):Void;
+	public static function setUseSecure (useSecure:Bool):Void;
 
 }

@@ -1,8 +1,5 @@
 package titanium;
 
-import dictionary<titanium.network.BonjourBrowser>;
-import dictionary<titanium.network.BonjourService>;
-import dictionary<titanium.network.HTTPClient>;
 import titanium.network.BonjourBrowser;
 import titanium.network.BonjourService;
 import titanium.network.HTTPClient;
@@ -60,40 +57,40 @@ Service, or null if it is not registered. */
 	public static var httpURLFormatter:String->Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns a BonjourBrowser object. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createBonjourBrowser (serviceType:String, domain:String, ?parameters:BonjourBrowser>):BonjourBrowser;
+	public static function createBonjourBrowser (serviceType:String, domain:String, ?parameters:Dynamic<BonjourBrowser>):BonjourBrowser;
 	/** Creates and returns a BonjourService object. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createBonjourService (name:String, type:String, domain:String, ?parameters:BonjourService>):BonjourService;
+	public static function createBonjourService (name:String, type:String, domain:String, ?parameters:Dynamic<BonjourService>):BonjourService;
 	/** Creates and returns an instance of Titanium.Network.HTTPClient. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createHTTPClient (?parameters:HTTPClient>):HTTPClient;
+	public static function createHTTPClient (?parameters:Dynamic<HTTPClient>):HTTPClient;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the httpURLFormatter property. */
-	@:require(titanium-mobileweb) public static function getHttpURLFormatter ():Void;
+	public static function getHttpURLFormatter ():Void;
 	/** Gets the value of the networkType property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getNetworkType ():Void;
+	public static function getNetworkType ():Void;
 	/** Gets the value of the networkTypeName property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getNetworkTypeName ():Void;
+	public static function getNetworkTypeName ():Void;
 	/** Gets the value of the online property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getOnline ():Void;
+	public static function getOnline ():Void;
 	/** Gets the value of the remoteDeviceUUID property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getRemoteDeviceUUID ():Void;
+	public static function getRemoteDeviceUUID ():Void;
 	/** Gets the value of the remoteNotificationsEnabled property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getRemoteNotificationsEnabled ():Void;
+	public static function getRemoteNotificationsEnabled ():Void;
 	/** Gets the value of the remoteNotificationTypes property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getRemoteNotificationTypes ():Void;
+	public static function getRemoteNotificationTypes ():Void;
 	/** Registers for push notifications with the Apple Push Notification Service. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function registerForPushNotifications (config:PushNotificationConfig):Void;
+	public static function registerForPushNotifications (config:PushNotificationConfig):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns a decoded version of a URI encoded value. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function decodeURIComponent (value:String):String;
+	public static function decodeURIComponent (value:String):String;
 	/** Returns a URI encoded version of the specified URI component. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function encodeURIComponent (value:String):String;
+	public static function encodeURIComponent (value:String):String;
 	/** Sets the value of the httpURLFormatter property. */
-	@:require(titanium-mobileweb) public static function setHttpURLFormatter (httpURLFormatter:String->Dynamic):Void;
+	public static function setHttpURLFormatter (httpURLFormatter:String->Dynamic):Void;
 	/** Unregisters the application for push notifications. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function unregisterForPushNotifications ():Void;
+	public static function unregisterForPushNotifications ():Void;
 
 }

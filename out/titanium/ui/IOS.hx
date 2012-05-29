@@ -1,10 +1,5 @@
 package titanium.ui;
 
-import dictionary<titanium.ui.ios.3DMatrix>;
-import dictionary<titanium.ui.ios.AdView>;
-import dictionary<titanium.ui.ios.CoverFlowView>;
-import dictionary<titanium.ui.ios.TabbedBar>;
-import dictionary<titanium.ui.ios.Toolbar>;
 import titanium.ui.ios.3DMatrix;
 import titanium.ui.ios.AdView;
 import titanium.ui.ios.CoverFlowView;
@@ -106,20 +101,20 @@ of the animation. */
 	public static var BLEND_MODE_XOR(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iOS.3DMatrix. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function create3DMatrix (?parameters:3DMatrix>):3DMatrix;
+	public static function create3DMatrix (?parameters:Dynamic<3DMatrix>):3DMatrix;
 	/** Creates and returns an instance of Titanium.UI.iOS.AdView. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createAdView (?parameters:AdView>):AdView;
+	public static function createAdView (?parameters:Dynamic<AdView>):AdView;
 	/** Creates and returns an instance of Titanium.UI.iOS.CoverFlowView. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createCoverFlowView (?parameters:CoverFlowView>):CoverFlowView;
+	public static function createCoverFlowView (?parameters:Dynamic<CoverFlowView>):CoverFlowView;
 	/** Creates and returns an instance of Titanium.UI.iOS.TabbedBar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createTabbedBar (?parameters:TabbedBar>):TabbedBar;
+	public static function createTabbedBar (?parameters:Dynamic<TabbedBar>):TabbedBar;
 	/** Creates and returns an instance of Titanium.UI.iOS.Toolbar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createToolbar (?parameters:Toolbar>):Toolbar;
+	public static function createToolbar (?parameters:Dynamic<Toolbar>):Toolbar;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

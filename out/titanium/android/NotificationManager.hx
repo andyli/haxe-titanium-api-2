@@ -37,16 +37,16 @@ Notification.defaults. */
 	public static var STREAM_DEFAULT(default,null):Float;
 
 	/** Adds a persistent notification to the status bar. */
-	@:require(titanium-android) public static function notify (id:Float, notification:Notification):Void;
+	public static function notify (id:Float, notification:Notification):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Cancels a previously displayed notification. */
-	@:require(titanium-android) public static function cancel (id:Float):Void;
+	public static function cancel (id:Float):Void;
 	/** Cancels all previously displayed notifications. */
-	@:require(titanium-android) public static function cancelAll ():Void;
+	public static function cancelAll ():Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

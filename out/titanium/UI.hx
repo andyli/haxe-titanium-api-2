@@ -1,41 +1,5 @@
 package titanium;
 
-import dictionary<titanium.ui.3DMatrix>;
-import dictionary<titanium.ui.ActivityIndicator>;
-import dictionary<titanium.ui.AlertDialog>;
-import dictionary<titanium.ui.Animation>;
-import dictionary<titanium.ui.Button>;
-import dictionary<titanium.ui.ButtonBar>;
-import dictionary<titanium.ui.CoverFlowView>;
-import dictionary<titanium.ui.DashboardItem>;
-import dictionary<titanium.ui.DashboardView>;
-import dictionary<titanium.ui.EmailDialog>;
-import dictionary<titanium.ui.ImageView>;
-import dictionary<titanium.ui.Label>;
-import dictionary<titanium.ui.MaskedImage>;
-import dictionary<titanium.ui.Notification>;
-import dictionary<titanium.ui.OptionDialog>;
-import dictionary<titanium.ui.Picker>;
-import dictionary<titanium.ui.PickerColumn>;
-import dictionary<titanium.ui.PickerRow>;
-import dictionary<titanium.ui.ProgressBar>;
-import dictionary<titanium.ui.ScrollableView>;
-import dictionary<titanium.ui.ScrollView>;
-import dictionary<titanium.ui.SearchBar>;
-import dictionary<titanium.ui.Slider>;
-import dictionary<titanium.ui.Switch>;
-import dictionary<titanium.ui.Tab>;
-import dictionary<titanium.ui.TabbedBar>;
-import dictionary<titanium.ui.TabGroup>;
-import dictionary<titanium.ui.TableView>;
-import dictionary<titanium.ui.TableViewRow>;
-import dictionary<titanium.ui.TableViewSection>;
-import dictionary<titanium.ui.TextArea>;
-import dictionary<titanium.ui.TextField>;
-import dictionary<titanium.ui.Toolbar>;
-import dictionary<titanium.ui.View>;
-import dictionary<titanium.ui.WebView>;
-import dictionary<titanium.ui.Window>;
 import titanium.MatrixCreationDict;
 import titanium.ui.2DMatrix;
 import titanium.ui.3DMatrix;
@@ -81,9 +45,9 @@ import titanium.ui.Window;
 extern class UI {
 
 	/** Align text to the bottom of the view. */
-	public static var TEXT_VERTICAL_ALIGNMENT_BOTTOM(default,null):[Number, String];
+	public static var TEXT_VERTICAL_ALIGNMENT_BOTTOM(default,null):Dynamic;
 	/** Align text to the top of the view. */
-	public static var TEXT_VERTICAL_ALIGNMENT_TOP(default,null):[Number, String];
+	public static var TEXT_VERTICAL_ALIGNMENT_TOP(default,null):Dynamic;
 	/** Always show buttons on the input field. */
 	public static var INPUT_BUTTONMODE_ALWAYS(default,null):Float;
 	/** Auto-capitalize all text in the input field. */
@@ -91,7 +55,7 @@ extern class UI {
 	/** Auto-capitalize the first letter of each word in the input field. */
 	public static var TEXT_AUTOCAPITALIZATION_WORDS(default,null):Float;
 	/** Center align text. */
-	public static var TEXT_ALIGNMENT_CENTER(default,null):[Number, String];
+	public static var TEXT_ALIGNMENT_CENTER(default,null):Dynamic;
 	/** Constant value for face-down orientation. */
 	public static var FACE_DOWN(default,null):Float;
 	/** Constant value for face-up orientation. */
@@ -103,7 +67,7 @@ extern class UI {
 	/** INHERIT behavior for UI layout. */
 	public static var INHERIT(default,null):String;
 	/** Left align text. */
-	public static var TEXT_ALIGNMENT_LEFT(default,null):[Number, String];
+	public static var TEXT_ALIGNMENT_LEFT(default,null):Dynamic;
 	/** Local path or URL to an image file for setting a background for the master view (when there 
 are no windows or other top-level controls displayed). */
 	public static var backgroundImage:String;
@@ -118,7 +82,7 @@ are no windows or other top-level controls displayed). */
 	/** Reverse landscape orientation (home button on right). */
 	public static var LANDSCAPE_RIGHT(default,null):Float;
 	/** Right align text. */
-	public static var TEXT_ALIGNMENT_RIGHT(default,null):[Number, String];
+	public static var TEXT_ALIGNMENT_RIGHT(default,null):Dynamic;
 	/** Set the return key text to "Done". */
 	public static var RETURNKEY_DONE(default,null):Float;
 	/** Set the return key text to "Emergency Call". */
@@ -213,101 +177,101 @@ controls displayed). */
 	/** Use the platform-specific default keyboard appearance. */
 	public static var KEYBOARD_APPEARANCE_DEFAULT(default,null):Float;
 	/** Vertically align text to the center of the view. */
-	public static var TEXT_VERTICAL_ALIGNMENT_CENTER(default,null):[Number, String];
+	public static var TEXT_VERTICAL_ALIGNMENT_CENTER(default,null):Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Converts one type of unit to another using the metrics of the main Display. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function convertUnits (convertFromValue:String, convertToUnits:String):Float;
+	public static function convertUnits (convertFromValue:String, convertToUnits:String):Float;
 	/** Creates and returns an instance of Titanium.UI.3DMatrix. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function create3DMatrix (?parameters:3DMatrix>):3DMatrix;
+	public static function create3DMatrix (?parameters:Dynamic<3DMatrix>):3DMatrix;
 	/** Creates and returns an instance of Titanium.UI.ActivityIndicator. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createActivityIndicator (?parameters:ActivityIndicator>):ActivityIndicator;
+	public static function createActivityIndicator (?parameters:Dynamic<ActivityIndicator>):ActivityIndicator;
 	/** Creates and returns an instance of Titanium.UI.AlertDialog. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createAlertDialog (?parameters:AlertDialog>):AlertDialog;
+	public static function createAlertDialog (?parameters:Dynamic<AlertDialog>):AlertDialog;
 	/** Creates and returns an instance of Titanium.UI.Animation. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createAnimation (?parameters:Animation>):Animation;
+	public static function createAnimation (?parameters:Dynamic<Animation>):Animation;
 	/** Creates and returns an instance of Titanium.UI.Button. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createButton (?parameters:Button>):Button;
+	public static function createButton (?parameters:Dynamic<Button>):Button;
 	/** Creates and returns an instance of Titanium.UI.ButtonBar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createButtonBar (?parameters:ButtonBar>):ButtonBar;
+	public static function createButtonBar (?parameters:Dynamic<ButtonBar>):ButtonBar;
 	/** Creates and returns an instance of Titanium.UI.CoverFlowView. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createCoverFlowView (?parameters:CoverFlowView>):CoverFlowView;
+	public static function createCoverFlowView (?parameters:Dynamic<CoverFlowView>):CoverFlowView;
 	/** Creates and returns an instance of Titanium.UI.DashboardItem. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createDashboardItem (?parameters:DashboardItem>):DashboardItem;
+	public static function createDashboardItem (?parameters:Dynamic<DashboardItem>):DashboardItem;
 	/** Creates and returns an instance of Titanium.UI.DashboardView. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createDashboardView (?parameters:DashboardView>):DashboardView;
+	public static function createDashboardView (?parameters:Dynamic<DashboardView>):DashboardView;
 	/** Creates and returns an instance of Titanium.UI.EmailDialog. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createEmailDialog (?parameters:EmailDialog>):EmailDialog;
+	public static function createEmailDialog (?parameters:Dynamic<EmailDialog>):EmailDialog;
 	/** Creates and returns an instance of Titanium.UI.ImageView. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createImageView (?parameters:ImageView>):ImageView;
+	public static function createImageView (?parameters:Dynamic<ImageView>):ImageView;
 	/** Creates and returns an instance of Titanium.UI.Label. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createLabel (?parameters:Label>):Label;
+	public static function createLabel (?parameters:Dynamic<Label>):Label;
 	/** Creates and returns an instance of Titanium.UI.MaskedImage. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createMaskedImage (?parameters:MaskedImage>):MaskedImage;
+	public static function createMaskedImage (?parameters:Dynamic<MaskedImage>):MaskedImage;
 	/** Creates and returns an instance of Titanium.UI.Notification. */
-	@:require(titanium-android) public static function createNotification (?parameters:Notification>):Notification;
+	public static function createNotification (?parameters:Dynamic<Notification>):Notification;
 	/** Creates and returns an instance of Titanium.UI.OptionDialog. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createOptionDialog (?parameters:OptionDialog>):OptionDialog;
+	public static function createOptionDialog (?parameters:Dynamic<OptionDialog>):OptionDialog;
 	/** Creates and returns an instance of Titanium.UI.Picker. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createPicker (?parameters:Picker>):Picker;
+	public static function createPicker (?parameters:Dynamic<Picker>):Picker;
 	/** Creates and returns an instance of Titanium.UI.PickerColumn. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createPickerColumn (?parameters:PickerColumn>):PickerColumn;
+	public static function createPickerColumn (?parameters:Dynamic<PickerColumn>):PickerColumn;
 	/** Creates and returns an instance of Titanium.UI.PickerRow. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createPickerRow (?parameters:PickerRow>):PickerRow;
+	public static function createPickerRow (?parameters:Dynamic<PickerRow>):PickerRow;
 	/** Creates and returns an instance of Titanium.UI.ProgressBar. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createProgressBar (?parameters:ProgressBar>):ProgressBar;
+	public static function createProgressBar (?parameters:Dynamic<ProgressBar>):ProgressBar;
 	/** Creates and returns an instance of Titanium.UI.ScrollableView. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function createScrollableView (?parameters:ScrollableView>):ScrollableView;
+	public static function createScrollableView (?parameters:Dynamic<ScrollableView>):ScrollableView;
 	/** Creates and returns an instance of Titanium.UI.ScrollView. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createScrollView (?parameters:ScrollView>):ScrollView;
+	public static function createScrollView (?parameters:Dynamic<ScrollView>):ScrollView;
 	/** Creates and returns an instance of Titanium.UI.SearchBar. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function createSearchBar (?parameters:SearchBar>):SearchBar;
+	public static function createSearchBar (?parameters:Dynamic<SearchBar>):SearchBar;
 	/** Creates and returns an instance of Titanium.UI.Slider. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createSlider (?parameters:Slider>):Slider;
+	public static function createSlider (?parameters:Dynamic<Slider>):Slider;
 	/** Creates and returns an instance of Titanium.UI.Switch. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createSwitch (?parameters:Switch>):Switch;
+	public static function createSwitch (?parameters:Dynamic<Switch>):Switch;
 	/** Creates and returns an instance of Titanium.UI.Tab. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTab (?parameters:Tab>):Tab;
+	public static function createTab (?parameters:Dynamic<Tab>):Tab;
 	/** Creates and returns an instance of Titanium.UI.TabbedBar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function createTabbedBar (?parameters:TabbedBar>):TabbedBar;
+	public static function createTabbedBar (?parameters:Dynamic<TabbedBar>):TabbedBar;
 	/** Creates and returns an instance of Titanium.UI.TabGroup. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTabGroup (?parameters:TabGroup>):TabGroup;
+	public static function createTabGroup (?parameters:Dynamic<TabGroup>):TabGroup;
 	/** Creates and returns an instance of Titanium.UI.TableView. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTableView (?parameters:TableView>):TableView;
+	public static function createTableView (?parameters:Dynamic<TableView>):TableView;
 	/** Creates and returns an instance of Titanium.UI.TableViewRow. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTableViewRow (?parameters:TableViewRow>):TableViewRow;
+	public static function createTableViewRow (?parameters:Dynamic<TableViewRow>):TableViewRow;
 	/** Creates and returns an instance of Titanium.UI.TableViewSection. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTableViewSection (?parameters:TableViewSection>):TableViewSection;
+	public static function createTableViewSection (?parameters:Dynamic<TableViewSection>):TableViewSection;
 	/** Creates and returns an instance of Titanium.UI.TextArea. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTextArea (?parameters:TextArea>):TextArea;
+	public static function createTextArea (?parameters:Dynamic<TextArea>):TextArea;
 	/** Creates and returns an instance of Titanium.UI.TextField. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTextField (?parameters:TextField>):TextField;
+	public static function createTextField (?parameters:Dynamic<TextField>):TextField;
 	/** Creates and returns an instance of Titanium.UI.Toolbar. */
-	@:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createToolbar (?parameters:Toolbar>):Toolbar;
+	public static function createToolbar (?parameters:Dynamic<Toolbar>):Toolbar;
 	/** Creates and returns an instance of Titanium.UI.View. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createView (?parameters:View>):View;
+	public static function createView (?parameters:Dynamic<View>):View;
 	/** Creates and returns an instance of Titanium.UI.WebView. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createWebView (?parameters:WebView>):WebView;
+	public static function createWebView (?parameters:Dynamic<WebView>):WebView;
 	/** Creates and returns an instance of Titanium.UI.Window. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createWindow (?parameters:Window>):Window;
+	public static function createWindow (?parameters:Dynamic<Window>):Window;
 	/** Creates are returns an instance of Titanium.UI.2DMatrix. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function create2DMatrix (?parameters:MatrixCreationDict):2DMatrix;
+	public static function create2DMatrix (?parameters:MatrixCreationDict):2DMatrix;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the backgroundColor property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getBackgroundColor ():Void;
+	public static function getBackgroundColor ():Void;
 	/** Gets the value of the backgroundImage property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getBackgroundImage ():Void;
+	public static function getBackgroundImage ():Void;
 	/** Gets the value of the currentTab property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getCurrentTab ():Void;
+	public static function getCurrentTab ():Void;
 	/** Gets the value of the currentWindow property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getCurrentWindow ():Void;
+	public static function getCurrentWindow ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the backgroundImage property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function setBackgroundImage (backgroundImage:String):Void;
+	public static function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the currentTab property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function setCurrentTab (currentTab:Tab):Void;
+	public static function setCurrentTab (currentTab:Tab):Void;
 
 }

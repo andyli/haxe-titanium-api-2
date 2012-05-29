@@ -46,12 +46,20 @@ class TitaniumApiJsonParser extends SimpleParser {
 		var definition = new ClassDefinition();
 		
 		definition.className = data.name;
-		if (!definition.className.startsWith("Titanium.")) definition.className = "titanium." + definition.className;
+		if (!definition.className.startsWith("Titanium.")) 
+			definition.className = "titanium." + definition.className;
+		
 		definition.nativeClassName = data.name;
-		definition.parentClassName = data.subtype;
+		if (definition.nativeClassName.startsWith("Global."))
+			definition.nativeClassName = definition.nativeClassName.remove("Global.");
+		
+		/*
+		if (definition.nativeClassName != "Titanium.Proxy" && data.subtype != null && definition.nativeClassName != data.subtype)
+			definition.parentClassName = data.subtype;
+		*/
 		definition.comment = "/** " + cast (data.summary, String).stripTags() + " */";
 		
-		if (data.type == "module") {
+		if (data.type == "module" || definition.nativeClassName.startsWith("Global.")) {
 			processMethods (cast (data.methods, Array <Dynamic>), definition.staticMethods, definition.className);
 			processProperties (cast (data.properties, Array <Dynamic>), definition.staticProperties, definition.className);
 		} else {
@@ -70,7 +78,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 		var data = BuildHX.parseJSON(content);
 		var fields = Reflect.fields(data);
 		fields.sort(Reflect.compare);
-		for (field in fields.filter(function(f) return true || f.startsWith("Titanium") || f.startsWith("Global"))) {
+		for (field in fields.filter(function(f) return f != "Global")) {
 			var data = Reflect.field(data, field);
 			var definition = definitions.get(data.name);
 		
@@ -108,7 +116,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 				method.returnType = methodData.returns.type;
 				method.owner = owner;
 				method.comment = "/** " + cast (methodData.summary, String).stripTags() + " */";
-				method.accessModifier = platformAccessModifier(methodData) + " " + method.accessModifier;
+				method.accessModifier = /*platformAccessModifier(methodData) + " " + */method.accessModifier;
 				
 				for (param in cast (methodData.parameters, Array <Dynamic>)) {
 					method.parameterNames.push (param.name);
@@ -147,7 +155,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 				if (propertyData.permission == "read-only") {
 					property.setter = "null";
 				}				
-				property.accessModifier = platformAccessModifier(propertyData) + " " + property.accessModifier;
+				property.accessModifier = /*platformAccessModifier(propertyData) + " " + */property.accessModifier;
 				
 				if (!properties.exists (property.name)) {
 					properties.set (property.name, property);
@@ -299,6 +307,15 @@ class TitaniumApiJsonParser extends SimpleParser {
 		
 			var rCallback = ~/Callback<(.*)>/;
 			resolvedType = rCallback.match(type) ? resolveType(rCallback.matched(1)) + "->Dynamic" : throw "cannot extact param from " + type;
+			
+		} else if (type.startsWith("Dictionary")) {
+		
+			var rDictionary = ~/Dictionary<(.*)>/;
+			resolvedType = rDictionary.match(type) ? "Dynamic<" + resolveType(rDictionary.matched(1)) + ">" : throw "cannot extact param from " + type;
+			
+		} else if (~/\[.*,.*\]/.match(type)) {
+			
+			resolvedType = "Dynamic";
 			
 		} else {
 			

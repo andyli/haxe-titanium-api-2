@@ -16,9 +16,9 @@ extern class Global extends Proxy {
 	/** Displays a pop-up alert dialog with the passed in message. */
 	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function alert (message:String):Void;
 	/** Executes a function repeatedly with a fixed time delay between each call to that function. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setInterval (function:Dynamic, delay:Float):Float;
+	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setInterval (_function:Dynamic, delay:Float):Float;
 	/** Executes code or a function after a delay. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTimeout (function:Dynamic, delay:Float):Float;
+	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function setTimeout (_function:Dynamic, delay:Float):Float;
 	/** Loads either a native Titanium module, or a CommonJS module. */
 	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public function require (moduleId:String):Dynamic;
 	/** Replaces each escape sequence in the specified string, created using the encodedURI 

@@ -1,8 +1,5 @@
 package titanium;
 
-import dictionary<titanium.android.Intent>;
-import dictionary<titanium.android.Notification>;
-import dictionary<titanium.android.PendingIntent>;
 import titanium.android.Activity;
 import titanium.android.Intent;
 import titanium.android.Notification;
@@ -383,34 +380,34 @@ an activity was canceled. */
 	public static var RESULT_CANCELED(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Check on state of Service. */
-	@:require(titanium-android) public static function isServiceRunning (intent:Intent):Bool;
+	public static function isServiceRunning (intent:Intent):Bool;
 	/** Create a Titanium.Android.Service so you can start/stop it and listen for events from it. */
-	@:require(titanium-android) public static function createService (intent:Intent):Service;
+	public static function createService (intent:Intent):Service;
 	/** Create an Intent to be used to start a service. */
-	@:require(titanium-android) public static function createServiceIntent (options:ServiceIntentOptions):Intent;
+	public static function createServiceIntent (options:ServiceIntentOptions):Intent;
 	/** Creates a PendingIntent to be used inside a
 Notification. */
-	@:require(titanium-android) public static function createPendingIntent (?parameters:PendingIntent>):PendingIntent;
+	public static function createPendingIntent (?parameters:Dynamic<PendingIntent>):PendingIntent;
 	/** Creates an activity chooser intent, used to allow the user to select a target activity
 for an intent. */
-	@:require(titanium-android) public static function createIntentChooser (intent:Intent, title:String):Intent;
+	public static function createIntentChooser (intent:Intent, title:String):Intent;
 	/** Creates and returns an instance of Titanium.Android.Intent. */
-	@:require(titanium-android) public static function createIntent (?parameters:Intent>):Intent;
+	public static function createIntent (?parameters:Dynamic<Intent>):Intent;
 	/** Creates and returns an instance of Titanium.Android.Notification. */
-	@:require(titanium-android) public static function createNotification (?parameters:Notification>):Notification;
+	public static function createNotification (?parameters:Dynamic<Notification>):Notification;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the currentActivity property. */
-	@:require(titanium-android) public static function getCurrentActivity ():Void;
+	public static function getCurrentActivity ():Void;
 	/** Gets the value of the currentService property. */
-	@:require(titanium-android) public static function getCurrentService ():Void;
+	public static function getCurrentService ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Starts a simple service. */
-	@:require(titanium-android) public static function startService (intent:Intent):Void;
+	public static function startService (intent:Intent):Void;
 	/** Stop a simple service that was started with startService. */
-	@:require(titanium-android) public static function stopService (intent:Intent):Void;
+	public static function stopService (intent:Intent):Void;
 
 }

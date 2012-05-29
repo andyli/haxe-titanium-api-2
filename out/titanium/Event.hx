@@ -1,15 +1,13 @@
 package titanium;
 
-import titanium.Proxy;
-
 
 /** The base type for all Titanium events. */
 @:native ("Titanium.Event")
-extern class Event extends Proxy {
+extern class Event {
 
 	/** Name of the event fired. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public var type:String;
+	public var type:String;
 	/** Source object that fired the event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public var source:Dynamic;
+	public var source:Dynamic;
 
 }

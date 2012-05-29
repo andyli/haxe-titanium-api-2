@@ -103,15 +103,15 @@ is accomodated by the current heavyweight window when it receives focus (default
 	public static var WEBVIEW_PLUGINS_ON(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Hides the soft keyboard. */
-	@:require(titanium-android) public static function hideSoftKeyboard ():Void;
+	public static function hideSoftKeyboard ():Void;
 	/** Opens an application preferences dialog, using the native Android system settings interface, 
 defined by the platform-specific preferences.xml and array.xml files. */
-	@:require(titanium-android) public static function openPreferences ():Void;
+	public static function openPreferences ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

@@ -85,48 +85,48 @@ accuracy available. */
 	public static var ACCURACY_BEST(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the accuracy property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getAccuracy ():Void;
+	public static function getAccuracy ():Void;
 	/** Gets the value of the distanceFilter property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getDistanceFilter ():Void;
+	public static function getDistanceFilter ():Void;
 	/** Gets the value of the frequency property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getFrequency ():Void;
+	public static function getFrequency ():Void;
 	/** Gets the value of the headingFilter property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getHeadingFilter ():Void;
+	public static function getHeadingFilter ():Void;
 	/** Gets the value of the locationServicesAuthorization property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getLocationServicesAuthorization ():Void;
+	public static function getLocationServicesAuthorization ():Void;
 	/** Gets the value of the locationServicesEnabled property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getLocationServicesEnabled ():Void;
+	public static function getLocationServicesEnabled ():Void;
 	/** Gets the value of the purpose property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getPurpose ():Void;
+	public static function getPurpose ():Void;
 	/** Gets the value of the showCalibration property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getShowCalibration ():Void;
+	public static function getShowCalibration ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Resolves an address to a location. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function forwardGeocoder (address:String, _callback:ForwardGeocodeResponse->Dynamic):Void;
+	public static function forwardGeocoder (address:String, _callback:ForwardGeocodeResponse->Dynamic):Void;
 	/** Retrieves the current compass heading. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getCurrentHeading (_callback:HeadingResponse->Dynamic):Void;
+	public static function getCurrentHeading (_callback:HeadingResponse->Dynamic):Void;
 	/** Retrieves the last known location from the device. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getCurrentPosition (_callback:Dynamic->Dynamic):Void;
+	public static function getCurrentPosition (_callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the accuracy property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function setAccuracy (accuracy:Float):Void;
+	public static function setAccuracy (accuracy:Float):Void;
 	/** Sets the value of the distanceFilter property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setDistanceFilter (distanceFilter:Float):Void;
+	public static function setDistanceFilter (distanceFilter:Float):Void;
 	/** Sets the value of the frequency property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function setFrequency (frequency:Float):Void;
+	public static function setFrequency (frequency:Float):Void;
 	/** Sets the value of the headingFilter property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setHeadingFilter (headingFilter:Float):Void;
+	public static function setHeadingFilter (headingFilter:Float):Void;
 	/** Sets the value of the locationServicesAuthorization property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setLocationServicesAuthorization (locationServicesAuthorization:Float):Void;
+	public static function setLocationServicesAuthorization (locationServicesAuthorization:Float):Void;
 	/** Sets the value of the purpose property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setPurpose (purpose:String):Void;
+	public static function setPurpose (purpose:String):Void;
 	/** Sets the value of the showCalibration property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function setShowCalibration (showCalibration:Bool):Void;
+	public static function setShowCalibration (showCalibration:Bool):Void;
 	/** Tries to resolve a location to an address. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function reverseGeocoder (latitude:Float, longitude:Float, _callback:ReverseGeocodeResponse->Dynamic):Void;
+	public static function reverseGeocoder (latitude:Float, longitude:Float, _callback:ReverseGeocodeResponse->Dynamic):Void;
 
 }

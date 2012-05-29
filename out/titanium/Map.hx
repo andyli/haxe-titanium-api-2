@@ -1,7 +1,5 @@
 package titanium;
 
-import dictionary<titanium.map.Annotation>;
-import dictionary<titanium.map.View>;
 import titanium.map.Annotation;
 import titanium.map.View;
 
@@ -29,14 +27,14 @@ Titanium.Map.Annotation.pincolor property. */
 	public static var TERRAIN_TYPE(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns an instance of Titanium.Map.Annotation. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createAnnotation (?parameters:Annotation>):Annotation;
+	public static function createAnnotation (?parameters:Dynamic<Annotation>):Annotation;
 	/** Creates and returns an instance of Titanium.Map.View. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createView (?parameters:View>):View;
+	public static function createView (?parameters:Dynamic<View>):View;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

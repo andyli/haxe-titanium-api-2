@@ -34,38 +34,38 @@ extern class Filesystem {
 	public static var separator(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates a temporary directory and returns a File object representing the new directory. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTempDirectory ():File;
+	public static function createTempDirectory ():File;
 	/** Creates a temporary file and returns a File object representing the new file. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function createTempFile ():File;
+	public static function createTempFile ():File;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the applicationCacheDirectory property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) public static function getApplicationCacheDirectory ():Void;
+	public static function getApplicationCacheDirectory ():Void;
 	/** Gets the value of the applicationDataDirectory property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getApplicationDataDirectory ():Void;
+	public static function getApplicationDataDirectory ():Void;
 	/** Gets the value of the applicationDirectory property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getApplicationDirectory ():Void;
+	public static function getApplicationDirectory ():Void;
 	/** Gets the value of the applicationSupportDirectory property. */
-	@:require(titanium-iphone) @:require(titanium-ipad) public static function getApplicationSupportDirectory ():Void;
+	public static function getApplicationSupportDirectory ():Void;
 	/** Gets the value of the externalStorageDirectory property. */
-	@:require(titanium-android) public static function getExternalStorageDirectory ():Void;
+	public static function getExternalStorageDirectory ():Void;
 	/** Gets the value of the lineEnding property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getLineEnding ():Void;
+	public static function getLineEnding ():Void;
 	/** Gets the value of the resourcesDirectory property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getResourcesDirectory ():Void;
+	public static function getResourcesDirectory ():Void;
 	/** Gets the value of the separator property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getSeparator ():Void;
+	public static function getSeparator ():Void;
 	/** Gets the value of the tempDirectory property. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getTempDirectory ():Void;
+	public static function getTempDirectory ():Void;
 	/** Opens file using the Titanium.IOStream interface. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function openStream (mode:Float, path:String):FileStream;
+	public static function openStream (mode:Float, path:String):FileStream;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns a File object representing the file identified by the path arguments. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getFile (path:String):File;
+	public static function getFile (path:String):File;
 	/** Returns true if the device supports external storage and the external storage device is mounted. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function isExternalStoragePresent ():Bool;
+	public static function isExternalStoragePresent ():Bool;
 
 }

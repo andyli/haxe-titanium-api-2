@@ -35,27 +35,27 @@ extern class Codec {
 	public static var CHARSET_UTF8(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Decodes the source buffer (starting at the optional position) using the passed in data type.
 Throws an Exception if source is null, or position is greater than source.length */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function decodeNumber (options:Dictionary<DecodeNumberDict>):Float;
+	public static function decodeNumber (options:Dynamic<DecodeNumberDict>):Float;
 	/** Decodes the source buffer into a String starting at position, with length bytes,
 using the supplied character set charset. Throws an Exception if charset is not
 a valid character set, source is null, or either position, length, or
 position+length is greater than source.length. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function decodeString (options:Dictionary<DecodeStringDict>):String;
+	public static function decodeString (options:Dynamic<DecodeStringDict>):String;
 	/** Encodes the Number source into dest using the passed in data type. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function encodeNumber (options:Dictionary<EncodeNumberDict>):Float;
+	public static function encodeNumber (options:Dynamic<EncodeNumberDict>):Float;
 	/** Encodes the String source into dest using charset.
 Throws an Exception if charset is not a valid character set,
 source is null, or either sourcePosition, sourceLength, or
 sourcePosition+sourceLength is greater than source.length. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function encodeString (options:Dictionary<EncodeStringDict>):Float;
+	public static function encodeString (options:Dynamic<EncodeStringDict>):Float;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Get the OS native byte order (either Titanium.Codec.BIG_ENDIAN or Titanium.Codec.LITTLE_ENDIAN) */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function getNativeByteOrder ():Float;
+	public static function getNativeByteOrder ():Float;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-android) @:require(titanium-iphone) @:require(titanium-ipad) @:require(titanium-mobileweb) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }

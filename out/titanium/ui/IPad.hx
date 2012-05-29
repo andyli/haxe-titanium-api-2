@@ -1,8 +1,5 @@
 package titanium.ui;
 
-import dictionary<titanium.ui.ipad.DocumentViewer>;
-import dictionary<titanium.ui.ipad.Popover>;
-import dictionary<titanium.ui.ipad.SplitWindow>;
 import titanium.ui.ipad.DocumentViewer;
 import titanium.ui.ipad.Popover;
 import titanium.ui.ipad.SplitWindow;
@@ -26,16 +23,16 @@ extern class IPad {
 	public static var POPOVER_ARROW_DIRECTION_UNKNOWN(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	@:require(titanium-ipad) public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iPad.DocumentViewer. */
-	@:require(titanium-ipad) public static function createDocumentViewer (?parameters:DocumentViewer>):DocumentViewer;
+	public static function createDocumentViewer (?parameters:Dynamic<DocumentViewer>):DocumentViewer;
 	/** Creates and returns an instance of Titanium.UI.iPad.Popover. */
-	@:require(titanium-ipad) public static function createPopover (?parameters:Popover>):Popover;
+	public static function createPopover (?parameters:Dynamic<Popover>):Popover;
 	/** Creates and returns an instance of Titanium.UI.iPad.SplitWindow. */
-	@:require(titanium-ipad) public static function createSplitWindow (?parameters:SplitWindow>):SplitWindow;
+	public static function createSplitWindow (?parameters:Dynamic<SplitWindow>):SplitWindow;
 	/** Fires a synthesized event to any registered listeners. */
-	@:require(titanium-ipad) public static function fireEvent (name:String, event:Dynamic):Void;
+	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	@:require(titanium-ipad) public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 
 }
