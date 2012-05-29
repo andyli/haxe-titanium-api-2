@@ -14,8 +14,6 @@ extern class App {
 	public static var guid(default,null):String;
 	/** Application ID, from tiapp.xml. */
 	public static var id(default,null):String;
-	/** Application name, determined by tiapp.xml. */
-	public static var name(default,null):String;
 	/** Application publisher, from tiapp.xml. */
 	public static var publisher(default,null):String;
 	/** Application URL, from tiapp.xml. */

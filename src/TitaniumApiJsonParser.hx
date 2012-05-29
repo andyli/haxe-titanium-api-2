@@ -60,11 +60,11 @@ class TitaniumApiJsonParser extends SimpleParser {
 		definition.comment = "/** " + cast (data.summary, String).stripTags() + " */";
 		
 		if (data.type == "module" || definition.nativeClassName.startsWith("Global.")) {
-			processMethods (cast (data.methods, Array <Dynamic>), definition.staticMethods, definition.className);
-			processProperties (cast (data.properties, Array <Dynamic>), definition.staticProperties, definition.className);
+			processMethods (cast (data.methods, Array <Dynamic>), definition, true);
+			processProperties (cast (data.properties, Array <Dynamic>), definition, true);
 		} else {
-			processMethods (cast (data.methods, Array <Dynamic>), definition.methods, definition.className);
-			processProperties (cast (data.properties, Array <Dynamic>), definition.properties, definition.className);	
+			processMethods (cast (data.methods, Array <Dynamic>), definition, false);
+			processProperties (cast (data.properties, Array <Dynamic>), definition, false);	
 		}
 		return definition;		
 	}
@@ -105,7 +105,8 @@ class TitaniumApiJsonParser extends SimpleParser {
 	}
 	
 	
-	private function processMethods (methodsData:Array <Dynamic>, methods:Hash <ClassMethod>, owner:String):Void {
+	private function processMethods (methodsData:Array <Dynamic>, owner:ClassDefinition, isStatic:Bool):Void {
+		var methods = isStatic ? owner.staticMethods : owner.methods;
 		
 		for (methodData in methodsData) {
 			
@@ -114,7 +115,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 				var method = new ClassMethod ();
 				method.name = methodData.name;
 				method.returnType = methodData.returns.type;
-				method.owner = owner;
+				method.owner = owner.className;
 				method.comment = "/** " + cast (methodData.summary, String).stripTags() + " */";
 				method.accessModifier = /*platformAccessModifier(methodData) + " " + */method.accessModifier;
 				
@@ -141,16 +142,17 @@ class TitaniumApiJsonParser extends SimpleParser {
 		return cast(propertyData.platforms, Array<Dynamic>).map(function(p) return "@:require(titanium-" + p.name + ")").join(" ");
 	}
 	
-	private function processProperties (propertiesData:Array <Dynamic>, properties:Hash <ClassProperty>, owner:String):Void {
+	private function processProperties (propertiesData:Array <Dynamic>, owner:ClassDefinition, isStatic:Bool):Void {
+		var properties = isStatic ? owner.staticProperties : owner.properties;
 		
 		for (propertyData in propertiesData) {
 			
-			if (propertyData.deprecated == null) {
+			if (propertyData.deprecated == null && !(isStatic && propertyData.name == "name")) {
 				
 				var property = new ClassProperty ();
 				property.name = propertyData.name;
 				property.type = propertyData.type;
-				property.owner = owner;
+				property.owner = owner.className;
 				property.comment = "/** " + cast (propertyData.summary, String).stripTags() + " */";
 				if (propertyData.permission == "read-only") {
 					property.setter = "null";

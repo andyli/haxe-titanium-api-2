@@ -29,8 +29,6 @@ in 5% increments on iPhone/iPad. */
 	public static var batteryLevel(default,null):Float;
 	/** The model of the device. */
 	public static var model(default,null):String;
-	/** The name of the platform. */
-	public static var name(default,null):String;
 	/** The number of processing cores. */
 	public static var processorCount(default,null):Float;
 	/** The Operating System architecture. On Android, this is 32bit. */
