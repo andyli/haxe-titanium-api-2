@@ -1,6 +1,5 @@
 package titanium;
 
-import array<titanium.media.Item>;
 import titanium.CameraOptionsType;
 import titanium.media.AudioPlayer;
 import titanium.media.AudioRecorder;
@@ -25,17 +24,17 @@ extern class Media {
 	/** A video type of media in the movie returned by Titanium.Media.VideoPlayer mediaTypes property. */
 	public static var VIDEO_MEDIA_TYPE_VIDEO(default,null):Float;
 	/** An instance of Titanium.Media.MusicPlayer representing the app-specific music player. */
-	public static var appMusicPlayer(default,null):MusicPlayer;
+	public static var appMusicPlayer(default,null):titanium.media.MusicPlayer;
 	/** An instance of Titanium.Media.MusicPlayer representing the system-wide music player. */
-	public static var systemMusicPlayer(default,null):MusicPlayer;
+	public static var systemMusicPlayer(default,null):titanium.media.MusicPlayer;
 	/** An unknown type of media in the movie returned by Titanium.Media.VideoPlayer mediaTypes property. */
 	public static var VIDEO_MEDIA_TYPE_NONE(default,null):Float;
 	/** Array of media type constants supported for saving to the device's camera roll or saved images album. */
-	public static var availablePhotoGalleryMediaTypes:Array<Object>;
+	public static var availablePhotoGalleryMediaTypes:Array<Dynamic>;
 	/** Array of media type constants supported for the camera. */
-	public static var availableCameraMediaTypes:Array<Object>;
+	public static var availableCameraMediaTypes:Array<Dynamic>;
 	/** Array of media type constants supported for the photo library. */
-	public static var availablePhotoMediaTypes:Array<Object>;
+	public static var availablePhotoMediaTypes:Array<Dynamic>;
 	/** Audio file format 3GPP. */
 	public static var AUDIO_FILEFORMAT_3GPP(default,null):Float;
 	/** Audio file format 3GPP2. */
@@ -244,21 +243,21 @@ extern class Media {
 	public static var VIDEO_SOURCE_TYPE_UNKNOWN(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.Media.AudioPlayer. */
-	public static function createAudioPlayer (?parameters:Dynamic<AudioPlayer>):AudioPlayer;
+	public static function createAudioPlayer (?parameters:Dynamic):titanium.media.AudioPlayer;
 	/** Creates and returns an instance of Titanium.Media.AudioRecorder. */
-	public static function createAudioRecorder (?parameters:Dynamic<AudioRecorder>):AudioRecorder;
+	public static function createAudioRecorder (?parameters:Dynamic):titanium.media.AudioRecorder;
 	/** Creates and returns an instance of Titanium.Media.Item. */
-	public static function createItem (?parameters:Dynamic<Item>):Item;
+	public static function createItem (?parameters:Dynamic):titanium.media.Item;
 	/** Creates and returns an instance of Titanium.Media.MusicPlayer. */
-	public static function createMusicPlayer (?parameters:Dynamic<MusicPlayer>):MusicPlayer;
+	public static function createMusicPlayer (?parameters:Dynamic):titanium.media.MusicPlayer;
 	/** Creates and returns an instance of Titanium.Media.Sound. */
-	public static function createSound (?parameters:Dynamic<Sound>):Sound;
+	public static function createSound (?parameters:Dynamic):titanium.media.Sound;
 	/** Creates and returns an instance of Titanium.Media.VideoPlayer. */
-	public static function createVideoPlayer (?parameters:Dynamic<VideoPlayer>):VideoPlayer;
+	public static function createVideoPlayer (?parameters:Dynamic):titanium.media.VideoPlayer;
 	/** Displays the given image. */
-	public static function previewImage (options:Dynamic<PreviewImageOptions>):Void;
+	public static function previewImage (options:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the appMusicPlayer property. */
@@ -292,39 +291,39 @@ extern class Media {
 	/** Hides the music library. */
 	public static function hideMusicLibrary ():Void;
 	/** Makes the device vibrate. */
-	public static function vibrate (?pattern:Array<Number>):Void;
+	public static function vibrate (?pattern:Array<Float>):Void;
 	/** Opens the photo gallery image picker. */
-	public static function openPhotoGallery (options:PhotoGalleryOptionsType):Void;
+	public static function openPhotoGallery (options:titanium.PhotoGalleryOptionsType):Void;
 	/** Plays a device beep notification. */
 	public static function beep ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns true if the source supports the specified media type. */
 	public static function isMediaTypeSupported (source:String, type:String):Bool;
 	/** Saves media to the device's photo gallery / camera roll. */
 	public static function saveToPhotoGallery (media:Dynamic, callbacks:Dynamic):Void;
 	/** Searches the music library for items matching the specified search predicates. */
-	public static function queryMusicLibrary (query:MediaQueryType):Item>;
+	public static function queryMusicLibrary (query:titanium.MediaQueryType):Array<titanium.media.Item>;
 	/** Sets the value of the audioSessionMode property. */
 	public static function setAudioSessionMode (audioSessionMode:Float):Void;
 	/** Sets the value of the availableCameraMediaTypes property. */
-	public static function setAvailableCameraMediaTypes (availableCameraMediaTypes:Array<Object>):Void;
+	public static function setAvailableCameraMediaTypes (availableCameraMediaTypes:Array<Dynamic>):Void;
 	/** Sets the value of the availablePhotoGalleryMediaTypes property. */
-	public static function setAvailablePhotoGalleryMediaTypes (availablePhotoGalleryMediaTypes:Array<Object>):Void;
+	public static function setAvailablePhotoGalleryMediaTypes (availablePhotoGalleryMediaTypes:Array<Dynamic>):Void;
 	/** Sets the value of the availablePhotoMediaTypes property. */
-	public static function setAvailablePhotoMediaTypes (availablePhotoMediaTypes:Array<Object>):Void;
+	public static function setAvailablePhotoMediaTypes (availablePhotoMediaTypes:Array<Dynamic>):Void;
 	/** Sets the value of the averageMicrophonePower property. */
 	public static function setAverageMicrophonePower (averageMicrophonePower:Float):Void;
 	/** Shows the camera. */
-	public static function showCamera (options:CameraOptionsType):Void;
+	public static function showCamera (options:titanium.CameraOptionsType):Void;
 	/** Shows the music library and allows the user to select one or more tracks. */
-	public static function openMusicLibrary (options:MusicLibraryOptionsType):Void;
+	public static function openMusicLibrary (options:titanium.MusicLibraryOptionsType):Void;
 	/** Starts monitoring the microphone sound level. */
 	public static function startMicrophoneMonitor ():Void;
 	/** Stops monitoring the microphone sound level. */
 	public static function stopMicrophoneMonitor ():Void;
 	/** Takes a screen shot of the visible UI on the device. */
-	public static function takeScreenshot (_callback:ScreenshotResult->Dynamic):Void;
+	public static function takeScreenshot (_callback:titanium.ScreenshotResult->Dynamic):Void;
 	/** Uses the device camera to capture a photo. */
 	public static function takePicture ():Void;
 

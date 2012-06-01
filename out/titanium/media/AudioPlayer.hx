@@ -3,7 +3,7 @@ package titanium.media;
 
 /** An audio player object used for streaming audio to the device, and low-level control of the audio playback. */
 @:native ("Titanium.Media.AudioPlayer")
-extern class AudioPlayer {
+typedef AudioPlayer = {
 
 	/** Audio data is being buffered from the network. */
 	public var STATE_BUFFERING(default,null):Float;
@@ -46,7 +46,7 @@ Android Activity is paused. */
 	public var url:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Converts a state value into a text description
 suitable for display. */
 	public function stateDescription (state:Float):String;
@@ -71,7 +71,7 @@ suitable for display. */
 	/** Pauses audio playback. */
 	public function pause ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns the value of the paused property. */
 	public function getPaused ():Bool;
 	/** Returns the value of the paused property. */

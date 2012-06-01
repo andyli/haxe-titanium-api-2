@@ -8,10 +8,10 @@ import titanium.CloudPushNotificationsResponse;
 extern class PushNotifications {
 
 	/** Send a push notification to a channel. */
-	public static function notify (parameters:Dynamic, _callback:CloudPushNotificationsResponse->Dynamic):Void;
+	public static function notify (parameters:Dynamic, _callback:titanium.CloudPushNotificationsResponse->Dynamic):Void;
 	/** Subscribe a mobile device to a push notification channel. */
-	public static function subscribe (parameters:Dynamic, _callback:CloudPushNotificationsResponse->Dynamic):Void;
+	public static function subscribe (parameters:Dynamic, _callback:titanium.CloudPushNotificationsResponse->Dynamic):Void;
 	/** Unsubscribe a mobile device from a push notification channel. */
-	public static function unsubscribe (parameters:Dynamic, _callback:CloudPushNotificationsResponse->Dynamic):Void;
+	public static function unsubscribe (parameters:Dynamic, _callback:titanium.CloudPushNotificationsResponse->Dynamic):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium.ui;
 
 /** An email dialog is a modal window that allows users to compose and send an email. */
 @:native ("Titanium.UI.EmailDialog")
-extern class EmailDialog {
+typedef EmailDialog = {
 
 	/** Bar color of the email dialog window, as a color name or hex triplet. */
 	public var barColor:String;
@@ -33,7 +33,7 @@ rather than plain text. */
 	/** Adds an attachment. */
 	public function addAttachment (attachment:Dynamic):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the barColor property. */
@@ -55,7 +55,7 @@ rather than plain text. */
 	/** Opens this email dialog. */
 	public function open (properties:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the barColor property. */
 	public function setBarColor (barColor:String):Void;
 	/** Sets the value of the bccRecipients property. */

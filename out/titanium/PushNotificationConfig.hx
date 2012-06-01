@@ -8,15 +8,15 @@ import titanium.PushNotificationSuccessArg;
 /** Simple object for specifying push notification options to
 registerForPushNotifications. */
 @:native ("PushNotificationConfig")
-extern class PushNotificationConfig {
+typedef PushNotificationConfig = {
 
 	/** Array of NOTIFICATION_TYPE constants that the application would like to receive. */
-	public var types:Array<Number>;
+	public var types:Array<Float>;
 	/** Callback function called when an error occurs during registration. */
-	public var error:PushNotificationErrorArg->Dynamic;
+	public var error:titanium.PushNotificationErrorArg->Dynamic;
 	/** Callback function called when the push registration is successfully completed. */
-	public var success:PushNotificationSuccessArg->Dynamic;
+	public var success:titanium.PushNotificationSuccessArg->Dynamic;
 	///** Callback function invoked upon receiving a new push notification. */
-	public var callback:PushNotificationData->Dynamic;
+	public var callback:titanium.PushNotificationData->Dynamic;
 
 }

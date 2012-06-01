@@ -5,7 +5,7 @@ package titanium;
 forwardGeocoder method.
 Note that Android includes a number of extra fields. */
 @:native ("ForwardGeocodeResponse")
-extern class ForwardGeocodeResponse {
+typedef ForwardGeocodeResponse = {
 
 	/** City name. */
 	public var city:String;

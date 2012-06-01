@@ -5,7 +5,7 @@ import titanium.ui.View;
 
 /** Represents a labeled point of interest on the map that the user can click on. */
 @:native ("Titanium.Map.Annotation")
-extern class Annotation {
+typedef Annotation = {
 
 	/** Boolean to indicate whether the pin should animate when dropped. */
 	public var animate:Bool;
@@ -23,7 +23,7 @@ extern class Annotation {
 button constant. */
 	public var leftButton:Dynamic;
 	/** Left view that is displayed on the annotation. */
-	public var leftView:View;
+	public var leftView:titanium.ui.View;
 	/** Longitude of the annotation, in decimal degrees. */
 	public var longitude:Float;
 	/** Pin color. Specify one of: Titanium.Map.ANNOTATION_GREEN, Titanium.Map.ANNOTATION_PURPLE 
@@ -35,12 +35,12 @@ or Titanium.Map.ANNOTATION_RED. */
 button constant. */
 	public var rightButton:Dynamic;
 	/** Right view that is displayed on the annotation. */
-	public var rightView:View;
+	public var rightView:titanium.ui.View;
 	/** Secondary title of the annotation view. */
 	public var subtitle:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the animate property. */
@@ -72,7 +72,7 @@ button constant. */
 	/** Gets the value of the titleid property. */
 	public function getTitleid ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the animate property. */
 	public function setAnimate (animate:Bool):Void;
 	/** Sets the value of the draggable property. */
@@ -84,7 +84,7 @@ button constant. */
 	/** Sets the value of the leftButton property. */
 	public function setLeftButton (leftButton:Dynamic):Void;
 	/** Sets the value of the leftView property. */
-	public function setLeftView (leftView:View):Void;
+	public function setLeftView (leftView:titanium.ui.View):Void;
 	/** Sets the value of the longitude property. */
 	public function setLongitude (longitude:Float):Void;
 	/** Sets the value of the pincolor property. */
@@ -92,7 +92,7 @@ button constant. */
 	/** Sets the value of the rightButton property. */
 	public function setRightButton (rightButton:Dynamic):Void;
 	/** Sets the value of the rightView property. */
-	public function setRightView (rightView:View):Void;
+	public function setRightView (rightView:titanium.ui.View):Void;
 	/** Sets the value of the subtitle property. */
 	public function setSubtitle (subtitle:String):Void;
 	/** Sets the value of the subtitleid property. */

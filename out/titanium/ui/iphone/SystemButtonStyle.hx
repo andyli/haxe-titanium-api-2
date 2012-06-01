@@ -3,7 +3,7 @@ package titanium.ui.iphone;
 
 /** A set of constants for the system button styles that can be used for the button style property. */
 @:native ("Titanium.UI.iPhone.SystemButtonStyle")
-extern class SystemButtonStyle {
+typedef SystemButtonStyle = {
 
 	/** A simple button style with a border. */
 	public var BORDERED(default,null):Float;
@@ -17,10 +17,10 @@ to use the more condensed style used in nav bars and tool bars. */
 	public var BAR(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium.android.calendar;
 
 /** An object that represents a single reminder for an event in an Android calendar. */
 @:native ("Titanium.Android.Calendar.Reminder")
-extern class Reminder {
+typedef Reminder = {
 
 	/** Identifier of this reminder. */
 	public var id(default,null):String;
@@ -14,7 +14,7 @@ should trigger. */
 	public var minutes(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the id property. */
@@ -24,6 +24,6 @@ should trigger. */
 	/** Gets the value of the minutes property. */
 	public function getMinutes ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

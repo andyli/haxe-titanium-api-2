@@ -3,7 +3,7 @@ package titanium.ui;
 
 /** The Animation object defines an animation that can be applied to a view. */
 @:native ("Titanium.UI.Animation")
-extern class Animation {
+typedef Animation = {
 
 	/** Animate the view from its current tranform to the specified transform. */
 	public var transform:Dynamic;
@@ -48,7 +48,7 @@ or hex triplet. */
 	public var zIndex:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the autoreverse property. */
@@ -92,7 +92,7 @@ or hex triplet. */
 	/** Gets the value of the zIndex property. */
 	public function getZIndex ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the autoreverse property. */
 	public function setAutoreverse (autoreverse:Bool):Void;
 	/** Sets the value of the backgroundColor property. */

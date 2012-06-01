@@ -6,7 +6,7 @@ import titanium.Blob;
 /** An object that represents a contact record for a person or organization in the system contacts 
 address book. */
 @:native ("Titanium.Contacts.Person")
-extern class Person {
+typedef Person = {
 
 	/** Addresses for the person. Multi-value. Read-only on Android. */
 	public var address:Dynamic;
@@ -28,7 +28,7 @@ Read-only on Android. */
 	/** First name of the person. Single value. */
 	public var firstName:String;
 	/** Image for the person. Single value. */
-	public var image:Blob;
+	public var image:titanium.Blob;
 	/** Instant messenger names of the person. Multi-value. */
 	public var instantMessage:Dynamic;
 	/** Job title of the person. Single value. */
@@ -67,7 +67,7 @@ Read-only on Android. */
 	public var url:Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the address property. */
@@ -127,7 +127,7 @@ Read-only on Android. */
 	/** Gets the value of the url property. */
 	public function getUrl ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the address property. */
 	public function setAddress (address:Dynamic):Void;
 	/** Sets the value of the birthday property. */
@@ -145,7 +145,7 @@ Read-only on Android. */
 	/** Sets the value of the id property. */
 	public function setId (id:Float):Void;
 	/** Sets the value of the image property. */
-	public function setImage (image:Blob):Void;
+	public function setImage (image:titanium.Blob):Void;
 	/** Sets the value of the instantMessage property. */
 	public function setInstantMessage (instantMessage:Dynamic):Void;
 	/** Sets the value of the jobTitle property. */

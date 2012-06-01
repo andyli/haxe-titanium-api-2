@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object used to describe the size of a movie. */
 @:native ("MovieSize")
-extern class MovieSize {
+typedef MovieSize = {
 
 	/** Height of the movie. */
 	public var height:Float;

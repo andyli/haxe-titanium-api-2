@@ -6,7 +6,7 @@ package titanium.ui;
 extern class Clipboard {
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Clear data of the given mime-type from the clipboard. If no mime-type is given, clear all data from the clipboard. */
 	public static function clearData (type:String):Void;
 	/** Clear the text portion of the clipboard. */
@@ -18,7 +18,7 @@ extern class Clipboard {
 	/** Get the data on the clipboard from the portion which contains data of the given mime-type. */
 	public static function getData (type:String):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Return true if there is any content in the text portion of the clipboard. */
 	public static function hasText ():Void;
 	/** Return true if there is any content of the given mime-type on the clipboard. */

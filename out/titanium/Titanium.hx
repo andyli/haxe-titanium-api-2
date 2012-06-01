@@ -18,9 +18,9 @@ extern class Titanium {
 	public static var version(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates a new buffer based on the params. */
-	public static function createBuffer (params:CreateBufferArgs):Buffer;
+	public static function createBuffer (params:titanium.CreateBufferArgs):titanium.Buffer;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the buildDate property. */
@@ -34,7 +34,7 @@ extern class Titanium {
 	/** Includes JavaScript code from one or more files. */
 	public static function include (name:String):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the userAgent property. */
 	public static function setUserAgent (userAgent:String):Void;
 

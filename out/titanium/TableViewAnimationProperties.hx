@@ -3,7 +3,7 @@ package titanium;
 
 /** A simple object for specifying the animation properties to use when inserting or deleting rows, or scrolling the table. */
 @:native ("TableViewAnimationProperties")
-extern class TableViewAnimationProperties {
+typedef TableViewAnimationProperties = {
 
 	/** Specifies what position to scroll the selected row to. One of the position constants from 
 Titanium.UI.iPhone.TableViewScrollPosition. */

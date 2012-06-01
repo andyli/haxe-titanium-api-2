@@ -3,7 +3,7 @@ package titanium.ui;
 
 /** A dashboard item is a view that is displayed as an icon in a Titanium.UI.DashboardView. */
 @:native ("Titanium.UI.DashboardItem")
-extern class DashboardItem {
+typedef DashboardItem = {
 
 	/** Determines whether this item can be deleted when it edit mode. */
 	public var canDelete:Bool;
@@ -15,7 +15,7 @@ extern class DashboardItem {
 	public var badge:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the badge property. */
@@ -27,7 +27,7 @@ extern class DashboardItem {
 	/** Gets the value of the selectedImage property. */
 	public function getSelectedImage ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the badge property. */
 	public function setBadge (badge:Float):Void;
 	/** Sets the value of the canDelete property. */

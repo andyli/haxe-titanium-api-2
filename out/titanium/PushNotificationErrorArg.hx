@@ -4,7 +4,7 @@ package titanium;
 /** A simple object passed to the 
 registerForPushNotifications error callback. */
 @:native ("PushNotificationErrorArg")
-extern class PushNotificationErrorArg {
+typedef PushNotificationErrorArg = {
 
 	/** Description of the error. */
 	public var error:String;

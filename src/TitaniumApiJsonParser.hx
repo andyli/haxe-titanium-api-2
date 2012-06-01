@@ -42,12 +42,23 @@ class TitaniumApiJsonParser extends SimpleParser {
 		this.types.set ("Callback", "Dynamic");
 	}
 	
+	private function renameClass(nativeName:String):String {
+		var lastDot = nativeName.lastIndexOf(".");
+		var name = nativeName.substr(lastDot+1);
+		if (!nativeName.startsWith("Titanium.")) 
+			return "titanium." + nativeName;
+		else if (name.startsWith("2D"))
+			return nativeName.substr(0, lastDot+1) + name.substr(2) + "2D";
+		else if (name.startsWith("3D"))
+			return nativeName.substr(0, lastDot+1) + name.substr(2) + "3D";
+		else
+			return nativeName;
+	}
+	
 	private function getClass (data:Dynamic):ClassDefinition {
 		var definition = new ClassDefinition();
 		
-		definition.className = data.name;
-		if (!definition.className.startsWith("Titanium.")) 
-			definition.className = "titanium." + definition.className;
+		definition.className = renameClass(data.name);
 		
 		definition.nativeClassName = data.name;
 		if (definition.nativeClassName.startsWith("Global."))
@@ -65,6 +76,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 		} else {
 			processMethods (cast (data.methods, Array <Dynamic>), definition, false);
 			processProperties (cast (data.properties, Array <Dynamic>), definition, false);	
+			definition.isTypedef = true;
 		}
 		return definition;		
 	}
@@ -117,7 +129,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 				method.returnType = methodData.returns.type;
 				method.owner = owner.className;
 				method.comment = "/** " + cast (methodData.summary, String).stripTags() + " */";
-				method.accessModifier = /*platformAccessModifier(methodData) + " " + */method.accessModifier;
+				method.accessModifier = method.accessModifier;
 				
 				for (param in cast (methodData.parameters, Array <Dynamic>)) {
 					method.parameterNames.push (param.name);
@@ -157,7 +169,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 				if (propertyData.permission == "read-only") {
 					property.setter = "null";
 				}				
-				property.accessModifier = /*platformAccessModifier(propertyData) + " " + */property.accessModifier;
+				property.accessModifier = owner.className.indexOf("OptionsType") == -1 ? property.accessModifier : "@:optional " + property.accessModifier;
 				
 				if (!properties.exists (property.name)) {
 					properties.set (property.name, property);
@@ -263,7 +275,7 @@ class TitaniumApiJsonParser extends SimpleParser {
 			
 		}
 		
-		if (type.indexOf (".") == -1) {
+		if (~/<.*>/.replace(type, "").indexOf (".") == -1) {
 			if (definitions.exists("titanium." + type))
 				return ["titanium." + type];
 			else
@@ -279,19 +291,9 @@ class TitaniumApiJsonParser extends SimpleParser {
 	
 	
 	public override function resolveType (type:String, abbreviate:Bool = true):String {
-		
 		if (type == null) {
 			
 			return "Void";
-			
-		}
-		
-		var isArray = false;
-		
-		if (type.substr (-2) == "[]") {
-			
-			isArray = true;
-			type = type.substr (0, type.length - 2);
 			
 		}
 		
@@ -309,17 +311,30 @@ class TitaniumApiJsonParser extends SimpleParser {
 		
 			var rCallback = ~/Callback<(.*)>/;
 			resolvedType = rCallback.match(type) ? resolveType(rCallback.matched(1)) + "->Dynamic" : throw "cannot extact param from " + type;
+			if (resolvedType == "Dynamic->Dynamic") resolvedType = "Dynamic";
 			
 		} else if (type.startsWith("Dictionary")) {
 		
-			var rDictionary = ~/Dictionary<(.*)>/;
-			resolvedType = rDictionary.match(type) ? "Dynamic<" + resolveType(rDictionary.matched(1)) + ">" : throw "cannot extact param from " + type;
+			//var rDictionary = ~/Dictionary<(.*)>/;
+			//resolvedType = rDictionary.match(type) ? "Dynamic<" + resolveType(rDictionary.matched(1)) + ">" : throw "cannot extact param from " + type;
+			resolvedType = "Dynamic";
+			
+		} else if (type.startsWith("Array")) {
+		
+			var rArray = ~/Array<(.*)>/;
+			resolvedType = rArray.match(type) ? "Array<" + resolveType(rArray.matched(1)) + ">" : throw "cannot extact param from " + type;
 			
 		} else if (~/\[.*,.*\]/.match(type)) {
 			
 			resolvedType = "Dynamic";
 			
 		} else {
+			var rename = renameClass(type);
+			var cd = definitions.filter(function(d:ClassDefinition) return d.nativeClassName == type);
+			if (definitions.exists(rename)) {
+				type = cd.first().className;
+				abbreviate = false;
+			}
 			
 			if (abbreviate) {
 				
@@ -330,19 +345,9 @@ class TitaniumApiJsonParser extends SimpleParser {
 				resolvedType = BuildHX.resolvePackageNameDot (type) + BuildHX.resolveClassName (type);
 				
 			}
-			
 		}
 		
-		if (isArray) {
-			
-			return "Array <" + resolvedType + ">";
-			
-		} else {
-			
-			return resolvedType;
-			
-		}
-		
+		return resolvedType;
 	}
 
 }

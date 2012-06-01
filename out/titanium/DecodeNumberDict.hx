@@ -5,10 +5,10 @@ import titanium.Buffer;
 
 /** Named parameters for Titanium.Codec.decodeNumber. */
 @:native ("DecodeNumberDict")
-extern class DecodeNumberDict {
+typedef DecodeNumberDict = {
 
 	/** Buffer to decode. */
-	public var source:Buffer;
+	public var source:titanium.Buffer;
 	/** byte order to decode with. */
 	public var byteOrder:Float;
 	/** Index in the source buffer of the first byte of data to decode. */

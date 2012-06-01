@@ -1,11 +1,11 @@
-package titanium.ui.ios;
+package titanium.ui;
 
-import titanium.ui.ios.3DMatrix;
+import titanium.ui.Matrix3D;
 
 
-/** The 3D Matrix is an object for holding values for an affine transformation matrix. */
-@:native ("Titanium.UI.iOS.3DMatrix")
-extern class 3DMatrix {
+/** Use Titanium.UI.iOS.3DMatrix instead. */
+@:native ("Titanium.UI.3DMatrix")
+typedef Matrix3D = {
 
 	/** The entry at position [1,1] in the matrix. */
 	public var m11:Float;
@@ -41,7 +41,7 @@ extern class 3DMatrix {
 	public var m44:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the m11 property. */
@@ -77,17 +77,17 @@ extern class 3DMatrix {
 	/** Gets the value of the m44 property. */
 	public function getM44 ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** Returns a matrix constructed by combining two existing matrices. */
-	public function multiply (t2:3DMatrix):3DMatrix;
-	/** Returns a matrix constructed by inverting an existing matrix. */
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
+	/** Returns a matrix constructed by combining two existing matrix. */
+	public function multiply (t2:titanium.ui.Matrix3D):titanium.ui.Matrix3D;
+	/** Returns a matrix constructed by inverting an existing matrix */
 	public function invert ():Void;
-	/** Returns a matrix constructed by rotating an existing matrix. */
-	public function rotate (angle:Float, x:Float, y:Float, z:Float):3DMatrix;
-	/** Returns a matrix constructed by scaling an existing matrix. */
-	public function scale (sx:Float, sy:Float, sz:Float):3DMatrix;
-	/** Returns a matrix constructed by translating an existing matrix. */
-	public function translate (tx:Float, ty:Float, tz:Float):3DMatrix;
+	/** Returns a matrix constructed by rotating an existing matrix */
+	public function rotate (angle:Float, x:Float, y:Float, z:Float):titanium.ui.Matrix3D;
+	/** Returns a matrix constructed by scaling an existing matrix */
+	public function scale (sx:Float, sy:Float, sz:Float):titanium.ui.Matrix3D;
+	/** Returns a matrix constructed by translating an existing matrix */
+	public function translate (tx:Float, ty:Float, tz:Float):titanium.ui.Matrix3D;
 	/** Sets the value of the m11 property. */
 	public function setM11 (m11:Float):Void;
 	/** Sets the value of the m12 property. */

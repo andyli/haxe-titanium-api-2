@@ -8,6 +8,6 @@ import titanium.CloudEmailsResponse;
 extern class Emails {
 
 	/** Send an email to a list of email adresses. */
-	public static function send (parameters:Dynamic, _callback:CloudEmailsResponse->Dynamic):Void;
+	public static function send (parameters:Dynamic, _callback:titanium.CloudEmailsResponse->Dynamic):Void;
 
 }

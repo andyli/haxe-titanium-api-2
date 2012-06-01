@@ -1,6 +1,5 @@
 package titanium.media;
 
-import array<titanium.ui.View>;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Gradient;
@@ -12,14 +11,14 @@ import titanium.ui.View;
 
 /** A native control for playing videos. */
 @:native ("Titanium.Media.VideoPlayer")
-extern class VideoPlayer {
+typedef VideoPlayer = {
 
 	/** A background gradient for the view. */
-	public var backgroundGradient:Gradient;
+	public var backgroundGradient:titanium.Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	public var anchorPoint:Point;
+	public var anchorPoint:titanium.Point;
 	/** Array of this view's child views. */
-	public var children(default,null):View>;
+	public var children(default,null):Array<titanium.ui.View>;
 	/** Background color of the view, as a color name or hex triplet. */
 	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
@@ -39,7 +38,7 @@ extern class VideoPlayer {
 	/** Current playback time of the current movie in milliseconds. */
 	public var currentPlaybackTime(default,null):Float;
 	/** Current position of the view during an animation. */
-	public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):titanium.Point;
 	/** Determines how the content scales to fit the view. */
 	public var scalingMode:Float;
 	/** Determines how the movie player repeats when reaching the end of playback. */
@@ -66,7 +65,7 @@ instead of creating a new session.  */
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
 	/** Returns the natural size of the movie. */
-	public var naturalSize:MovieSize;
+	public var naturalSize:titanium.MovieSize;
 	/** Returns the network load state of the movie player. */
 	public var loadState(default,null):Float;
 	/** Selected background color of the view, as a color name or hex triplet. */
@@ -81,7 +80,7 @@ instead of creating a new session.  */
 One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
 	/** The bounding box of the view relative to its parent, in system units. */
-	public var rect(default,null):Dimension;
+	public var rect(default,null):titanium.Dimension;
 	/** The currently playable duration of the movie, for progressively downloaded network content. */
 	public var playableDuration(default,null):Float;
 	/** The duration of the current movie in milliseconds, or 0.0 if not known. */
@@ -91,7 +90,7 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** The playback type of the movie. */
 	public var sourceType:Float;
 	/** The size of the view in system units.  */
-	public var size(default,null):Dimension;
+	public var size(default,null):titanium.Dimension;
 	/** The start time of movie playback, in milliseconds. */
 	public var initialPlaybackTime:Float;
 	/** The style of the playback controls. */
@@ -111,7 +110,7 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	public var center:Point;
+	public var center:titanium.Point;
 	/** View's left position, in platform-specific units. */
 	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
@@ -130,13 +129,13 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	public function add (view:View):Void;
+	public function add (view:titanium.ui.View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Animates this view. */
-	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic):Void;
 	/** Asynchronously request thumbnail images for one or more points in time in the video. */
-	public function requestThumbnailImagesAtTimes (times:Array<Number>, option:Float, _callback:ThumbnailResponse->Dynamic):Void;
+	public function requestThumbnailImagesAtTimes (times:Array<Float>, option:Float, _callback:titanium.ThumbnailResponse->Dynamic):Void;
 	/** Cancels all pending asynchronous thumbnail requests. */
 	public function cancelAllThumbnailImageRequests ():Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
@@ -265,19 +264,19 @@ layout pass after they have been updated. */
 	/** Releases the internal video resources immediately. */
 	public function release ():Void;
 	/** Removes a child view from this view's hierarchy. */
-	public function remove (view:View):Void;
+	public function remove (view:titanium.ui.View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns a thumbnail image for the video at the specified time. */
-	public function thumbnailImageAtTime (time:Float, option:Float):Blob;
+	public function thumbnailImageAtTime (time:Float, option:Float):titanium.Blob;
 	/** Returns an image of the rendered view, as a Blob. */
-	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:titanium.Blob->Dynamic, ?honorScaleFactor:Bool):titanium.Blob;
 	/** Sets the background view for customization which is always displayed behind movie content. */
-	public function setBackgroundView (view:View):Void;
+	public function setBackgroundView (view:titanium.ui.View):Void;
 	/** Sets the value of the allowsAirPlay property. */
 	public function setAllowsAirPlay (allowsAirPlay:Bool):Void;
 	/** Sets the value of the anchorPoint property. */
-	public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:titanium.Point):Void;
 	/** Sets the value of the autoplay property. */
 	public function setAutoplay (autoplay:Bool):Void;
 	/** Sets the value of the backgroundColor property. */
@@ -291,7 +290,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the backgroundFocusedImage property. */
 	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:titanium.Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
 	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
@@ -313,7 +312,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	public function setCenter (center:Point):Void;
+	public function setCenter (center:titanium.Point):Void;
 	/** Sets the value of the duration property. */
 	public function setDuration (duration:Float):Void;
 	/** Sets the value of the endPlaybackTime property. */
@@ -339,7 +338,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the mediaTypes property. */
 	public function setMediaTypes (mediaTypes:Float):Void;
 	/** Sets the value of the naturalSize property. */
-	public function setNaturalSize (naturalSize:MovieSize):Void;
+	public function setNaturalSize (naturalSize:titanium.MovieSize):Void;
 	/** Sets the value of the opacity property. */
 	public function setOpacity (opacity:Float):Void;
 	/** Sets the value of the repeatMode property. */
@@ -376,6 +375,6 @@ layout pass after they have been updated. */
 	public function stop ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:titanium.Point, destinationView:titanium.ui.View):titanium.Point;
 
 }

@@ -7,12 +7,12 @@ import titanium.IOStream;
 write operation
 finishes. */
 @:native ("WriteCallbackArgs")
-extern class WriteCallbackArgs {
+typedef WriteCallbackArgs = {
 
 	/** Number of bytes processed, or -1 in the event of an error or end of stream. */
 	public var bytesProcessed:Float;
 	/** Stream being written to. */
-	public var source:IOStream;
+	public var source:titanium.IOStream;
 	/** Text description of the error. */
 	public var errorDescription:String;
 	/** Whether an error was encountered. Set to 1 in the case of an error, 0

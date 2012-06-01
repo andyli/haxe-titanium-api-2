@@ -1,6 +1,5 @@
 package titanium.ui;
 
-import array<titanium.ui.View>;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Gradient;
@@ -16,16 +15,16 @@ import titanium.ui.View;
 /** A table view is used to present information, organized in sections and rows, in a 
 vertically-scrolling view. */
 @:native ("Titanium.UI.TableView")
-extern class TableView {
+typedef TableView = {
 
 	/** A background gradient for the view. */
-	public var backgroundGradient:Gradient;
+	public var backgroundGradient:titanium.Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	public var anchorPoint:Point;
+	public var anchorPoint:titanium.Point;
 	/** Array of objects (with title and index properties) to control the table view index. */
-	public var index:Array<TableViewIndexEntry>;
+	public var index:Array<titanium.TableViewIndexEntry>;
 	/** Array of this view's child views. */
-	public var children(default,null):View>;
+	public var children(default,null):Array<titanium.ui.View>;
 	/** Background color of the view, as a color name or hex triplet. */
 	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
@@ -39,7 +38,7 @@ extern class TableView {
 	/** Border width of the view. */
 	public var borderWidth:Float;
 	/** Current position of the view during an animation. */
-	public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):titanium.Point;
 	/** Default row height for table view rows. */
 	public var rowHeight:Float;
 	/** Determines keyboard behavior when this view is focused. */
@@ -87,7 +86,7 @@ user when the table is in editing or moving mode. */
 	/** Rows of the table view. */
 	public var data:Dynamic;
 	/** Search field to use for the table view. */
-	public var search:SearchBar;
+	public var search:titanium.ui.SearchBar;
 	/** Separator color between rows, as a color name or hex triplet. */
 	public var separatorColor:String;
 	/** Separator style constant. */
@@ -103,17 +102,17 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 Titanium.UI.iPhone.TableViewStyle. */
 	public var style:Float;
 	/** Table view footer as a view that will be rendered instead of a label. */
-	public var footerView:View;
+	public var footerView:titanium.ui.View;
 	/** Table view footer title. */
 	public var footerTitle:String;
 	/** Table view header as a view that will be rendered instead of a label. */
-	public var headerView:View;
+	public var headerView:titanium.ui.View;
 	/** Table view header title. */
 	public var headerTitle:String;
 	/** The bounding box of the view relative to its parent, in system units. */
-	public var rect(default,null):Dimension;
+	public var rect(default,null):titanium.Dimension;
 	/** The size of the view in system units.  */
-	public var size(default,null):Dimension;
+	public var size(default,null):titanium.Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -124,11 +123,11 @@ Titanium.UI.iPhone.TableViewStyle. */
 	public var height:Dynamic;
 	/** View positioned above the first row that is only revealed when the user drags the table 
 contents down. */
-	public var headerPullView:View;
+	public var headerPullView:titanium.ui.View;
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	public var center:Point;
+	public var center:titanium.Point;
 	/** View's left position, in platform-specific units. */
 	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
@@ -145,15 +144,15 @@ contents down. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	public function add (view:View):Void;
+	public function add (view:titanium.ui.View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Animates this view. */
-	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic):Void;
 	/** Appends one or more rows to the table. */
-	public function appendRow (row:Dynamic, ?animation:TableViewAnimationProperties):Void;
+	public function appendRow (row:Dynamic, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Deletes an existing row. */
-	public function deleteRow (row:Float, ?animation:TableViewAnimationProperties):Void;
+	public function deleteRow (row:Float, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -281,9 +280,9 @@ contents down. */
 	/** Hides this view. */
 	public function hide ():Void;
 	/** Inserts a row after another row. */
-	public function insertRowAfter (index:Float, row:Dynamic, ?animation:TableViewAnimationProperties):Void;
+	public function insertRowAfter (index:Float, row:Dynamic, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Inserts a row before another row. */
-	public function insertRowBefore (index:Float, row:Dynamic, ?animation:TableViewAnimationProperties):Void;
+	public function insertRowBefore (index:Float, row:Dynamic, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Makes this view visible. */
 	public function show ():Void;
 	/** Performs a batch update of all supplied layout properties and schedules a
@@ -294,26 +293,26 @@ layout pass after they have been updated. */
 	/** Programmatically selects a row. */
 	public function selectRow (row:Float):Void;
 	/** Removes a child view from this view's hierarchy. */
-	public function remove (view:View):Void;
+	public function remove (view:titanium.ui.View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
-	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:titanium.Blob->Dynamic, ?honorScaleFactor:Bool):titanium.Blob;
 	/** Scrolls the table to a specific top position where 0 is the topmost y position in the 
 table view. */
-	public function scrollToTop (top:Float, ?animation:TableViewAnimationProperties):Void;
+	public function scrollToTop (top:Float, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Scrolls the table view to ensure that the specified row is on screen. */
-	public function scrollToIndex (index:Float, ?animation:TableViewAnimationProperties):Void;
+	public function scrollToIndex (index:Float, ?animation:titanium.TableViewAnimationProperties):Void;
 	/** Sets the data in the table. */
-	public function setData (data:Dynamic, animation:TableViewAnimationProperties):Void;
+	public function setData (data:Dynamic, animation:titanium.TableViewAnimationProperties):Void;
 	/** Sets the value of the [Titanium.UI.TableView.headerPullView] property. */
-	public function setHeaderPullView (view:View):Void;
+	public function setHeaderPullView (view:titanium.ui.View):Void;
 	/** Sets the value of the allowsSelection property. */
 	public function setAllowsSelection (allowsSelection:Bool):Void;
 	/** Sets the value of the allowsSelectionDuringEditing property. */
 	public function setAllowsSelectionDuringEditing (allowsSelectionDuringEditing:Bool):Void;
 	/** Sets the value of the anchorPoint property. */
-	public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:titanium.Point):Void;
 	/** Sets the value of the backgroundColor property. */
 	public function setBackgroundColor (backgroundColor:String):Void;
 	/** Sets the value of the backgroundDisabledColor property. */
@@ -325,7 +324,7 @@ table view. */
 	/** Sets the value of the backgroundFocusedImage property. */
 	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:titanium.Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
 	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
@@ -343,7 +342,7 @@ table view. */
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	public function setCenter (center:Point):Void;
+	public function setCenter (center:titanium.Point):Void;
 	/** Sets the value of the editable property. */
 	public function setEditable (editable:Bool):Void;
 	/** Sets the value of the editing property. */
@@ -357,17 +356,17 @@ table view. */
 	/** Sets the value of the footerTitle property. */
 	public function setFooterTitle (footerTitle:String):Void;
 	/** Sets the value of the footerView property. */
-	public function setFooterView (footerView:View):Void;
+	public function setFooterView (footerView:titanium.ui.View):Void;
 	/** Sets the value of the headerTitle property. */
 	public function setHeaderTitle (headerTitle:String):Void;
 	/** Sets the value of the headerView property. */
-	public function setHeaderView (headerView:View):Void;
+	public function setHeaderView (headerView:titanium.ui.View):Void;
 	/** Sets the value of the height property. */
 	public function setHeight (height:Dynamic):Void;
 	/** Sets the value of the hideSearchOnSelection property. */
 	public function setHideSearchOnSelection (hideSearchOnSelection:Bool):Void;
 	/** Sets the value of the index property. */
-	public function setIndex (index:Array<TableViewIndexEntry>):Void;
+	public function setIndex (index:Array<titanium.TableViewIndexEntry>):Void;
 	/** Sets the value of the keepScreenOn property. */
 	public function setKeepScreenOn (keepScreenOn:Bool):Void;
 	/** Sets the value of the layout property. */
@@ -391,7 +390,7 @@ table view. */
 	/** Sets the value of the scrollable property. */
 	public function setScrollable (scrollable:Bool):Void;
 	/** Sets the value of the search property. */
-	public function setSearch (search:SearchBar):Void;
+	public function setSearch (search:titanium.ui.SearchBar):Void;
 	/** Sets the value of the searchHidden property. */
 	public function setSearchHidden (searchHidden:Bool):Void;
 	/** Sets the value of the separatorColor property. */
@@ -417,13 +416,13 @@ table view. */
 	/** Sets the value of the zIndex property. */
 	public function setZIndex (zIndex:Float):Void;
 	/** Sets this tableview's content insets. */
-	public function setContentInsets (edgeInsets:TableViewEdgeInsets, ?animated:TableViewContentInsetOption):Void;
+	public function setContentInsets (edgeInsets:titanium.TableViewEdgeInsets, ?animated:titanium.TableViewContentInsetOption):Void;
 	/** Starts a batch update of this view's layout properties. */
 	public function startLayout ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:titanium.Point, destinationView:titanium.ui.View):titanium.Point;
 	/** Updates an existing row, optionally with animation */
-	public function updateRow (index:Float, row:TableViewRow, animation:TableViewAnimationProperties):Void;
+	public function updateRow (index:Float, row:titanium.ui.TableViewRow, animation:titanium.TableViewAnimationProperties):Void;
 
 }

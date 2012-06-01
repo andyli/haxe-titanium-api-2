@@ -3,7 +3,7 @@ package titanium.android;
 
 /** The Titanium binding of the Android system-wide resources class. */
 @:native ("Titanium.Android.R")
-extern class R {
+typedef R = {
 
 	/** Animation resources. See 
 R.anim 
@@ -54,10 +54,10 @@ in the Android Developer Reference. */
 	public var styleable(default,null):Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -9,16 +9,16 @@ import titanium.xml.Node;
 extern class XML {
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Parses an XML string into a Titanium.XML.Document object.
 Throws an exception if the string is unable to be parsed into a valid
 document. */
-	public static function parseString (xml:String):Document;
+	public static function parseString (xml:String):titanium.xml.Document;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Serializes a Titanium.XML.Document object into a string. */
-	public static function serializeToString (node:Node):String;
+	public static function serializeToString (node:titanium.xml.Node):String;
 
 }

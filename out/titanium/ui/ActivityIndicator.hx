@@ -5,14 +5,14 @@ import titanium.Font;
 
 /** An activity indicator that lets the user know an action is taking place. */
 @:native ("Titanium.UI.ActivityIndicator")
-extern class ActivityIndicator {
+typedef ActivityIndicator = {
 
 	/** Bottom position of the view. */
 	public var bottom:Dynamic;
 	/** Color of the message text, as a color name or hex triplet. */
 	public var color:String;
 	/** Font used for the message text. */
-	public var font:Font;
+	public var font:titanium.Font;
 	/** Key identifying a string in the locale file to use for the message text. */
 	public var messageid:String;
 	/** Left position of the view. */
@@ -33,7 +33,7 @@ display the message and to position the view correctly. */
 	public var width:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the bottom property. */
@@ -61,13 +61,13 @@ display the message and to position the view correctly. */
 	/** Hides the activity indicator and stops the animation. */
 	public function hide ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the color property. */
 	public function setColor (color:String):Void;
 	/** Sets the value of the font property. */
-	public function setFont (font:Font):Void;
+	public function setFont (font:titanium.Font):Void;
 	/** Sets the value of the height property. */
 	public function setHeight (height:String):Void;
 	/** Sets the value of the left property. */

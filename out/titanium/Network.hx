@@ -26,7 +26,7 @@ communicating over a local-area network. */
 communicating over a mobile network. */
 	public static var NETWORK_MOBILE(default,null):Float;
 	/** Array of push notification type constants enabled for the application. */
-	public static var remoteNotificationTypes(default,null):Array<Number>;
+	public static var remoteNotificationTypes(default,null):Array<Float>;
 	/** Boolean value indicating if the device can reach the Internet. */
 	public static var online(default,null):Bool;
 	/** Constant value for a Badge style push notification. */
@@ -57,13 +57,13 @@ Service, or null if it is not registered. */
 	public static var httpURLFormatter:String->Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns a BonjourBrowser object. */
-	public static function createBonjourBrowser (serviceType:String, domain:String, ?parameters:Dynamic<BonjourBrowser>):BonjourBrowser;
+	public static function createBonjourBrowser (serviceType:String, domain:String, ?parameters:Dynamic):titanium.network.BonjourBrowser;
 	/** Creates and returns a BonjourService object. */
-	public static function createBonjourService (name:String, type:String, domain:String, ?parameters:Dynamic<BonjourService>):BonjourService;
+	public static function createBonjourService (name:String, type:String, domain:String, ?parameters:Dynamic):titanium.network.BonjourService;
 	/** Creates and returns an instance of Titanium.Network.HTTPClient. */
-	public static function createHTTPClient (?parameters:Dynamic<HTTPClient>):HTTPClient;
+	public static function createHTTPClient (?parameters:Dynamic):titanium.network.HTTPClient;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the httpURLFormatter property. */
@@ -81,9 +81,9 @@ Service, or null if it is not registered. */
 	/** Gets the value of the remoteNotificationTypes property. */
 	public static function getRemoteNotificationTypes ():Void;
 	/** Registers for push notifications with the Apple Push Notification Service. */
-	public static function registerForPushNotifications (config:PushNotificationConfig):Void;
+	public static function registerForPushNotifications (config:titanium.PushNotificationConfig):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns a decoded version of a URI encoded value. */
 	public static function decodeURIComponent (value:String):String;
 	/** Returns a URI encoded version of the specified URI component. */

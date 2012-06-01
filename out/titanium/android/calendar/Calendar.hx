@@ -1,12 +1,11 @@
 package titanium.android.calendar;
 
-import array<titanium.android.calendar.Event>;
 import titanium.android.calendar.Event;
 
 
 /** An object that represents a single calendar on Android. */
 @:native ("Titanium.Android.Calendar.Calendar")
-extern class Calendar {
+typedef Calendar = {
 
 	/** Display name of this calendar. */
 	public var name(default,null):String;
@@ -18,21 +17,21 @@ extern class Calendar {
 	public var hidden(default,null):Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates an event in this calendar. */
-	public function createEvent (properties:Dynamic<Event>):Event;
+	public function createEvent (properties:Dynamic):titanium.android.calendar.Event;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets all events that occur during a specified year. */
-	public function getEventsInYear (year:Float):Event>;
+	public function getEventsInYear (year:Float):Array<titanium.android.calendar.Event>;
 	/** Gets events that occur between two dates. */
-	public function getEventsBetweenDates (date1:Date, date2:Date):Event>;
+	public function getEventsBetweenDates (date1:Date, date2:Date):Array<titanium.android.calendar.Event>;
 	/** Gets events that occur during a specified month. */
-	public function getEventsInMonth (year:Float, month:Float):Event>;
+	public function getEventsInMonth (year:Float, month:Float):Array<titanium.android.calendar.Event>;
 	/** Gets events that occur on a specified date. */
-	public function getEventsInDate (year:Float, month:Float, day:Float):Event>;
+	public function getEventsInDate (year:Float, month:Float, day:Float):Array<titanium.android.calendar.Event>;
 	/** Gets the event with the specified identifier. */
-	public function getEventById (id:Float):Event;
+	public function getEventById (id:Float):titanium.android.calendar.Event;
 	/** Gets the value of the hidden property. */
 	public function getHidden ():Void;
 	/** Gets the value of the id property. */
@@ -42,6 +41,6 @@ extern class Calendar {
 	/** Gets the value of the selected property. */
 	public function getSelected ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

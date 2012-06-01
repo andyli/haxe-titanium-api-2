@@ -1,6 +1,5 @@
 package titanium.ui;
 
-import array<titanium.ui.View>;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Gradient;
@@ -10,14 +9,14 @@ import titanium.ui.View;
 
 /** The web view allows you to open an HTML5 based view which can load either local or remote content.  */
 @:native ("Titanium.UI.WebView")
-extern class WebView {
+typedef WebView = {
 
 	/** A background gradient for the view. */
-	public var backgroundGradient:Gradient;
+	public var backgroundGradient:titanium.Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	public var anchorPoint:Point;
+	public var anchorPoint:titanium.Point;
 	/** Array of this view's child views. */
-	public var children(default,null):View>;
+	public var children(default,null):Array<titanium.ui.View>;
 	/** Background color of the view, as a color name or hex triplet. */
 	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
@@ -31,7 +30,7 @@ extern class WebView {
 	/** Border width of the view. */
 	public var borderWidth:Float;
 	/** Current position of the view during an animation. */
-	public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):titanium.Point;
 	/** Determines how to treat content that requires plugins in this web view. */
 	public var pluginState:Float;
 	/** Determines keyboard behavior when this view is focused. */
@@ -70,9 +69,9 @@ extern class WebView {
 One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
 	/** The bounding box of the view relative to its parent, in system units. */
-	public var rect(default,null):Dimension;
+	public var rect(default,null):titanium.Dimension;
 	/** The size of the view in system units.  */
-	public var size(default,null):Dimension;
+	public var size(default,null):titanium.Dimension;
 	/** The User-Agent header used by the web view when requesting content. */
 	public var userAgent:String;
 	/** The view's top position. */
@@ -88,7 +87,7 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	public var center:Point;
+	public var center:titanium.Point;
 	/** View's left position, in platform-specific units. */
 	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
@@ -107,11 +106,11 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	public function add (view:View):Void;
+	public function add (view:titanium.ui.View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Animates this view. */
-	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic):Void;
 	/** Evaluates a JavaScript expression inside the context of the web view and
 optionally, returns a result. */
 	public function evalJS (code:String):String;
@@ -231,13 +230,13 @@ layout pass after they have been updated. */
 	/** Reloads the current webpage. */
 	public function reload ():Void;
 	/** Removes a child view from this view's hierarchy. */
-	public function remove (view:View):Void;
+	public function remove (view:titanium.ui.View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Resume native webview plugins. */
 	public function resume ():Void;
 	/** Returns an image of the rendered view, as a Blob. */
-	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:titanium.Blob->Dynamic, ?honorScaleFactor:Bool):titanium.Blob;
 	/** Returns true if the web view can go back in its history list. */
 	public function canGoBack ():Bool;
 	/** Returns true if the web view can go forward in its history list. */
@@ -247,7 +246,7 @@ layout pass after they have been updated. */
 	/** Sets the value of html property. */
 	public function setHtml (html:Dynamic, ?baseURL:String, ?mimeType:String):Void;
 	/** Sets the value of the anchorPoint property. */
-	public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:titanium.Point):Void;
 	/** Sets the value of the backgroundColor property. */
 	public function setBackgroundColor (backgroundColor:String):Void;
 	/** Sets the value of the backgroundDisabledColor property. */
@@ -259,7 +258,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the backgroundFocusedImage property. */
 	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:titanium.Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
 	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
@@ -281,7 +280,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	public function setCenter (center:Point):Void;
+	public function setCenter (center:titanium.Point):Void;
 	/** Sets the value of the data property. */
 	public function setData (data:Dynamic):Void;
 	/** Sets the value of the enableZoomControls property. */
@@ -334,6 +333,6 @@ layout pass after they have been updated. */
 	public function stopLoading (hardStop:Bool):Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:titanium.Point, destinationView:titanium.ui.View):titanium.Point;
 
 }

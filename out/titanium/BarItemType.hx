@@ -3,7 +3,7 @@ package titanium;
 
 /** Object describing a button bar or tabbed bar item. */
 @:native ("BarItemType")
-extern class BarItemType {
+typedef BarItemType = {
 
 	/** Button icon. If specified, takes precedence over title. */
 	public var image:Dynamic;

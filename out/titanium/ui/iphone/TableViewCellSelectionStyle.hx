@@ -4,7 +4,7 @@ package titanium.ui.iphone;
 /** A set of constants for the style that can be used for the selectionStyle property of 
 Titanium.UI.TableViewRow. */
 @:native ("Titanium.UI.iPhone.TableViewCellSelectionStyle")
-extern class TableViewCellSelectionStyle {
+typedef TableViewCellSelectionStyle = {
 
 	/** The cell has no distinct style for when it is selected. */
 	public var NONE(default,null):Float;
@@ -14,10 +14,10 @@ extern class TableViewCellSelectionStyle {
 	public var GRAY(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

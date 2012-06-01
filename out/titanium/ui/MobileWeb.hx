@@ -9,12 +9,12 @@ will only work on this platform. */
 extern class MobileWeb {
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.MobileWeb.NavigationGroup. */
-	public static function createNavigationGroup (?parameters:Dynamic<NavigationGroup>):NavigationGroup;
+	public static function createNavigationGroup (?parameters:Dynamic):titanium.ui.mobileweb.NavigationGroup;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

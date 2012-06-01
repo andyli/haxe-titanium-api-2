@@ -5,7 +5,7 @@ import titanium.android.Intent;
 
 /** The Titanium binding of an Android PendingIntent. */
 @:native ("Titanium.Android.PendingIntent")
-extern class PendingIntent {
+typedef PendingIntent = {
 
 	/** Flags used for creating the Pending Intent. */
 	public var flags:Float;
@@ -13,10 +13,10 @@ extern class PendingIntent {
 appended to flags automatically. Default value is true. */
 	public var updateCurrentIntent:Bool;
 	/** The intent data to pass to the Activity launched by this PendingIntent. */
-	public var intent:Intent;
+	public var intent:titanium.android.Intent;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the flags property. */
@@ -26,6 +26,6 @@ appended to flags automatically. Default value is true. */
 	/** Gets the value of the updateCurrentIntent property. */
 	public function getUpdateCurrentIntent ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object passed to Titanium.UI.create2DMatrix to initialize a matrix. */
 @:native ("MatrixCreationDict")
-extern class MatrixCreationDict {
+typedef MatrixCreationDict = {
 
 	/** Point to rotate around, specified as a dictionary object with x and y
 properties, where { x: 0.5, y: 0.5 } represents the center of whatever is being

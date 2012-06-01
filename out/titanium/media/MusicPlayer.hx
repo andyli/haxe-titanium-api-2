@@ -3,7 +3,7 @@ package titanium.media;
 
 /** The MusicPlayer instance returned from Titanium.Media.createMusicPlayer.  This object represents a music controller. */
 @:native ("Titanium.Media.MusicPlayer")
-extern class MusicPlayer {
+typedef MusicPlayer = {
 
 	/** a value between 0.0 and 1.0 indicating the volume level for the music player */
 	public var volume:Float;
@@ -19,7 +19,7 @@ extern class MusicPlayer {
 	public var shuffleMode:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** begin playback */
 	public function play ():Void;
 	/** end a seek operation */
@@ -41,7 +41,7 @@ extern class MusicPlayer {
 	/** pause playback */
 	public function pause ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** seek backward in the currently playing media */
 	public function seekBackward ():Void;
 	/** seek forward in the currently playing media */

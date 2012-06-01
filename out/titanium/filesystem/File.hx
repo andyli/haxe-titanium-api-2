@@ -7,10 +7,10 @@ import titanium.filesystem.FileStream;
 
 /** Object representing a path to a file or directory in the device's persistent storage. */
 @:native ("Titanium.Filesystem.File")
-extern class File {
+typedef File = {
 
 	/** A File object representing the parent directory of the file identified by this object. */
-	public var parent(default,null):File;
+	public var parent(default,null):titanium.filesystem.File;
 	/** Name of the file. */
 	public var name(default,null):String;
 	/** Native path associated with this file object, as a file URL. */
@@ -31,7 +31,7 @@ extern class File {
 	public var remoteBackup:Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Appends data to the file identified by this file object. */
 	public function append (data:Dynamic):Bool;
 	/** Copies the file identified by this file object to a new path. */
@@ -67,9 +67,9 @@ extern class File {
 	/** Moves the file identified by this file object to another path. */
 	public function move (newpath:String):Bool;
 	/** Opens the file identified by this file object for random access. */
-	public function open (mode:Float):FileStream;
+	public function open (mode:Float):titanium.filesystem.FileStream;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Renames the file identified by this file object. */
 	public function rename (newname:String):Bool;
 	/** Returns a listing of the directory identified by this file object, or null
@@ -78,7 +78,7 @@ if this object doesn't identify a directory. */
 	/** Returns the amount of free space available on the device where the file identified by this file object is stored. */
 	public function spaceAvailable ():Float;
 	/** Returns the contents of the file identified by this file object as a Blob. */
-	public function read ():Blob;
+	public function read ():titanium.Blob;
 	/** Returns the creation timestamp for the file identified by this file object. */
 	public function createTimestamp ():Float;
 	/** Returns the extension for the file identified by this file object. */

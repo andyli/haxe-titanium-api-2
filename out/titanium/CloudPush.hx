@@ -19,9 +19,9 @@ extern class CloudPush {
 	public static var focusAppOnPush:Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Asynchronously retrieves the application specific device token. */
-	public static function retrieveDeviceToken (config:CloudPushNotificationConfig):Void;
+	public static function retrieveDeviceToken (config:titanium.CloudPushNotificationConfig):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the enabled property. */
@@ -35,7 +35,7 @@ extern class CloudPush {
 	/** Gets the value of the showTrayNotificationsWhenFocused property. */
 	public static function getShowTrayNotificationsWhenFocused ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the enabled property. */
 	public static function setEnabled (enabled:Bool):Void;
 	/** Sets the value of the focusAppOnPush property. */

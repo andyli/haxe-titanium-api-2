@@ -1,5 +1,7 @@
 package titanium.ui;
 
+import titanium.HideParams;
+import titanium.ShowParams;
 import titanium.ui.View;
 
 
@@ -7,7 +9,7 @@ import titanium.ui.View;
 in the middle of the display on Android and at the bottom edge on iOS. On Android, buttons may 
 be added below the options. */
 @:native ("Titanium.UI.OptionDialog")
-extern class OptionDialog {
+typedef OptionDialog = {
 
 	/** Defines the default selected option. */
 	public var selectedIndex:Float;
@@ -22,10 +24,10 @@ extern class OptionDialog {
 	/** Title of the dialog. */
 	public var title:String;
 	/** View to load inside the message area, to create a custom layout. */
-	public var androidView:View;
+	public var androidView:titanium.ui.View;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the androidView property. */
@@ -43,11 +45,11 @@ extern class OptionDialog {
 	/** Gets the value of the titleid property. */
 	public function getTitleid ():Void;
 	/** Hides this dialog. */
-	public function hide (?params:HideParams):Void;
+	public function hide (?params:titanium.HideParams):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the androidView property. */
-	public function setAndroidView (androidView:View):Void;
+	public function setAndroidView (androidView:titanium.ui.View):Void;
 	/** Sets the value of the cancel property. */
 	public function setCancel (cancel:Float):Void;
 	/** Sets the value of the title property. */
@@ -55,6 +57,6 @@ extern class OptionDialog {
 	/** Sets the value of the titleid property. */
 	public function setTitleid (titleid:String):Void;
 	/** Shows this dialog. */
-	public function show (?params:ShowParams):Void;
+	public function show (?params:titanium.ShowParams):Void;
 
 }

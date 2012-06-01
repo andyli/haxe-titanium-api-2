@@ -9,14 +9,14 @@ import titanium.ErrorCallbackArgs;
 
 /** TCP socket that implements the Titanium.IOStream interface. */
 @:native ("Titanium.Network.Socket.TCP")
-extern class TCP {
+typedef TCP = {
 
 	/** Callback to be fired when a listener accepts a connection. */
-	public var accepted:AcceptedCallbackArgs->Dynamic;
+	public var accepted:titanium.AcceptedCallbackArgs->Dynamic;
 	/** Callback to be fired when the socket enters the "connected" state. */
-	public var connected:ConnectedCallbackArgs->Dynamic;
+	public var connected:titanium.ConnectedCallbackArgs->Dynamic;
 	/** Callback to be fired when the socket enters the ERROR state. */
-	public var error:ErrorCallbackArgs->Dynamic;
+	public var error:titanium.ErrorCallbackArgs->Dynamic;
 	/** Current state of the socket. */
 	public var state(default,null):Float;
 	/** Max number of pending incoming connections to be allowed when the socket is in the LISTENING state. */
@@ -29,7 +29,7 @@ extern class TCP {
 	public var timeout:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Attempts to connect the socket to its host/port. */
 	public function connect ():Void;
 	/** Attempts to start listening on the socket's host/port. */
@@ -59,15 +59,15 @@ extern class TCP {
 	/** Indicates whether this stream is writeable. */
 	public function isWriteable ():Bool;
 	/** Reads data from this stream into a buffer. */
-	public function read (buffer:Buffer, ?offset:Float, ?length:Float):Float;
+	public function read (buffer:titanium.Buffer, ?offset:Float, ?length:Float):Float;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the accepted property. */
-	public function setAccepted (accepted:AcceptedCallbackArgs->Dynamic):Void;
+	public function setAccepted (accepted:titanium.AcceptedCallbackArgs->Dynamic):Void;
 	/** Sets the value of the connected property. */
-	public function setConnected (connected:ConnectedCallbackArgs->Dynamic):Void;
+	public function setConnected (connected:titanium.ConnectedCallbackArgs->Dynamic):Void;
 	/** Sets the value of the error property. */
-	public function setError (error:ErrorCallbackArgs->Dynamic):Void;
+	public function setError (error:titanium.ErrorCallbackArgs->Dynamic):Void;
 	/** Sets the value of the host property. */
 	public function setHost (host:String):Void;
 	/** Sets the value of the listenQueueSize property. */
@@ -77,8 +77,8 @@ extern class TCP {
 	/** Sets the value of the timeout property. */
 	public function setTimeout (timeout:Float):Void;
 	/** Tells a LISTENING socket to accept a connection request at the top of a listener's request queue when one becomes available. */
-	public function accept (options:AcceptDict):Void;
+	public function accept (options:titanium.AcceptDict):Void;
 	/** Writes data from a buffer to this stream. */
-	public function write (buffer:Buffer, ?offset:Float, ?length:Float):Float;
+	public function write (buffer:titanium.Buffer, ?offset:Float, ?length:Float):Float;
 
 }

@@ -5,7 +5,7 @@ import titanium.filesystem.File;
 
 /** An audio recorder object used for recording audio from the device microphone. */
 @:native ("Titanium.Media.AudioRecorder")
-extern class AudioRecorder {
+typedef AudioRecorder = {
 
 	/** Audio compression to be used for the recording. */
 	public var compression:Float;
@@ -19,7 +19,7 @@ extern class AudioRecorder {
 	public var stopped(default,null):Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the compression property. */
@@ -35,7 +35,7 @@ extern class AudioRecorder {
 	/** Pauses the current audio recording. */
 	public function pause ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Resumes a paused recording. */
 	public function resume ():Void;
 	/** Sets the value of the compression property. */
@@ -45,6 +45,6 @@ extern class AudioRecorder {
 	/** Starts an audio recording. */
 	public function start ():Void;
 	/** Stops the current audio recording and returns the recorded audio file. */
-	public function stop ():File;
+	public function stop ():titanium.filesystem.File;
 
 }

@@ -3,7 +3,7 @@ package titanium.geolocation.android;
 
 /** A location rule to filter the results returned by location providers. */
 @:native ("Titanium.Geolocation.Android.LocationRule")
-extern class LocationRule {
+typedef LocationRule = {
 
 	/** Controls the frequency of location updates. */
 	public var minAge:Float;
@@ -17,7 +17,7 @@ by the specified provider. If null, this rule applies to all updates. */
 	public var accuracy:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the accuracy property. */
@@ -29,7 +29,7 @@ by the specified provider. If null, this rule applies to all updates. */
 	/** Gets the value of the name property. */
 	public function getName ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the accuracy property. */
 	public function setAccuracy (accuracy:Float):Void;
 	/** Sets the value of the maxAge property. */

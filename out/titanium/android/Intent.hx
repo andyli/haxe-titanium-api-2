@@ -3,7 +3,7 @@ package titanium.android;
 
 /** The Titanium binding of an Android Intent. */
 @:native ("Titanium.Android.Intent")
-extern class Intent {
+typedef Intent = {
 
 	/** Intent flags. See the FLAG_ constants in Titanium.Android. */
 	public var flags:Float;
@@ -24,7 +24,7 @@ extern class Intent {
 	/** Adds a category to this Intent. See the CATEGORY constants in Titanium.Android. */
 	public function addCategory (name:String):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Adds to the existing flags on the Intent. */
 	public function addFlags (flags:Float):Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -58,7 +58,7 @@ extern class Intent {
 	/** Puts an extra property on this Intent. */
 	public function putExtra (name:String, value:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns true if this Intent has the specified property. */
 	public function hasExtra (name:String):Bool;
 	/** Sets the value of the flags property. */

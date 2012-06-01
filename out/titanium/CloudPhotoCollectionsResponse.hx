@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback when a request finishes successfully or erroneously. */
 @:native ("CloudPhotoCollectionsResponse")
-extern class CloudPhotoCollectionsResponse {
+typedef CloudPhotoCollectionsResponse = {
 
 	/** Error code, if any returned. */
 	public var code:Float;
@@ -16,6 +16,6 @@ extern class CloudPhotoCollectionsResponse {
 	/** Meta data, if any returned. */
 	public var meta:Dynamic;
 	/** Set of collections objects, if any exist. */
-	public var collections:Array<Dictionary>;
+	public var collections:Array<Dynamic>;
 
 }

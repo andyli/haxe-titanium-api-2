@@ -34,11 +34,11 @@ the default login button reading "Connect" or "Login". */
 	public static var appid:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Clears the OAuth accessToken and logs out the user. */
 	public static function logout ():Void;
 	/** Creates and returns an instance of Titanium.Facebook.LoginButton. */
-	public static function createLoginButton (?parameters:Dynamic<LoginButton>):LoginButton;
+	public static function createLoginButton (?parameters:Dynamic):titanium.facebook.LoginButton;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the accessToken property. */
@@ -56,16 +56,16 @@ the default login button reading "Connect" or "Login". */
 	/** Gets the value of the uid property. */
 	public static function getUid ():Void;
 	/** Makes a Facebook Graph API request. */
-	public static function requestWithGraphPath (path:String, params:Dynamic, httpMethod:String, _callback:FacebookGraphResponse->Dynamic):Void;
+	public static function requestWithGraphPath (path:String, params:Dynamic, httpMethod:String, _callback:titanium.FacebookGraphResponse->Dynamic):Void;
 	/** Makes a request to the legacy Facebook REST API. */
-	public static function request (method:String, params:Dynamic, _callback:FacebookRESTResponse->Dynamic):Void;
+	public static function request (method:String, params:Dynamic, _callback:titanium.FacebookRESTResponse->Dynamic):Void;
 	/** Opens a supported Facebook dialog. */
-	public static function dialog (action:String, params:Dynamic, _callback:FacebookDialogResponse->Dynamic):Void;
+	public static function dialog (action:String, params:Dynamic, _callback:titanium.FacebookDialogResponse->Dynamic):Void;
 	/** Prompts the user to log in (if not already logged in) and authorize your application.
  */
 	public static function authorize ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the accessToken property. */
 	public static function setAccessToken (accessToken:String):Void;
 	/** Sets the value of the appid property. */

@@ -1,15 +1,14 @@
 package titanium.ui;
 
-import array<titanium.ui.PickerColumn>;
 import titanium.ui.PickerColumn;
 
 
 /** A control used to select one or more fixed values. */
 @:native ("Titanium.UI.Picker")
-extern class Picker {
+typedef Picker = {
 
 	/** Columns used for this picker, as an array of Titanium.UI.PickerColumn objects. */
-	public var columns:PickerColumn>;
+	public var columns:Array<titanium.ui.PickerColumn>;
 	/** Date and time value for Date pickers. */
 	public var value:Date;
 	/** Determines the type of picker displayed */
@@ -38,7 +37,7 @@ useSpinner is true. */
 	/** Adds rows or columns to the picker. */
 	public function add (data:Dynamic):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the selected row for a column, or null if none exists. */
@@ -68,15 +67,15 @@ useSpinner is true. */
 	/** Gets the value of the visibleItems property. */
 	public function getVisibleItems ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Repopulates values for a column. */
-	public function reloadColumn (column:PickerColumn):Void;
+	public function reloadColumn (column:titanium.ui.PickerColumn):Void;
 	/** Selects a column's row. */
 	public function setSelectedRow (column:Float, row:Float, ?animated:Bool):Void;
 	/** Sets the date and time value property for Date pickers. */
 	public function setValue (date:Dynamic, suppressEvent:Bool):Void;
 	/** Sets the value of the columns property. */
-	public function setColumns (columns:PickerColumn>):Void;
+	public function setColumns (columns:Array<titanium.ui.PickerColumn>):Void;
 	/** Sets the value of the countDownDuration property. */
 	public function setCountDownDuration (countDownDuration:Float):Void;
 	/** Sets the value of the format24 property. */

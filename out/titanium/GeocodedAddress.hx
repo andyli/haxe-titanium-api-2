@@ -4,7 +4,7 @@ package titanium;
 /** Simple object representing a place, returned in the callback from the 
 reverseGeocoder method. */
 @:native ("GeocodedAddress")
-extern class GeocodedAddress {
+typedef GeocodedAddress = {
 
 	/** City name. */
 	public var city:String;

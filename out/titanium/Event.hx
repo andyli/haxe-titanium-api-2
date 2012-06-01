@@ -3,7 +3,7 @@ package titanium;
 
 /** The base type for all Titanium events. */
 @:native ("Titanium.Event")
-extern class Event {
+typedef Event = {
 
 	/** Name of the event fired. */
 	public var type:String;

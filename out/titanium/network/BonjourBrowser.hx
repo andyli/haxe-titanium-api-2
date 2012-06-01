@@ -3,7 +3,7 @@ package titanium.network;
 
 /** A browser for the discovery and retrieval of Bonjour services available on the network. */
 @:native ("Titanium.Network.BonjourBrowser")
-extern class BonjourBrowser {
+typedef BonjourBrowser = {
 
 	/** The domain the browser is searching in */
 	public var domain:String;
@@ -13,7 +13,7 @@ extern class BonjourBrowser {
 	public var isSearching:Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Conduct a search for Bonjour services matching the type and domain specified during creation */
 	public function search ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -27,7 +27,7 @@ extern class BonjourBrowser {
 	/** Halt an ongoing search */
 	public function stopSearch ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the domain property. */
 	public function setDomain (domain:String):Void;
 	/** Sets the value of the isSearching property. */

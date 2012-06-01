@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback when a request finishes successfully or erroneously. */
 @:native ("CloudKeyValuesResponse")
-extern class CloudKeyValuesResponse {
+typedef CloudKeyValuesResponse = {
 
 	/** Error code, if any returned. */
 	public var code:Float;
@@ -16,6 +16,6 @@ extern class CloudKeyValuesResponse {
 	/** Meta data, if any returned. */
 	public var meta:Dynamic;
 	/** Set of keyvalues objects, if any exist. */
-	public var keyvalues:Array<Dictionary>;
+	public var keyvalues:Array<Dynamic>;
 
 }

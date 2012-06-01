@@ -13,7 +13,7 @@ extern class Locale {
 	public static var currentLanguage(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Formats a telephone number according to the current system locale. */
@@ -25,7 +25,7 @@ extern class Locale {
 	/** Gets the value of the currentLocale property. */
 	public static function getCurrentLocale ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns a string, localized according to the current system locale using the appropriate 
 /i18n/LANG/strings.xml localization file. */
 	public static function getString (key:String, ?hint:String):String;

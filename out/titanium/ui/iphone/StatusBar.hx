@@ -3,7 +3,7 @@ package titanium.ui.iphone;
 
 /** A set of constants for the status bar style. */
 @:native ("Titanium.UI.iPhone.StatusBar")
-extern class StatusBar {
+typedef StatusBar = {
 
 	/** Default status bar style. */
 	public var DEFAULT(default,null):Float;
@@ -24,10 +24,10 @@ the device background. */
 	public var TRANSLUCENT_BLACK(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

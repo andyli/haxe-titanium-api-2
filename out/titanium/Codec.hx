@@ -39,21 +39,21 @@ extern class Codec {
 	public static var CHARSET_UTF8(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Decodes a number from the source buffer using the specified data type. */
-	public static function decodeNumber (options:DecodeNumberDict):Float;
+	public static function decodeNumber (options:titanium.DecodeNumberDict):Float;
 	/** Decodes the source buffer into a String using the supplied character set. */
-	public static function decodeString (options:DecodeStringDict):String;
+	public static function decodeString (options:titanium.DecodeStringDict):String;
 	/** Encodes a number and writes it to a buffer. */
-	public static function encodeNumber (options:EncodeNumberDict):Float;
+	public static function encodeNumber (options:titanium.EncodeNumberDict):Float;
 	/** Encodes a string into a series of bytes in a buffer using the specified character set. */
-	public static function encodeString (options:Dynamic<EncodeStringDict>):Float;
+	public static function encodeString (options:Dynamic):Float;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Get the OS native byte order (either Titanium.Codec.BIG_ENDIAN or
 Titanium.Codec.LITTLE_ENDIAN). */
 	public static function getNativeByteOrder ():Float;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium.network;
 
 /** Describes a service on the network which is published by Bonjour. */
 @:native ("Titanium.Network.BonjourService")
-extern class BonjourService {
+typedef BonjourService = {
 
 	/** the domain of the service */
 	public var domain:String;
@@ -17,7 +17,7 @@ extern class BonjourService {
 	public var isLocal:Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the domain property. */
@@ -35,7 +35,7 @@ extern class BonjourService {
 	/** Publish a Bonjour service to the network.  Only works if isLocal is TRUE */
 	public function publish (socket:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Resolve a Bonjour service from the network.  Must be done before attempting to access the service's socket information, if a remote service.  You cannot resolve a locally published service. */
 	public function resolve (timeout:Float):Void;
 	/** Sets the value of the domain property. */

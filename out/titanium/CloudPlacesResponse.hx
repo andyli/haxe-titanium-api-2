@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback when a request finishes successfully or erroneously. */
 @:native ("CloudPlacesResponse")
-extern class CloudPlacesResponse {
+typedef CloudPlacesResponse = {
 
 	/** Error code, if any returned. */
 	public var code:Float;
@@ -16,6 +16,6 @@ extern class CloudPlacesResponse {
 	/** Meta data, if any returned. */
 	public var meta:Dynamic;
 	/** Set of places objects, if any exist. */
-	public var places:Array<Dictionary>;
+	public var places:Array<Dynamic>;
 
 }

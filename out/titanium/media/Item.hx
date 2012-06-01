@@ -5,7 +5,7 @@ import titanium.Blob;
 
 /** A representation of a media item returned by openMusicLibrary or queryMusicLibrary. */
 @:native ("Titanium.Media.Item")
-extern class Item {
+typedef Item = {
 
 	/** Artist credited for the album containing this item. */
 	public var albumArtist(default,null):String;
@@ -19,7 +19,7 @@ extern class Item {
 	public var genre(default,null):String;
 	/** Image for the item's artwork as a Blob object,  or null if no artwork is
 available. */
-	public var artwork(default,null):Blob;
+	public var artwork(default,null):titanium.Blob;
 	/** Length (in seconds) of this item. */
 	public var playbackDuration(default,null):Float;
 	/** Lyrics for this item. */
@@ -48,7 +48,7 @@ available. */
 	public var isCompilation(default,null):Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the albumArtist property. */
@@ -90,6 +90,6 @@ available. */
 	/** Gets the value of the title property. */
 	public function getTitle ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

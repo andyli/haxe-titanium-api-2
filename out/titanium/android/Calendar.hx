@@ -1,7 +1,5 @@
 package titanium.android;
 
-import array<titanium.android.calendar.Alert>;
-import array<titanium.android.calendar.Calendar>;
 import titanium.android.calendar.Calendar;
 
 
@@ -17,11 +15,11 @@ extern class Calendar {
 	/** Alert scheduled status. */
 	public static var STATE_SCHEDULED(default,null):Float;
 	/** All alerts in selected calendars. */
-	public static var allAlerts(default,null):Alert>;
+	public static var allAlerts(default,null):Array<titanium.android.calendar.Alert>;
 	/** All calendars known to the native calendar app. */
-	public static var allCalendars(default,null):Calendar>;
+	public static var allCalendars(default,null):Array<titanium.android.calendar.Calendar>;
 	/** All calendars selected within the native calendar app, which may be a subset of allCalendars.  */
-	public static var selectableCalendars(default,null):Calendar>;
+	public static var selectableCalendars(default,null):Array<titanium.android.calendar.Calendar>;
 	/** Event canceled status. */
 	public static var STATUS_CANCELED(default,null):Float;
 	/** Event confidential visibility. */
@@ -46,11 +44,11 @@ extern class Calendar {
 	public static var METHOD_SMS(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the calendar with the specified identifier. */
-	public static function getCalendarById (id:Float):Calendar;
+	public static function getCalendarById (id:Float):titanium.android.calendar.Calendar;
 	/** Gets the value of the allAlerts property. */
 	public static function getAllAlerts ():Void;
 	/** Gets the value of the allCalendars property. */
@@ -58,6 +56,6 @@ extern class Calendar {
 	/** Gets the value of the selectableCalendars property. */
 	public static function getSelectableCalendars ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium;
 
 /** Dictionary of options for the Titanium.UI.Window.open method. */
 @:native ("openWindowParams")
-extern class OpenWindowParams {
+typedef OpenWindowParams = {
 
 	/** Determines whether the window is modal. */
 	public var modal:Bool;

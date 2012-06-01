@@ -3,7 +3,7 @@ package titanium;
 
 /** An abstract datatype for specifying a text font. */
 @:native ("Font")
-extern class Font {
+typedef Font = {
 
 	/** Font size, in platform-dependent units. */
 	public var fontSize:Dynamic;

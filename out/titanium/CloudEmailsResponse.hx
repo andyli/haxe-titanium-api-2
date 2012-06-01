@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback when a request finishes successfully or erroneously. */
 @:native ("CloudEmailsResponse")
-extern class CloudEmailsResponse {
+typedef CloudEmailsResponse = {
 
 	/** Error code, if any returned. */
 	public var code:Float;

@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object used as an argument to setLocation. */
 @:native ("MapLocationType")
-extern class MapLocationType {
+typedef MapLocationType = {
 
 	/** If true, the specified region is modified to fit the aspect ratio of the
 map view, while remaining centered on latitude,longitude. */

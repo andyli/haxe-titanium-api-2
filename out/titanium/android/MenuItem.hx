@@ -3,7 +3,7 @@ package titanium.android;
 
 /** The Titanium binding of an Android menu item. */
 @:native ("Titanium.Android.MenuItem")
-extern class MenuItem {
+typedef MenuItem = {
 
 	/** Determines if the item can be checked. */
 	public var checkable:Bool;
@@ -27,7 +27,7 @@ extern class MenuItem {
 	public var title:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the groupId property. */
@@ -43,7 +43,7 @@ extern class MenuItem {
 	/** Gets the value of the titleCondensed property. */
 	public function getTitleCondensed ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns the checkable state of the menu item. */
 	public function isCheckable ():Bool;
 	/** Returns the checked state of the menu item. */

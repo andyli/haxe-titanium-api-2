@@ -21,7 +21,7 @@ extern class Platform {
 	/** Indicates the state of the battery. Accessible only when batteryMonitoring is enabled. */
 	public static var batteryState(default,null):Float;
 	/** Returns the DisplayCaps object. */
-	public static var displayCaps(default,null):DisplayCaps;
+	public static var displayCaps(default,null):titanium.platform.DisplayCaps;
 	/** The applications's globally-unique ID (UUID). */
 	public static var id(default,null):String;
 	/** The battery level in percent, accessible only when batteryMonitoring is enabled. Measured 
@@ -56,7 +56,7 @@ iPad will return ipad, Android will return android and Mobile Web will return mo
 	public static var netmask(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates a globally-unique identifier. */
 	public static function createUUID ():String;
 	/** Fires a synthesized event to any registered listeners. */
@@ -102,7 +102,7 @@ iPad will return ipad, Android will return android and Mobile Web will return mo
 	/** Opens this URL using the system's default application for its protocol. */
 	public static function openURL (url:String):Bool;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns whether the system is configured with a default application to handle the URL's protocol. */
 	public static function canOpenURL (url:String):Bool;
 	/** Returns whether the system settings are configured to show times in 24-hour format. */

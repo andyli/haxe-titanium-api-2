@@ -5,12 +5,12 @@ import titanium.Point;
 
 /** A simple object defining a color gradient. */
 @:native ("Gradient")
-extern class Gradient {
+typedef Gradient = {
 
 	/** An array of colors, as a color name or hex triplet. */
 	public var colors:Dynamic;
 	/** End point for the gradient. */
-	public var endPoint:Point;
+	public var endPoint:titanium.Point;
 	/** For a radial gradient, the radius at the endPoint. */
 	public var endRadius:Float;
 	/** For a radial gradient, the radius at the startPoint. */
@@ -20,7 +20,7 @@ extern class Gradient {
 	/** Set to true to continue filling with the starting color beyond the startPoint. */
 	public var backfillStart:Bool;
 	/** Start point for the gradient. */
-	public var startPoint:Point;
+	public var startPoint:titanium.Point;
 	/** Type of gradient, either 'linear' or 'radial'. */
 	public var type:String;
 

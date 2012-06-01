@@ -9,12 +9,12 @@ import titanium.xml.Text;
 
 /** Represents the textual content of an Titanium.XML.Element or Titanium.XML.Attr Implements the DOM Level 2 API on Android and iOS. Exposes the DOM Level 3 API implementation on Mobile Web. */
 @:native ("Titanium.XML.Text")
-extern class Text {
+typedef Text = {
 
 	/** A map of this node's attributes */
-	public var attributes(default,null):NamedNodeMap;
+	public var attributes(default,null):titanium.xml.NamedNodeMap;
 	/** A Titanium.XML.NodeList of this node's children */
-	public var childNodes(default,null):NodeList;
+	public var childNodes(default,null):titanium.xml.NodeList;
 	/** The character data of the node that implements this interface. Throws an exception during setting if this node is readonly. */
 	public var data:String;
 	/** The content (value) of all text nodes within this node */
@@ -56,30 +56,30 @@ extern class Text {
 	/** The value of nodeType when this node is a Titanium.XML.Text */
 	public var TEXT_NODE(default,null):Float;
 	/** This node's first child */
-	public var firstChild(default,null):Node;
+	public var firstChild(default,null):titanium.xml.Node;
 	/** This node's last child */
-	public var lastChild(default,null):Node;
+	public var lastChild(default,null):titanium.xml.Node;
 	/** This node's next sibling */
-	public var nextSibling(default,null):Node;
+	public var nextSibling(default,null):titanium.xml.Node;
 	/** This node's owning Document */
-	public var ownerDocument(default,null):Document;
+	public var ownerDocument(default,null):titanium.xml.Document;
 	/** This node's parent node */
-	public var parentNode(default,null):Node;
+	public var parentNode(default,null):titanium.xml.Node;
 	/** This node's previous sibling */
-	public var previousSibling(default,null):Node;
+	public var previousSibling(default,null):titanium.xml.Node;
 	/** This node's type. One of ELEMENT_NODE, ATTRIBUTE_NODE, TEXT_NODE, CDATA_SECTION_NODE,
 ENTITY_REFERENCE_NODE, ENTITY_NODE, PROCESSING_INSTRUCTION_NODE, COMMENT_NODE,
 DOCUMENT_NODE, DOCUMENT_TYPE_NODE, DOCUMENT_FRAGMENT_NODE, NOTATION_NODE. */
 	public var nodeType(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Append the string to the end of the character data of the node. Upon success, data provides access to the concatenation of data and the string specified. Throws an exception if this node is readonly. */
 	public function appendData (arg:String):Void;
 	/** Appends the node newChild as a child of this node */
-	public function appendChild (newChild:Node):Node;
+	public function appendChild (newChild:titanium.xml.Node):titanium.xml.Node;
 	/** Breaks this node into two nodes at the specified by offset, and returns a new node of the same type, which contains all the content at and after the offset point. Throws an exception if the specified offset is negative or if this node is read only. */
-	public function splitText (offset:Float):Text;
+	public function splitText (offset:Float):titanium.xml.Text;
 	/** Extracts a range of data from the node. Throws an exception if offset is negative, offset is beyond the data's length, or if count is negative. */
 	public function substringData (offset:Float, count:Float):String;
 	/** Fires a synthesized event to any registered listeners. */
@@ -121,21 +121,21 @@ DOCUMENT_NODE, DOCUMENT_TYPE_NODE, DOCUMENT_FRAGMENT_NODE, NOTATION_NODE. */
 	/** Insert a string at the specified offset. Throws an exception if this node is readonly, if offset is negative, or if offset is beyond the data's length. */
 	public function insertData (offset:Float, arg:String):Void;
 	/** Inserts the node newChild before the node refChild. */
-	public function insertBefore (newChild:Node, refChild:Node):Node;
+	public function insertBefore (newChild:titanium.xml.Node, refChild:titanium.xml.Node):titanium.xml.Node;
 	/** Normalizes text and attribute nodes in this node's child hierarchy */
 	public function normalize ():Void;
 	/** Remove a range of characters from the node. Upon success, data and length reflect the change. Throws an exception if this node is readonly, if offset is negative, offset is beyond the data's length, or if count is negative. */
 	public function deleteData (offset:Float, count:Float):Void;
 	/** Removes a child node from this node */
-	public function removeChild (oldChild:Node):Node;
+	public function removeChild (oldChild:titanium.xml.Node):titanium.xml.Node;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Replace the characters starting at the specified offset with the specified string. Throws an exception if this node is readonly, if offset is negative, offset is beyond the data's length, or if count is negative. */
 	public function replaceData (offset:Float, count:Float, arg:String):Void;
 	/** Replaces the node oldChild with the node newChild */
-	public function replaceChild (newChild:Node, oldChild:Node):Void;
+	public function replaceChild (newChild:titanium.xml.Node, oldChild:titanium.xml.Node):Void;
 	/** Returns a duplicate of this node */
-	public function cloneNode (deep:Bool):Node;
+	public function cloneNode (deep:Bool):titanium.xml.Node;
 	/** Sets the value of the data property. */
 	public function setData (data:String):Void;
 	/** Sets the value of the localName property. */

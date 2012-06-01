@@ -3,7 +3,7 @@ package titanium.database;
 
 /** The ResultSet instance returned by Titanium.Database.DB.execute. */
 @:native ("Titanium.Database.ResultSet")
-extern class ResultSet {
+typedef ResultSet = {
 
 	/** Indicates whether the current row is valid. */
 	public var validRow(default,null):Bool;
@@ -13,7 +13,7 @@ extern class ResultSet {
 	public var fieldCount(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Advances to the next row in the result set and returns true if one exists, 
 or false otherwise. */
 	public function next ():Bool;
@@ -29,7 +29,7 @@ be used. */
 	/** Gets the value of the validRow property. */
 	public function getValidRow ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Retrieves the value for the specified field in the current row, 
 and casts it to the specified type (String, Integer, Float or Double.) */
 	public function field (index:Float, ?type:Float):Void;

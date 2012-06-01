@@ -42,14 +42,14 @@ to indicate that the user started dragging the annotation. */
 	public static var TERRAIN_TYPE(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.Map.Annotation. */
-	public static function createAnnotation (?parameters:Dynamic<Annotation>):Annotation;
+	public static function createAnnotation (?parameters:Dynamic):titanium.map.Annotation;
 	/** Creates and returns an instance of Titanium.Map.View. */
-	public static function createView (?parameters:Dynamic<View>):View;
+	public static function createView (?parameters:Dynamic):titanium.map.View;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

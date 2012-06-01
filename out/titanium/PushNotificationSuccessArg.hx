@@ -4,7 +4,7 @@ package titanium;
 /** A simple object passed to the 
 registerForPushNotifications success callback. */
 @:native ("PushNotificationSuccessArg")
-extern class PushNotificationSuccessArg {
+typedef PushNotificationSuccessArg = {
 
 	/** The device token which this device was registered for. */
 	public var deviceToken:String;

@@ -5,7 +5,7 @@ import titanium.android.PendingIntent;
 
 /** The Titanium binding of Android RemoteViews.  */
 @:native ("Titanium.Android.RemoteViews")
-extern class RemoteViews {
+typedef RemoteViews = {
 
 	/** Android layout resource ID for the view to display. Required. */
 	public var layoutId:Float;
@@ -13,7 +13,7 @@ extern class RemoteViews {
 	public var packageName:String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Calls a method taking a single boolean argument on a view in the remote view
 hierarchy.  See Android's documentation for
 setBoolean. */
@@ -35,9 +35,9 @@ hierarchy. */
 	/** Gets the value of the packageName property. */
 	public function getPackageName ():Void;
 	/** Launches a Titanium.Android.PendingIntent when the specified view is clicked. */
-	public function setOnClickPendingIntent (viewId:Float, pendingIntent:PendingIntent):Void;
+	public function setOnClickPendingIntent (viewId:Float, pendingIntent:titanium.android.PendingIntent):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the base time, format string, and started flag for a chronometer
 in the remote view hierarchy. */
 	public function setChronometer (viewId:Float, base:Date, format:String, started:Bool):Void;

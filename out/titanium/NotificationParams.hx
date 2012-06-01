@@ -4,7 +4,7 @@ package titanium;
 /** Dictionary object of parameters used to create a notification using 
 Titanium.App.iOS.scheduleLocalNotification. */
 @:native ("NotificationParams")
-extern class NotificationParams {
+typedef NotificationParams = {
 
 	/** Alert button text ('View', by default) or slider text ('slide to unlock...', by default) 
 to display. */

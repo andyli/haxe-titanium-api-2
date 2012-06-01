@@ -5,9 +5,9 @@ import titanium.Blob;
 
 /** The parameter passed to the Titanium.Media.takeScreenshot callback. */
 @:native ("ScreenshotResult")
-extern class ScreenshotResult {
+typedef ScreenshotResult = {
 
 	/** The screenshot image. */
-	public var media:Blob;
+	public var media:titanium.Blob;
 
 }

@@ -8,14 +8,14 @@ import titanium.CloudPostsResponse;
 extern class Posts {
 
 	/** Create a post. */
-	public static function create (parameters:Dynamic, _callback:CloudPostsResponse->Dynamic):Void;
+	public static function create (parameters:Dynamic, _callback:titanium.CloudPostsResponse->Dynamic):Void;
 	/** Delete a post. */
-	public static function remove (parameters:Dynamic, _callback:CloudPostsResponse->Dynamic):Void;
+	public static function remove (parameters:Dynamic, _callback:titanium.CloudPostsResponse->Dynamic):Void;
 	/** Retrieve a list of posts with sorting and pagination. */
-	public static function query (?parameters:Dynamic, _callback:CloudPostsResponse->Dynamic):Void;
+	public static function query (?parameters:Dynamic, _callback:titanium.CloudPostsResponse->Dynamic):Void;
 	/** Retrieve information about a post. */
-	public static function show (parameters:Dynamic, _callback:CloudPostsResponse->Dynamic):Void;
+	public static function show (parameters:Dynamic, _callback:titanium.CloudPostsResponse->Dynamic):Void;
 	/** Update the information for a post. */
-	public static function update (parameters:Dynamic, _callback:CloudPostsResponse->Dynamic):Void;
+	public static function update (parameters:Dynamic, _callback:titanium.CloudPostsResponse->Dynamic):Void;
 
 }

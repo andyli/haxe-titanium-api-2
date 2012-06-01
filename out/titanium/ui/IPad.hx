@@ -23,16 +23,16 @@ extern class IPad {
 	public static var POPOVER_ARROW_DIRECTION_UNKNOWN(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iPad.DocumentViewer. */
-	public static function createDocumentViewer (?parameters:Dynamic<DocumentViewer>):DocumentViewer;
+	public static function createDocumentViewer (?parameters:Dynamic):titanium.ui.ipad.DocumentViewer;
 	/** Creates and returns an instance of Titanium.UI.iPad.Popover. */
-	public static function createPopover (?parameters:Dynamic<Popover>):Popover;
+	public static function createPopover (?parameters:Dynamic):titanium.ui.ipad.Popover;
 	/** Creates and returns an instance of Titanium.UI.iPad.SplitWindow. */
-	public static function createSplitWindow (?parameters:Dynamic<SplitWindow>):SplitWindow;
+	public static function createSplitWindow (?parameters:Dynamic):titanium.ui.ipad.SplitWindow;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

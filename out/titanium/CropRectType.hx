@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object for describing the crop rectangle for an image. */
 @:native ("CropRectType")
-extern class CropRectType {
+typedef CropRectType = {
 
 	/** Height of the crop rectangle, in pixels. */
 	public var height:Float;

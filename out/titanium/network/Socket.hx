@@ -19,12 +19,12 @@ extern class Socket {
 	public static var INITIALIZED(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns a new TCP socket object. */
-	public static function createTCP (?params:Dynamic<TCP>):TCP;
+	public static function createTCP (?params:Dynamic):titanium.network.socket.TCP;
 
 }

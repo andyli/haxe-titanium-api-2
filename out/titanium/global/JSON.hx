@@ -3,7 +3,7 @@ package titanium.global;
 
 /** Global JSON object providing the parse and stringify methods. */
 @:native ("JSON")
-extern class JSON {
+typedef JSON = {
 
 	/** Parses a JSON text to produce an object or array. */
 	public function parse (text:String, reviver:Dynamic):Dynamic;

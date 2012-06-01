@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object holding the data for a location update. */
 @:native ("LocationCoordinates")
-extern class LocationCoordinates {
+typedef LocationCoordinates = {
 
 	/** Accuracy of the location update, in meters. */
 	public var accuracy:Float;

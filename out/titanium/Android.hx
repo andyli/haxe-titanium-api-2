@@ -19,9 +19,9 @@ extern class Android {
 	/** A Service start mode indicating that if the host application is stopped by Android, the service should not be restarted automatically. */
 	public static var START_NOT_STICKY(default,null):Float;
 	/** Accessor for Android system resources. */
-	public static var R(default,null):R;
+	public static var R(default,null):titanium.android.R;
 	/** Activity of the active context. */
-	public static var currentActivity(default,null):Activity;
+	public static var currentActivity(default,null):titanium.android.Activity;
 	/** Cancel the notification when it is clicked by the user. */
 	public static var FLAG_AUTO_CANCEL(default,null):Float;
 	/** Corresponds to the Android Intent.ACTION_AIRPLANE_MODE_CHANGED constant. */
@@ -326,7 +326,7 @@ extern class Android {
 is opened. */
 	public static var FLAG_INSISTENT(default,null):Float;
 	/** Service in the active context. */
-	public static var currentService(default,null):Service;
+	public static var currentService(default,null):titanium.android.Service;
 	/** Specifies that a notification is in reference to something that is ongoing, like a phone call. */
 	public static var FLAG_ONGOING_EVENT(default,null):Float;
 	/** The URI scheme used for intent URIs. */
@@ -400,25 +400,25 @@ an activity was canceled. */
 	public static var RESULT_CANCELED(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Check on state of Service. */
-	public static function isServiceRunning (intent:Intent):Bool;
+	public static function isServiceRunning (intent:titanium.android.Intent):Bool;
 	/** Create a Titanium.Android.Service so you can start/stop it and listen for events from it. */
-	public static function createService (intent:Intent):Service;
+	public static function createService (intent:titanium.android.Intent):titanium.android.Service;
 	/** Create an Intent to be used to start a service. */
-	public static function createServiceIntent (options:ServiceIntentOptions):Intent;
+	public static function createServiceIntent (options:titanium.ServiceIntentOptions):titanium.android.Intent;
 	/** Creates a PendingIntent to be used inside a
 Notification. */
-	public static function createPendingIntent (?parameters:Dynamic<PendingIntent>):PendingIntent;
+	public static function createPendingIntent (?parameters:Dynamic):titanium.android.PendingIntent;
 	/** Creates an activity chooser intent, used to allow the user to select a target activity
 for an intent. */
-	public static function createIntentChooser (intent:Intent, title:String):Intent;
+	public static function createIntentChooser (intent:titanium.android.Intent, title:String):titanium.android.Intent;
 	/** Creates and returns an instance of Titanium.Android.Intent. */
-	public static function createIntent (?parameters:Dynamic<Intent>):Intent;
+	public static function createIntent (?parameters:Dynamic):titanium.android.Intent;
 	/** Creates and returns an instance of Titanium.Android.Notification. */
-	public static function createNotification (?parameters:Dynamic<Notification>):Notification;
+	public static function createNotification (?parameters:Dynamic):titanium.android.Notification;
 	/** Creates and returns an instance of Titanium.Android.RemoteViews. */
-	public static function createRemoteViews (?parameters:Dynamic<RemoteViews>):RemoteViews;
+	public static function createRemoteViews (?parameters:Dynamic):titanium.android.RemoteViews;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the currentActivity property. */
@@ -426,10 +426,10 @@ for an intent. */
 	/** Gets the value of the currentService property. */
 	public static function getCurrentService ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Starts a simple service. */
-	public static function startService (intent:Intent):Void;
+	public static function startService (intent:titanium.android.Intent):Void;
 	/** Stop a simple service that was started with startService. */
-	public static function stopService (intent:Intent):Void;
+	public static function stopService (intent:titanium.android.Intent):Void;
 
 }

@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object passed to the scanMediaFiles callback. */
 @:native ("MediaScannerResponse")
-extern class MediaScannerResponse {
+typedef MediaScannerResponse = {
 
 	/** Path to the media file that was scanned. */
 	public var path:String;

@@ -3,7 +3,7 @@ package titanium;
 
 /** A simple object consisting of a color and an offset. */
 @:native ("GradientColorRef")
-extern class GradientColorRef {
+typedef GradientColorRef = {
 
 	/** Color value at this point in the gradient, as a color name or hex triplet. */
 	public var color:String;

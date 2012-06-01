@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object holding compass heading data. */
 @:native ("HeadingData")
-extern class HeadingData {
+typedef HeadingData = {
 
 	/** Accuracy of the compass heading, in platform-specific units. */
 	public var accuracy:Float;

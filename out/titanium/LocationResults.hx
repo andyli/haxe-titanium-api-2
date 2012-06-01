@@ -6,7 +6,7 @@ import titanium.LocationProviderDict;
 
 /** Argument passed to the getCurrentPosition callback. */
 @:native ("LocationResults")
-extern class LocationResults {
+typedef LocationResults = {
 
 	/** If success is false, a string describing the error. */
 	public var error:String;
@@ -15,8 +15,8 @@ extern class LocationResults {
 	/** Indicates if location data was successfully retrieved. */
 	public var success:Bool;
 	/** Location data for this update. */
-	public var coords:LocationCoordinates;
+	public var coords:titanium.LocationCoordinates;
 	/** Object describing the location provider generating this update. */
-	public var provider:LocationProviderDict;
+	public var provider:titanium.LocationProviderDict;
 
 }

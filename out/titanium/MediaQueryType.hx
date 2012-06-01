@@ -3,7 +3,7 @@ package titanium;
 
 /** A specifier for a media library query. By default, filters perform an exact match. */
 @:native ("MediaQueryType")
-extern class MediaQueryType {
+typedef MediaQueryType = {
 
 	/** A constant that specifies the ordering of the result array. One of the MUSIC_MEDIA_GROUP_* constants specified on the Titanium.Media module. */
 	public var grouping:Float;

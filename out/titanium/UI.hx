@@ -1,8 +1,6 @@
 package titanium;
 
 import titanium.MatrixCreationDict;
-import titanium.ui.2DMatrix;
-import titanium.ui.3DMatrix;
 import titanium.ui.ActivityIndicator;
 import titanium.ui.AlertDialog;
 import titanium.ui.Animation;
@@ -15,6 +13,8 @@ import titanium.ui.EmailDialog;
 import titanium.ui.ImageView;
 import titanium.ui.Label;
 import titanium.ui.MaskedImage;
+import titanium.ui.Matrix2D;
+import titanium.ui.Matrix3D;
 import titanium.ui.Notification;
 import titanium.ui.OptionDialog;
 import titanium.ui.Picker;
@@ -119,9 +119,9 @@ controls displayed). */
 	/** Standard landscape orientation (home button on left). */
 	public static var LANDSCAPE_LEFT(default,null):Float;
 	/** The active window associated with the executing JavaScript context. */
-	public static var currentWindow(default,null):Window;
+	public static var currentWindow(default,null):titanium.ui.Window;
 	/** The currently active tab, if a tab group is open. */
-	public static var currentTab:Tab;
+	public static var currentTab:titanium.ui.Tab;
 	/** Unit constant representing units in centimeters. */
 	public static var UNIT_CM(default,null):String;
 	/** Unit constant representing units in density-independent pixels. */
@@ -180,83 +180,83 @@ controls displayed). */
 	public static var TEXT_VERTICAL_ALIGNMENT_CENTER(default,null):Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Converts one type of unit to another using the metrics of the main Display. */
 	public static function convertUnits (convertFromValue:String, convertToUnits:String):Float;
 	/** Creates and returns an instance of Titanium.UI.3DMatrix. */
-	public static function create3DMatrix (?parameters:Dynamic<3DMatrix>):3DMatrix;
+	public static function create3DMatrix (?parameters:Dynamic):titanium.ui.Matrix3D;
 	/** Creates and returns an instance of Titanium.UI.ActivityIndicator. */
-	public static function createActivityIndicator (?parameters:Dynamic<ActivityIndicator>):ActivityIndicator;
+	public static function createActivityIndicator (?parameters:Dynamic):titanium.ui.ActivityIndicator;
 	/** Creates and returns an instance of Titanium.UI.AlertDialog. */
-	public static function createAlertDialog (?parameters:Dynamic<AlertDialog>):AlertDialog;
+	public static function createAlertDialog (?parameters:Dynamic):titanium.ui.AlertDialog;
 	/** Creates and returns an instance of Titanium.UI.Animation. */
-	public static function createAnimation (?parameters:Dynamic<Animation>):Animation;
+	public static function createAnimation (?parameters:Dynamic):titanium.ui.Animation;
 	/** Creates and returns an instance of Titanium.UI.Button. */
-	public static function createButton (?parameters:Dynamic<Button>):Button;
+	public static function createButton (?parameters:Dynamic):titanium.ui.Button;
 	/** Creates and returns an instance of Titanium.UI.ButtonBar. */
-	public static function createButtonBar (?parameters:Dynamic<ButtonBar>):ButtonBar;
+	public static function createButtonBar (?parameters:Dynamic):titanium.ui.ButtonBar;
 	/** Creates and returns an instance of Titanium.UI.CoverFlowView. */
-	public static function createCoverFlowView (?parameters:Dynamic<CoverFlowView>):CoverFlowView;
+	public static function createCoverFlowView (?parameters:Dynamic):titanium.ui.CoverFlowView;
 	/** Creates and returns an instance of Titanium.UI.DashboardItem. */
-	public static function createDashboardItem (?parameters:Dynamic<DashboardItem>):DashboardItem;
+	public static function createDashboardItem (?parameters:Dynamic):titanium.ui.DashboardItem;
 	/** Creates and returns an instance of Titanium.UI.DashboardView. */
-	public static function createDashboardView (?parameters:Dynamic<DashboardView>):DashboardView;
+	public static function createDashboardView (?parameters:Dynamic):titanium.ui.DashboardView;
 	/** Creates and returns an instance of Titanium.UI.EmailDialog. */
-	public static function createEmailDialog (?parameters:Dynamic<EmailDialog>):EmailDialog;
+	public static function createEmailDialog (?parameters:Dynamic):titanium.ui.EmailDialog;
 	/** Creates and returns an instance of Titanium.UI.ImageView. */
-	public static function createImageView (?parameters:Dynamic<ImageView>):ImageView;
+	public static function createImageView (?parameters:Dynamic):titanium.ui.ImageView;
 	/** Creates and returns an instance of Titanium.UI.Label. */
-	public static function createLabel (?parameters:Dynamic<Label>):Label;
+	public static function createLabel (?parameters:Dynamic):titanium.ui.Label;
 	/** Creates and returns an instance of Titanium.UI.MaskedImage. */
-	public static function createMaskedImage (?parameters:Dynamic<MaskedImage>):MaskedImage;
+	public static function createMaskedImage (?parameters:Dynamic):titanium.ui.MaskedImage;
 	/** Creates and returns an instance of Titanium.UI.Notification. */
-	public static function createNotification (?parameters:Dynamic<Notification>):Notification;
+	public static function createNotification (?parameters:Dynamic):titanium.ui.Notification;
 	/** Creates and returns an instance of Titanium.UI.OptionDialog. */
-	public static function createOptionDialog (?parameters:Dynamic<OptionDialog>):OptionDialog;
+	public static function createOptionDialog (?parameters:Dynamic):titanium.ui.OptionDialog;
 	/** Creates and returns an instance of Titanium.UI.Picker. */
-	public static function createPicker (?parameters:Dynamic<Picker>):Picker;
+	public static function createPicker (?parameters:Dynamic):titanium.ui.Picker;
 	/** Creates and returns an instance of Titanium.UI.PickerColumn. */
-	public static function createPickerColumn (?parameters:Dynamic<PickerColumn>):PickerColumn;
+	public static function createPickerColumn (?parameters:Dynamic):titanium.ui.PickerColumn;
 	/** Creates and returns an instance of Titanium.UI.PickerRow. */
-	public static function createPickerRow (?parameters:Dynamic<PickerRow>):PickerRow;
+	public static function createPickerRow (?parameters:Dynamic):titanium.ui.PickerRow;
 	/** Creates and returns an instance of Titanium.UI.ProgressBar. */
-	public static function createProgressBar (?parameters:Dynamic<ProgressBar>):ProgressBar;
+	public static function createProgressBar (?parameters:Dynamic):titanium.ui.ProgressBar;
 	/** Creates and returns an instance of Titanium.UI.ScrollableView. */
-	public static function createScrollableView (?parameters:Dynamic<ScrollableView>):ScrollableView;
+	public static function createScrollableView (?parameters:Dynamic):titanium.ui.ScrollableView;
 	/** Creates and returns an instance of Titanium.UI.ScrollView. */
-	public static function createScrollView (?parameters:Dynamic<ScrollView>):ScrollView;
+	public static function createScrollView (?parameters:Dynamic):titanium.ui.ScrollView;
 	/** Creates and returns an instance of Titanium.UI.SearchBar. */
-	public static function createSearchBar (?parameters:Dynamic<SearchBar>):SearchBar;
+	public static function createSearchBar (?parameters:Dynamic):titanium.ui.SearchBar;
 	/** Creates and returns an instance of Titanium.UI.Slider. */
-	public static function createSlider (?parameters:Dynamic<Slider>):Slider;
+	public static function createSlider (?parameters:Dynamic):titanium.ui.Slider;
 	/** Creates and returns an instance of Titanium.UI.Switch. */
-	public static function createSwitch (?parameters:Dynamic<Switch>):Switch;
+	public static function createSwitch (?parameters:Dynamic):titanium.ui.Switch;
 	/** Creates and returns an instance of Titanium.UI.Tab. */
-	public static function createTab (?parameters:Dynamic<Tab>):Tab;
+	public static function createTab (?parameters:Dynamic):titanium.ui.Tab;
 	/** Creates and returns an instance of Titanium.UI.TabbedBar. */
-	public static function createTabbedBar (?parameters:Dynamic<TabbedBar>):TabbedBar;
+	public static function createTabbedBar (?parameters:Dynamic):titanium.ui.TabbedBar;
 	/** Creates and returns an instance of Titanium.UI.TabGroup. */
-	public static function createTabGroup (?parameters:Dynamic<TabGroup>):TabGroup;
+	public static function createTabGroup (?parameters:Dynamic):titanium.ui.TabGroup;
 	/** Creates and returns an instance of Titanium.UI.TableView. */
-	public static function createTableView (?parameters:Dynamic<TableView>):TableView;
+	public static function createTableView (?parameters:Dynamic):titanium.ui.TableView;
 	/** Creates and returns an instance of Titanium.UI.TableViewRow. */
-	public static function createTableViewRow (?parameters:Dynamic<TableViewRow>):TableViewRow;
+	public static function createTableViewRow (?parameters:Dynamic):titanium.ui.TableViewRow;
 	/** Creates and returns an instance of Titanium.UI.TableViewSection. */
-	public static function createTableViewSection (?parameters:Dynamic<TableViewSection>):TableViewSection;
+	public static function createTableViewSection (?parameters:Dynamic):titanium.ui.TableViewSection;
 	/** Creates and returns an instance of Titanium.UI.TextArea. */
-	public static function createTextArea (?parameters:Dynamic<TextArea>):TextArea;
+	public static function createTextArea (?parameters:Dynamic):titanium.ui.TextArea;
 	/** Creates and returns an instance of Titanium.UI.TextField. */
-	public static function createTextField (?parameters:Dynamic<TextField>):TextField;
+	public static function createTextField (?parameters:Dynamic):titanium.ui.TextField;
 	/** Creates and returns an instance of Titanium.UI.Toolbar. */
-	public static function createToolbar (?parameters:Dynamic<Toolbar>):Toolbar;
+	public static function createToolbar (?parameters:Dynamic):titanium.ui.Toolbar;
 	/** Creates and returns an instance of Titanium.UI.View. */
-	public static function createView (?parameters:Dynamic<View>):View;
+	public static function createView (?parameters:Dynamic):titanium.ui.View;
 	/** Creates and returns an instance of Titanium.UI.WebView. */
-	public static function createWebView (?parameters:Dynamic<WebView>):WebView;
+	public static function createWebView (?parameters:Dynamic):titanium.ui.WebView;
 	/** Creates and returns an instance of Titanium.UI.Window. */
-	public static function createWindow (?parameters:Dynamic<Window>):Window;
+	public static function createWindow (?parameters:Dynamic):titanium.ui.Window;
 	/** Creates are returns an instance of Titanium.UI.2DMatrix. */
-	public static function create2DMatrix (?parameters:MatrixCreationDict):2DMatrix;
+	public static function create2DMatrix (?parameters:titanium.MatrixCreationDict):titanium.ui.Matrix2D;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the backgroundColor property. */
@@ -268,10 +268,10 @@ controls displayed). */
 	/** Gets the value of the currentWindow property. */
 	public static function getCurrentWindow ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the backgroundImage property. */
 	public static function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the currentTab property. */
-	public static function setCurrentTab (currentTab:Tab):Void;
+	public static function setCurrentTab (currentTab:titanium.ui.Tab):Void;
 
 }

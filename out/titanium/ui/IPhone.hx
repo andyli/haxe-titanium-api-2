@@ -1,5 +1,7 @@
 package titanium.ui;
 
+import titanium.HideStatusBarParams;
+import titanium.ShowStatusBarParams;
 import titanium.ui.iphone.NavigationGroup;
 
 
@@ -43,9 +45,9 @@ the screen. */
 	public static var MODAL_PRESENTATION_FORMSHEET(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iPhone.NavigationGroup. */
-	public static function createNavigationGroup (?parameters:Dynamic<NavigationGroup>):NavigationGroup;
+	public static function createNavigationGroup (?parameters:Dynamic):titanium.ui.iphone.NavigationGroup;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the appBadge property. */
@@ -57,9 +59,9 @@ the screen. */
 	/** Gets the value of the statusBarStyle property. */
 	public static function getStatusBarStyle ():Void;
 	/** Hides the status bar. */
-	public static function hideStatusBar (?params:HideStatusBarParams):Void;
+	public static function hideStatusBar (?params:titanium.HideStatusBarParams):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the appBadge property. */
 	public static function setAppBadge (appBadge:Float):Void;
 	/** Sets the value of the appSupportsShakeToEdit property. */
@@ -69,6 +71,6 @@ the screen. */
 	/** Sets the value of the statusBarStyle property. */
 	public static function setStatusBarStyle (statusBarStyle:Float):Void;
 	/** Shows the status bar. */
-	public static function showStatusBar (?params:ShowStatusBarParams):Void;
+	public static function showStatusBar (?params:titanium.ShowStatusBarParams):Void;
 
 }

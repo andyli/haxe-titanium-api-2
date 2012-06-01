@@ -1,30 +1,30 @@
 package titanium.ui;
 
-import array<titanium.ui.View>;
 import titanium.android.Activity;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Gradient;
+import titanium.OpenWindowParams;
 import titanium.Point;
 import titanium.ui.View;
 
 
 /** The Window is an empty drawing surface or container. */
 @:native ("Titanium.UI.Window")
-extern class Window {
+typedef Window = {
 
 	/** A background gradient for the view. */
-	public var backgroundGradient:Gradient;
+	public var backgroundGradient:titanium.Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	public var anchorPoint:Point;
+	public var anchorPoint:titanium.Point;
 	/** Array of button objects to show in the window's toolbar. This is only valid when
 the window is the child of a tab. */
-	public var toolbar:Array<Object>;
+	public var toolbar:Array<Dynamic>;
 	/** Array of supported orientation modes, specified using the orientation
 constants defined in Titanium.UI. */
-	public var orientationModes:Array<Number>;
+	public var orientationModes:Array<Float>;
 	/** Array of this view's child views. */
-	public var children(default,null):View>;
+	public var children(default,null):Array<titanium.ui.View>;
 	/** Background color for the nav bar, as a color name or hex triplet. */
 	public var barColor:String;
 	/** Background color of the view, as a color name or hex triplet. */
@@ -55,7 +55,7 @@ Back button is pressed while the window is being shown. */
 	/** Current orientation of the window. */
 	public var orientation:Float;
 	/** Current position of the view during an animation. */
-	public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):titanium.Point;
 	/** Determines keyboard behavior when this view is focused. */
 	public var softKeyboardOnFocus:Float;
 	/** Determines whether a heavyweight window's soft input area (ie software keyboard) is visible 
@@ -72,7 +72,7 @@ contents in view. */
 	public var backgroundFocusedImage:String;
 	/** For heavyweight windows, this property contains a reference to the
 Android Activity object associated with this window. */
-	public var activity:Activity;
+	public var activity:titanium.android.Activity;
 	/** For modal windows, hide the nav bar (true) or show the nav bar (false). */
 	public var navBarHidden:Bool;
 	/** Image to show in the title area of the nav bar, specified as a local file path or URL. */
@@ -97,13 +97,13 @@ Android Activity object associated with this window. */
 One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
 	/** The bounding box of the view relative to its parent, in system units. */
-	public var rect(default,null):Dimension;
+	public var rect(default,null):titanium.Dimension;
 	/** The image to show as the back button. This is only valid when the window is a child of a tab. */
 	public var backButtonTitleImage:Dynamic;
 	/** The opacity from 0.0-1.0. */
 	public var opacity:Float;
 	/** The size of the view in system units.  */
-	public var size(default,null):Dimension;
+	public var size(default,null):titanium.Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Title for the back button. This is only valid when the window is a child of a tab. */
@@ -119,15 +119,15 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** View height, in platform-specific units. */
 	public var height:Dynamic;
 	/** View to show in the left nav bar area. */
-	public var leftNavButton:View;
+	public var leftNavButton:titanium.ui.View;
 	/** View to show in the right nav bar area. */
-	public var rightNavButton:View;
+	public var rightNavButton:titanium.ui.View;
 	/** View to show in the title area of the nav bar. */
-	public var titleControl:View;
+	public var titleControl:titanium.ui.View;
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	public var center:Point;
+	public var center:titanium.Point;
 	/** View's left position, in platform-specific units. */
 	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
@@ -144,13 +144,13 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	public function add (view:View):Void;
+	public function add (view:titanium.ui.View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Animates this view. */
-	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic):Void;
 	/** Closes the window. */
-	public function close (?params:Dynamic<Animation>):Void;
+	public function close (?params:Dynamic):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -284,20 +284,20 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** Makes this view visible. */
 	public function show ():Void;
 	/** Opens the window. */
-	public function open (?params:OpenWindowParams):Void;
+	public function open (?params:titanium.OpenWindowParams):Void;
 	/** Performs a batch update of all supplied layout properties and schedules a
 layout pass after they have been updated. */
 	public function updateLayout (params:Dynamic):Void;
 	/** Removes a child view from this view's hierarchy. */
-	public function remove (view:View):Void;
+	public function remove (view:titanium.ui.View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
-	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:titanium.Blob->Dynamic, ?honorScaleFactor:Bool):titanium.Blob;
 	/** Sets the value of the activity property. */
-	public function setActivity (activity:Activity):Void;
+	public function setActivity (activity:titanium.android.Activity):Void;
 	/** Sets the value of the anchorPoint property. */
-	public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:titanium.Point):Void;
 	/** Sets the value of the backButtonTitle property. */
 	public function setBackButtonTitle (backButtonTitle:String):Void;
 	/** Sets the value of the backButtonTitleImage property. */
@@ -313,7 +313,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the backgroundFocusedImage property. */
 	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:titanium.Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
 	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
@@ -339,7 +339,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	public function setCenter (center:Point):Void;
+	public function setCenter (center:titanium.Point):Void;
 	/** Sets the value of the focusable property. */
 	public function setFocusable (focusable:Bool):Void;
 	/** Sets the value of the fullscreen property. */
@@ -353,7 +353,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the left property. */
 	public function setLeft (left:Dynamic):Void;
 	/** Sets the value of the leftNavButton property. */
-	public function setLeftNavButton (leftNavButton:View):Void;
+	public function setLeftNavButton (leftNavButton:titanium.ui.View):Void;
 	/** Sets the value of the modal property. */
 	public function setModal (modal:Bool):Void;
 	/** Sets the value of the navBarHidden property. */
@@ -363,11 +363,11 @@ layout pass after they have been updated. */
 	/** Sets the value of the orientation property. */
 	public function setOrientation (orientation:Float):Void;
 	/** Sets the value of the orientationModes property. */
-	public function setOrientationModes (orientationModes:Array<Number>):Void;
+	public function setOrientationModes (orientationModes:Array<Float>):Void;
 	/** Sets the value of the right property. */
 	public function setRight (right:Dynamic):Void;
 	/** Sets the value of the rightNavButton property. */
-	public function setRightNavButton (rightNavButton:View):Void;
+	public function setRightNavButton (rightNavButton:titanium.ui.View):Void;
 	/** Sets the value of the softKeyboardOnFocus property. */
 	public function setSoftKeyboardOnFocus (softKeyboardOnFocus:Float):Void;
 	/** Sets the value of the tabBarHidden property. */
@@ -375,7 +375,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the title property. */
 	public function setTitle (title:String):Void;
 	/** Sets the value of the titleControl property. */
-	public function setTitleControl (titleControl:View):Void;
+	public function setTitleControl (titleControl:titanium.ui.View):Void;
 	/** Sets the value of the titleid property. */
 	public function setTitleid (titleid:String):Void;
 	/** Sets the value of the titleImage property. */
@@ -385,7 +385,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the titlepromptid property. */
 	public function setTitlepromptid (titlepromptid:String):Void;
 	/** Sets the value of the toolbar property. */
-	public function setToolbar (toolbar:Array<Object>):Void;
+	public function setToolbar (toolbar:Array<Dynamic>):Void;
 	/** Sets the value of the top property. */
 	public function setTop (top:Dynamic):Void;
 	/** Sets the value of the touchEnabled property. */
@@ -406,6 +406,6 @@ layout pass after they have been updated. */
 	public function startLayout ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:titanium.Point, destinationView:titanium.ui.View):titanium.Point;
 
 }

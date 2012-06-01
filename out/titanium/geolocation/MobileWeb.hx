@@ -17,7 +17,7 @@ extern class MobileWeb {
 	public static var reverseGeocoderTimeout:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the forwardGeocoderTimeout property. */
@@ -31,7 +31,7 @@ extern class MobileWeb {
 	/** Gets the value of the reverseGeocoderTimeout property. */
 	public static function getReverseGeocoderTimeout ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the forwardGeocoderTimeout property. */
 	public static function setForwardGeocoderTimeout (forwardGeocoderTimeout:Float):Void;
 	/** Sets the value of the locationTimeout property. */

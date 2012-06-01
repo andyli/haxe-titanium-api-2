@@ -103,7 +103,7 @@ is accomodated by the current heavyweight window when it receives focus (default
 	public static var WEBVIEW_PLUGINS_ON(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Hides the soft keyboard. */
@@ -112,6 +112,6 @@ is accomodated by the current heavyweight window when it receives focus (default
 defined by the platform-specific preferences.xml and array.xml files. */
 	public static function openPreferences ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

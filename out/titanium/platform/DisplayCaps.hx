@@ -3,7 +3,7 @@ package titanium.platform;
 
 /** The Display Caps object returned by the Titanium.Platform.displayCaps property. */
 @:native ("Titanium.Platform.DisplayCaps")
-extern class DisplayCaps {
+typedef DisplayCaps = {
 
 	/** Absolute height of the display in relation to UI orientation. Measured in platform-specific 
 units; pixels on Android and density-independent pixels (dip) on iOS. */
@@ -24,7 +24,7 @@ unit. */
 	public var ydpi:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the density property. */
@@ -42,7 +42,7 @@ unit. */
 	/** Gets the value of the ydpi property. */
 	public function getYdpi ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the density property. */
 	public function setDensity (density:String):Void;
 	/** Sets the value of the dpi property. */

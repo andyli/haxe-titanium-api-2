@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the dialog callback when a dialog is completed or canceled. */
 @:native ("FacebookDialogResponse")
-extern class FacebookDialogResponse {
+typedef FacebookDialogResponse = {
 
 	/** Error message, if request failed. */
 	public var error:String;

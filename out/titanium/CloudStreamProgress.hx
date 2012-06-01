@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback as a request is transmitted or received. */
 @:native ("CloudStreamProgress")
-extern class CloudStreamProgress {
+typedef CloudStreamProgress = {
 
 	/** A value from 0.0-1.0 with the progress of the exchange. */
 	public var progress:Float;

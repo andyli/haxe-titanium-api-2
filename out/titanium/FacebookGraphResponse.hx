@@ -4,7 +4,7 @@ package titanium;
 /** Argument passed to the graph API callback, in response to a
 requestWithGraphPath call. */
 @:native ("FacebookGraphResponse")
-extern class FacebookGraphResponse {
+typedef FacebookGraphResponse = {
 
 	/** Error message, if request failed. */
 	public var error:String;

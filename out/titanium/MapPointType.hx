@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object representing a point on the map. */
 @:native ("MapPointType")
-extern class MapPointType {
+typedef MapPointType = {
 
 	/** Latitude value of the map point, in decimal degrees. */
 	public var latitude:Float;

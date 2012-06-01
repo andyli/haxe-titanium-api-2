@@ -1,6 +1,5 @@
 package titanium.ui.ios;
 
-import array<titanium.ui.View>;
 import titanium.Blob;
 import titanium.Dimension;
 import titanium.Gradient;
@@ -10,16 +9,16 @@ import titanium.ui.View;
 
 /** A button bar that maintains a selected state. */
 @:native ("Titanium.UI.iOS.TabbedBar")
-extern class TabbedBar {
+typedef TabbedBar = {
 
 	/** A background gradient for the view. */
-	public var backgroundGradient:Gradient;
+	public var backgroundGradient:titanium.Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
-	public var anchorPoint:Point;
+	public var anchorPoint:titanium.Point;
 	/** Array of labels for the tabbed bar. */
 	public var labels:Dynamic;
 	/** Array of this view's child views. */
-	public var children(default,null):View>;
+	public var children(default,null):Array<titanium.ui.View>;
 	/** Background color of the view, as a color name or hex triplet. */
 	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
@@ -33,7 +32,7 @@ extern class TabbedBar {
 	/** Border width of the view. */
 	public var borderWidth:Float;
 	/** Current position of the view during an animation. */
-	public var animatedCenterPoint(default,null):Point;
+	public var animatedCenterPoint(default,null):titanium.Point;
 	/** Determines keyboard behavior when this view is focused. */
 	public var softKeyboardOnFocus:Float;
 	/** Disabled background color of the view, as a color name or hex triplet. */
@@ -62,9 +61,9 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** Style of the tabbed bar. */
 	public var style:Float;
 	/** The bounding box of the view relative to its parent, in system units. */
-	public var rect(default,null):Dimension;
+	public var rect(default,null):titanium.Dimension;
 	/** The size of the view in system units.  */
-	public var size(default,null):Dimension;
+	public var size(default,null):titanium.Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -76,7 +75,7 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
-	public var center:Point;
+	public var center:titanium.Point;
 	/** View's left position, in platform-specific units. */
 	public var left:Dynamic;
 	/** View's right position, in platform-specific units. */
@@ -93,11 +92,11 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
-	public function add (view:View):Void;
+	public function add (view:titanium.ui.View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Animates this view. */
-	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	public function animate (obj:Dynamic, _callback:Dynamic):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -188,13 +187,13 @@ One of: 'composite', 'vertical', or 'horizontal'. */
 layout pass after they have been updated. */
 	public function updateLayout (params:Dynamic):Void;
 	/** Removes a child view from this view's hierarchy. */
-	public function remove (view:View):Void;
+	public function remove (view:titanium.ui.View):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
-	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	public function toImage (?_callback:titanium.Blob->Dynamic, ?honorScaleFactor:Bool):titanium.Blob;
 	/** Sets the value of the anchorPoint property. */
-	public function setAnchorPoint (anchorPoint:Point):Void;
+	public function setAnchorPoint (anchorPoint:titanium.Point):Void;
 	/** Sets the value of the backgroundColor property. */
 	public function setBackgroundColor (backgroundColor:String):Void;
 	/** Sets the value of the backgroundDisabledColor property. */
@@ -206,7 +205,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the backgroundFocusedImage property. */
 	public function setBackgroundFocusedImage (backgroundFocusedImage:String):Void;
 	/** Sets the value of the backgroundGradient property. */
-	public function setBackgroundGradient (backgroundGradient:Gradient):Void;
+	public function setBackgroundGradient (backgroundGradient:titanium.Gradient):Void;
 	/** Sets the value of the backgroundImage property. */
 	public function setBackgroundImage (backgroundImage:String):Void;
 	/** Sets the value of the backgroundLeftCap property. */
@@ -228,7 +227,7 @@ layout pass after they have been updated. */
 	/** Sets the value of the bottom property. */
 	public function setBottom (bottom:Dynamic):Void;
 	/** Sets the value of the center property. */
-	public function setCenter (center:Point):Void;
+	public function setCenter (center:titanium.Point):Void;
 	/** Sets the value of the focusable property. */
 	public function setFocusable (focusable:Bool):Void;
 	/** Sets the value of the height property. */
@@ -267,6 +266,6 @@ layout pass after they have been updated. */
 	public function startLayout ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
-	public function convertPointToView (point:Point, destinationView:View):Point;
+	public function convertPointToView (point:titanium.Point, destinationView:titanium.ui.View):titanium.Point;
 
 }

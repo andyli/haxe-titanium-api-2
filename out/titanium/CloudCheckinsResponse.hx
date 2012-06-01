@@ -3,7 +3,7 @@ package titanium;
 
 /** Argument passed to the callback when a request finishes successfully or erroneously. */
 @:native ("CloudCheckinsResponse")
-extern class CloudCheckinsResponse {
+typedef CloudCheckinsResponse = {
 
 	/** Error code, if any returned. */
 	public var code:Float;
@@ -16,6 +16,6 @@ extern class CloudCheckinsResponse {
 	/** Meta data, if any returned. */
 	public var meta:Dynamic;
 	/** Set of checkins objects, if any exist. */
-	public var checkins:Array<Dictionary>;
+	public var checkins:Array<Dynamic>;
 
 }

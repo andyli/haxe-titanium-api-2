@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object describing a location provider. */
 @:native ("LocationProviderDict")
-extern class LocationProviderDict {
+typedef LocationProviderDict = {
 
 	/** Accuracy of the location provider, either fine (1) or coarse (2). */
 	public var accuracy:Float;

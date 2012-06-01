@@ -5,12 +5,12 @@ import titanium.Buffer;
 
 /** Named parameters for Titanium.Codec.encodeString. */
 @:native ("EncodeStringDict")
-extern class EncodeStringDict {
+typedef EncodeStringDict = {
 
 	/** Character encoding to use when encoding this string to bytes. */
 	public var charset:String;
 	/** Destination buffer. */
-	public var dest:Buffer;
+	public var dest:titanium.Buffer;
 	/** Index in the dest buffer of the first byte of the encoded string. */
 	public var destPosition:Float;
 	/** Number of characters in source to encode. */

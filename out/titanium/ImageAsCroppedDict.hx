@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object used to specify options for imageAsCropped. */
 @:native ("ImageAsCroppedDict")
-extern class ImageAsCroppedDict {
+typedef ImageAsCroppedDict = {
 
 	/** Height to crop this image to. */
 	public var height:Float;

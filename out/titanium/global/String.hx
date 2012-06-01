@@ -3,7 +3,7 @@ package titanium.global;
 
 /** The JavaScript built-in String type. */
 @:native ("String")
-extern class String {
+typedef String = {
 
 	/** Formats a date into the date format of the locale configured for the system. */
 	public function formatDate (date:Date, ?format:String):String;

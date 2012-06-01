@@ -4,7 +4,7 @@ package titanium;
 /** Argument passed to the REST API callback when a request completes (successfully
 or unsuccessfully). */
 @:native ("FacebookRESTResponse")
-extern class FacebookRESTResponse {
+typedef FacebookRESTResponse = {
 
 	/** Error message, if request failed. */
 	public var error:String;

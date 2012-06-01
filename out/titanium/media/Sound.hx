@@ -3,7 +3,7 @@ package titanium.media;
 
 /** An object for playing basic audio resources. */
 @:native ("Titanium.Media.Sound")
-extern class Sound {
+typedef Sound = {
 
 	/** Current playback position of the audio. */
 	public var time:Float;
@@ -23,7 +23,7 @@ extern class Sound {
 	public var volume:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the duration property. */
@@ -39,7 +39,7 @@ extern class Sound {
 	/** Releases all internal resources. */
 	public function release ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Resets the audio playback position to the beginning. */
 	public function reset ():Void;
 	/** Returns the value of the looping property. */

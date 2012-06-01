@@ -1,8 +1,8 @@
 package titanium.ui;
 
-import titanium.ui.ios.3DMatrix;
 import titanium.ui.ios.AdView;
 import titanium.ui.ios.CoverFlowView;
+import titanium.ui.ios.Matrix3D;
 import titanium.ui.ios.TabbedBar;
 import titanium.ui.ios.Toolbar;
 
@@ -100,20 +100,20 @@ slowly, and speeds up, then slows down at the end of the animation. */
 	public static var BLEND_MODE_XOR(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates and returns an instance of Titanium.UI.iOS.3DMatrix. */
-	public static function create3DMatrix (?parameters:Dynamic<3DMatrix>):3DMatrix;
+	public static function create3DMatrix (?parameters:Dynamic):titanium.ui.ios.Matrix3D;
 	/** Creates and returns an instance of Titanium.UI.iOS.AdView. */
-	public static function createAdView (?parameters:Dynamic<AdView>):AdView;
+	public static function createAdView (?parameters:Dynamic):titanium.ui.ios.AdView;
 	/** Creates and returns an instance of Titanium.UI.iOS.CoverFlowView. */
-	public static function createCoverFlowView (?parameters:Dynamic<CoverFlowView>):CoverFlowView;
+	public static function createCoverFlowView (?parameters:Dynamic):titanium.ui.ios.CoverFlowView;
 	/** Creates and returns an instance of Titanium.UI.iOS.TabbedBar. */
-	public static function createTabbedBar (?parameters:Dynamic<TabbedBar>):TabbedBar;
+	public static function createTabbedBar (?parameters:Dynamic):titanium.ui.ios.TabbedBar;
 	/** Creates and returns an instance of Titanium.UI.iOS.Toolbar. */
-	public static function createToolbar (?parameters:Dynamic<Toolbar>):Toolbar;
+	public static function createToolbar (?parameters:Dynamic):titanium.ui.ios.Toolbar;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

@@ -8,9 +8,9 @@ import titanium.CloudStreamProgress;
 extern class Cloud {
 
 	/** Function to be called at regular intervals as the request data is being received. */
-	public static var ondatastream:CloudStreamProgress->Dynamic;
+	public static var ondatastream:titanium.CloudStreamProgress->Dynamic;
 	/** Function to be called at regular intervals as the request data is being transmitted. */
-	public static var onsendstream:CloudStreamProgress->Dynamic;
+	public static var onsendstream:titanium.CloudStreamProgress->Dynamic;
 	/** Indicates whether internal debug logging should be output to the console. */
 	public static var debug:Bool;
 	/** Indicates whether to use SSL when sending requests to ACS. */
@@ -31,9 +31,9 @@ extern class Cloud {
 	/** Sets the value of the debug property. */
 	public static function setDebug (debug:Bool):Void;
 	/** Sets the value of the ondatastream property. */
-	public static function setOndatastream (ondatastream:CloudStreamProgress->Dynamic):Void;
+	public static function setOndatastream (ondatastream:titanium.CloudStreamProgress->Dynamic):Void;
 	/** Sets the value of the onsendstream property. */
-	public static function setOnsendstream (onsendstream:CloudStreamProgress->Dynamic):Void;
+	public static function setOnsendstream (onsendstream:titanium.CloudStreamProgress->Dynamic):Void;
 	/** Sets the value of the useSecure property. */
 	public static function setUseSecure (useSecure:Bool):Void;
 

@@ -3,7 +3,7 @@ package titanium;
 
 /** The parameter for setContentInsets method. */
 @:native ("TableViewEdgeInsets")
-extern class TableViewEdgeInsets {
+typedef TableViewEdgeInsets = {
 
 	/** Value specifying the bottom insets for the enclosing scroll view of the table. */
 	public var bottom:Float;

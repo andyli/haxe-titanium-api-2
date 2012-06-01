@@ -85,7 +85,7 @@ accuracy available. */
 	public static var ACCURACY_BEST(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the accuracy property. */
@@ -105,13 +105,13 @@ accuracy available. */
 	/** Gets the value of the showCalibration property. */
 	public static function getShowCalibration ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Resolves an address to a location. */
-	public static function forwardGeocoder (address:String, _callback:ForwardGeocodeResponse->Dynamic):Void;
+	public static function forwardGeocoder (address:String, _callback:titanium.ForwardGeocodeResponse->Dynamic):Void;
 	/** Retrieves the current compass heading. */
-	public static function getCurrentHeading (_callback:HeadingResponse->Dynamic):Void;
+	public static function getCurrentHeading (_callback:titanium.HeadingResponse->Dynamic):Void;
 	/** Retrieves the last known location from the device. */
-	public static function getCurrentPosition (_callback:Dynamic->Dynamic):Void;
+	public static function getCurrentPosition (_callback:Dynamic):Void;
 	/** Sets the value of the accuracy property. */
 	public static function setAccuracy (accuracy:Float):Void;
 	/** Sets the value of the distanceFilter property. */
@@ -127,6 +127,6 @@ accuracy available. */
 	/** Sets the value of the showCalibration property. */
 	public static function setShowCalibration (showCalibration:Bool):Void;
 	/** Tries to resolve a location to an address. */
-	public static function reverseGeocoder (latitude:Float, longitude:Float, _callback:ReverseGeocodeResponse->Dynamic):Void;
+	public static function reverseGeocoder (latitude:Float, longitude:Float, _callback:titanium.ReverseGeocodeResponse->Dynamic):Void;
 
 }

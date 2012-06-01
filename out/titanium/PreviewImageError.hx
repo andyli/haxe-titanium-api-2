@@ -3,7 +3,7 @@ package titanium;
 
 /** The parameter passed to the error callback of PreviewImageOptions. */
 @:native ("PreviewImageError")
-extern class PreviewImageError {
+typedef PreviewImageError = {
 
 	/** Description of the error. */
 	public var message:String;

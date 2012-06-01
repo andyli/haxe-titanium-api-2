@@ -1,23 +1,21 @@
 package titanium.android.calendar;
 
-import array<titanium.android.calendar.Alert>;
-import array<titanium.android.calendar.Reminder>;
 import titanium.android.calendar.Alert;
 import titanium.android.calendar.Reminder;
 
 
 /** An object that represents a single event in an Android calendar. */
 @:native ("Titanium.Android.Calendar.Event")
-extern class Event {
+typedef Event = {
 
 	/** Description of this event. */
 	public var description(default,null):String;
 	/** End date/time of this event. */
 	public var end(default,null):Date;
 	/** Existing alerts for this event. */
-	public var alerts(default,null):Alert>;
+	public var alerts(default,null):Array<titanium.android.calendar.Alert>;
 	/** Existing reminders for this event. */
-	public var reminders(default,null):Reminder>;
+	public var reminders(default,null):Array<titanium.android.calendar.Reminder>;
 	/** Extended properties of this event. */
 	public var extendedProperties(default,null):Dynamic;
 	/** Identifier of this event. */
@@ -41,11 +39,11 @@ exists for this event. */
 	public var visibility(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates a reminder for this event. */
-	public function createReminder (data:Dynamic<Reminder>):Reminder;
+	public function createReminder (data:Dynamic):titanium.android.calendar.Reminder;
 	/** Creates an alert for this event. */
-	public function createAlert (data:Dynamic<Alert>):Alert;
+	public function createAlert (data:Dynamic):titanium.android.calendar.Alert;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the alerts property. */
@@ -79,7 +77,7 @@ exists for this event. */
 	/** Gets the value of the visibility property. */
 	public function getVisibility ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Sets the value of the specified extended property. */
 	public function setExtendedProperty (name:String, value:String):Void;
 

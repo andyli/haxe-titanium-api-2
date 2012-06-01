@@ -18,14 +18,14 @@ extern class Database {
 	public static var FIELD_TYPE_STRING(default,null):Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Installs an SQLite database to device's internal storage. */
-	public static function install (path:String, dbName:String):DB;
+	public static function install (path:String, dbName:String):titanium.database.DB;
 	/** Opens an SQLite database. */
-	public static function open (dbName:String):DB;
+	public static function open (dbName:String):titanium.database.DB;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 
 }

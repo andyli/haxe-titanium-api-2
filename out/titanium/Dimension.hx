@@ -3,7 +3,7 @@ package titanium;
 
 /** A simple object consisting of the position and size measurements. */
 @:native ("Dimension")
-extern class Dimension {
+typedef Dimension = {
 
 	/** The height measurement. */
 	public var height:Float;

@@ -8,6 +8,6 @@ import titanium.CloudClientsResponse;
 extern class Clients {
 
 	/** Locate a mobile device based on the IP address of the device. */
-	public static function geolocate (?parameters:Dynamic, _callback:CloudClientsResponse->Dynamic):Void;
+	public static function geolocate (?parameters:Dynamic, _callback:titanium.CloudClientsResponse->Dynamic):Void;
 
 }

@@ -6,7 +6,7 @@ import titanium.xml.Document;
 
 /** HTTP client object that (mostly) implements the XMLHttpRequest specification. */
 @:native ("Titanium.Network.HTTPClient")
-extern class HTTPClient {
+typedef HTTPClient = {
 
 	/** Absolute URL of the request. */
 	public var location(default,null):String;
@@ -27,15 +27,15 @@ extern class HTTPClient {
 	/** Determines whether the request should include any cookies and HTTP authentication information. */
 	public var withCredentials:Bool;
 	/** Function to be called at regular intervals as the request data is being received. */
-	public var ondatastream:Dynamic->Dynamic;
+	public var ondatastream:Dynamic;
 	/** Function to be called at regular intervals as the request data is being transmitted. */
-	public var onsendstream:Dynamic->Dynamic;
+	public var onsendstream:Dynamic;
 	/** Function to be called for each readyState change. */
-	public var onreadystatechange:Dynamic->Dynamic;
+	public var onreadystatechange:Dynamic;
 	/** Function to be called upon a error response. */
-	public var onerror:Dynamic->Dynamic;
+	public var onerror:Dynamic;
 	/** Function to be called upon a successful response. */
-	public var onload:Dynamic->Dynamic;
+	public var onload:Dynamic;
 	/** Human-readable status message associated with the status code. */
 	public var statusText(default,null):String;
 	/** Indicates whether the response was successful. */
@@ -54,11 +54,11 @@ not yet been sent. */
 	/** Response as text. */
 	public var responseText(default,null):String;
 	/** Response data as a Blob object. */
-	public var responseData(default,null):Blob;
+	public var responseData(default,null):titanium.Blob;
 	/** Response HTTP status code. */
 	public var status(default,null):Float;
 	/** Response object as an XML DOM Document object. */
-	public var responseXML(default,null):Document;
+	public var responseXML(default,null):titanium.xml.Document;
 	/** Sets the TLS version to use for handshakes. */
 	public var tlsVersion:Float;
 	/** Target local file to receive data. */
@@ -69,7 +69,7 @@ not yet been sent. */
 	public var timeout:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Cancels a pending request. */
 	public function abort ():Void;
 	/** Clears any cookies stored for the host. */
@@ -127,7 +127,7 @@ not yet been sent. */
 	/** Opens the request and prepares the connection. */
 	public function open (method:String, url:String, ?async:Bool):Void;
 	/** Removes the specified callback as an event listener for the named event. */
-	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns the value of the specified response header. */
 	public function getResponseHeader (name:String):String;
 	/** Sends the request. */
@@ -147,15 +147,15 @@ not yet been sent. */
 	/** Sets the value of the file property. */
 	public function setFile (file:String):Void;
 	/** Sets the value of the ondatastream property. */
-	public function setOndatastream (ondatastream:Dynamic->Dynamic):Void;
+	public function setOndatastream (ondatastream:Dynamic):Void;
 	/** Sets the value of the onerror property. */
-	public function setOnerror (onerror:Dynamic->Dynamic):Void;
+	public function setOnerror (onerror:Dynamic):Void;
 	/** Sets the value of the onload property. */
-	public function setOnload (onload:Dynamic->Dynamic):Void;
+	public function setOnload (onload:Dynamic):Void;
 	/** Sets the value of the onreadystatechange property. */
-	public function setOnreadystatechange (onreadystatechange:Dynamic->Dynamic):Void;
+	public function setOnreadystatechange (onreadystatechange:Dynamic):Void;
 	/** Sets the value of the onsendstream property. */
-	public function setOnsendstream (onsendstream:Dynamic->Dynamic):Void;
+	public function setOnsendstream (onsendstream:Dynamic):Void;
 	/** Sets the value of the tlsVersion property. */
 	public function setTlsVersion (tlsVersion:Float):Void;
 	/** Sets the value of the validatesSecureCertificate property. */

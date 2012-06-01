@@ -34,11 +34,11 @@ extern class Filesystem {
 	public static var separator(default,null):String;
 
 	/** Adds the specified callback as an event listener for the named event. */
-	public static function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function addEventListener (name:String, _callback:Dynamic):Void;
 	/** Creates a temporary directory and returns a File object representing the new directory. */
-	public static function createTempDirectory ():File;
+	public static function createTempDirectory ():titanium.filesystem.File;
 	/** Creates a temporary file and returns a File object representing the new file. */
-	public static function createTempFile ():File;
+	public static function createTempFile ():titanium.filesystem.File;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the applicationCacheDirectory property. */
@@ -60,11 +60,11 @@ extern class Filesystem {
 	/** Gets the value of the tempDirectory property. */
 	public static function getTempDirectory ():Void;
 	/** Opens file using the Titanium.IOStream interface. */
-	public static function openStream (mode:Float, path:String):FileStream;
+	public static function openStream (mode:Float, path:String):titanium.filesystem.FileStream;
 	/** Removes the specified callback as an event listener for the named event. */
-	public static function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
+	public static function removeEventListener (name:String, _callback:Dynamic):Void;
 	/** Returns a File object representing the file identified by the path arguments. */
-	public static function getFile (path:String):File;
+	public static function getFile (path:String):titanium.filesystem.File;
 	/** Returns true if the device supports external storage and the external storage device is mounted. */
 	public static function isExternalStoragePresent ():Bool;
 

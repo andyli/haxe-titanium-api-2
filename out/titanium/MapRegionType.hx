@@ -3,7 +3,7 @@ package titanium;
 
 /** Simple object representing a map location and zoom level. */
 @:native ("MapRegionType")
-extern class MapRegionType {
+typedef MapRegionType = {
 
 	/** Latitude value for the center point of the map, in decimal degrees. */
 	public var latitude:Float;
