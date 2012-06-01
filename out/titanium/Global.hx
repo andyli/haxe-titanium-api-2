@@ -1,7 +1,5 @@
 package titanium;
 
-import titanium.Proxy;
-
 /** The APIs that reside in the global scope, which may be called without a namespace prefix. */
 extern class Global {
 
