@@ -1,7 +1,9 @@
 package titanium;
 
+import titanium.MusicLibraryResponseType;
 
-/** Simple object for specifying options to showMusicLibrary. */
+
+/** Simple object for specifying options to openMusicLibrary. */
 @:native ("MusicLibraryOptionsType")
 extern class MusicLibraryOptionsType {
 
@@ -14,7 +16,7 @@ extern class MusicLibraryOptionsType {
 	/** Function to call upon receiving an error. */
 	public var error:Dynamic->Dynamic;
 	/** Function to call when the music library selection is made. */
-	public var success:Dynamic->Dynamic;
+	public var success:MusicLibraryResponseType->Dynamic;
 	/** Set to true to allow the user to select multiple items from the library. */
 	public var allowMultipleSelections:Bool;
 	/** Specifies that the library should be hidden automatically after media selection is completed. */

@@ -9,20 +9,14 @@ import titanium.Point;
 import titanium.ui.View;
 
 
-/** A TableView section object created by the method Titanium.UI.createTableViewSection. */
+/** A table view section is a container within a table used to organize table view rows. */
 @:native ("Titanium.UI.TableViewSection")
 extern class TableViewSection {
 
 	/** A background gradient for the view. */
 	public var backgroundGradient:Gradient;
-	/** a view to use instead of the default label when rendering the section footer */
-	public var footerView:Dynamic;
-	/** a view to use instead of the default label when rendering the section header */
-	public var headerView:Dynamic;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
 	public var anchorPoint:Point;
-	/** Array of rows in the section. */
-	public var rows(default,null):TableViewRow>;
 	/** Array of this view's child views. */
 	public var children(default,null):View>;
 	/** Background color of the view, as a color name or hex triplet. */
@@ -49,8 +43,12 @@ extern class TableViewSection {
 	public var backgroundFocusedColor:String;
 	/** Focused background image for the view, specified as a local file path or URL. */
 	public var backgroundFocusedImage:String;
+	/** Number of rows in the section. */
+	public var rowCount(default,null):Float;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
+	/** Rows in the section. */
+	public var rows(default,null):TableViewRow>;
 	/** Selected background color of the view, as a color name or hex triplet. */
 	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
@@ -60,26 +58,28 @@ extern class TableViewSection {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
-	/** the number of rows in the section */
-	public var rowCount(default,null):Float;
-	/** the title of the section footer */
-	public var footerTitle:String;
-	/** the title of the section header */
-	public var headerTitle:String;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
+	/** Title of the section footer. */
+	public var footerTitle:String;
+	/** Title of the section header. */
+	public var headerTitle:String;
 	/** Toggle for whether or not to tile a background across a view. */
 	public var backgroundRepeat:Bool;
 	/** Transformation matrix to apply to the view. */
 	public var transform:Dynamic;
 	/** View height, in platform-specific units. */
 	public var height:Dynamic;
+	/** View to use instead of the default label when rendering the section footer. */
+	public var footerView:View;
+	/** View to use instead of the default label when rendering the section header. */
+	public var headerView:View;
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
@@ -96,7 +96,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -247,11 +247,9 @@ layout pass after they have been updated. */
 	/** Sets the value of the footerTitle property. */
 	public function setFooterTitle (footerTitle:String):Void;
 	/** Sets the value of the footerView property. */
-	public function setFooterView (footerView:Dynamic):Void;
+	public function setFooterView (footerView:View):Void;
 	/** Sets the value of the headerTitle property. */
 	public function setHeaderTitle (headerTitle:String):Void;
-	/** Sets the value of the headerView property. */
-	public function setHeaderView (headerView:Dynamic):Void;
 	/** Sets the value of the height property. */
 	public function setHeight (height:Dynamic):Void;
 	/** Sets the value of the keepScreenOn property. */

@@ -3,17 +3,17 @@ package titanium;
 import titanium.Buffer;
 
 
-/** Options for Titanium.Codec.decodeNumber */
+/** Named parameters for Titanium.Codec.decodeNumber. */
 @:native ("DecodeNumberDict")
 extern class DecodeNumberDict {
 
-	/** The buffer to decode */
+	/** Buffer to decode. */
 	public var source:Buffer;
-	/** The byte order to decode with */
+	/** byte order to decode with. */
 	public var byteOrder:Float;
-	/** The encoding type to use. Must be one of Titanium.Codec.TYPE_BYTE, Titanium.Codec.TYPE_SHORT, Titanium.Codec.TYPE_INT, Titanium.Codec.TYPE_FLOAT, Titanium.Codec.TYPE_LONG, or Titanium.Codec.TYPE_DOUBLE */
-	public var type:String;
-	/** The position in source to start at */
+	/** Index in the source buffer of the first byte of data to decode. */
 	public var position:Float;
+	/** The encoding type to use. Must be one of Titanium.Codec.TYPE_BYTE, Titanium.Codec.TYPE_SHORT, Titanium.Codec.TYPE_INT, Titanium.Codec.TYPE_FLOAT, Titanium.Codec.TYPE_LONG, or Titanium.Codec.TYPE_DOUBLE. */
+	public var type:String;
 
 }

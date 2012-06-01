@@ -5,19 +5,19 @@ package titanium;
 @:native ("CloudClientsResponse")
 extern class CloudClientsResponse {
 
-	/** A dictionary object containing meta data, if any. */
-	public var meta:Dynamic;
-	/** Error code, if any. */
+	/** Error code, if any returned. */
 	public var code:Float;
-	/** Error message, if any. */
+	/** Error message, if any returned. */
 	public var message:String;
-	/** IP address of client */
-	public var ip_address:String;
-	/** Location of client */
-	public var location:Dynamic;
-	/** Set to true if the request failed. */
+	/** Indicates whether the request failed. */
 	public var error:Bool;
-	/** Set to true if the request succeeded. */
+	/** Indicates whether the request succeeded. */
 	public var success:Bool;
+	/** IP address of client. */
+	public var ip_address:String;
+	/** Location of client. */
+	public var location:Dynamic;
+	/** Meta data, if any returned. */
+	public var meta:Dynamic;
 
 }

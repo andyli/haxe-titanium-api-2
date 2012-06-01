@@ -7,7 +7,7 @@ import titanium.CloudPhotosResponse;
 @:native ("Titanium.Cloud.Photos")
 extern class Photos {
 
-	/** Create, or upload, a new photo. */
+	/** Create or upload a new photo. */
 	public static function create (parameters:Dynamic, _callback:CloudPhotosResponse->Dynamic):Void;
 	/** Delete a photo. */
 	public static function remove (parameters:Dynamic, _callback:CloudPhotosResponse->Dynamic):Void;

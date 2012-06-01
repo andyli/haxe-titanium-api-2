@@ -1,7 +1,7 @@
 package titanium;
 
 
-/** The top level Accelerometer module.  The Accelerometer modules contains methods and properties for using the device accelerometer. */
+/** The top-level Accelerometer module, used to determine the device's physical position. */
 @:native ("Titanium.Accelerometer")
 extern class Accelerometer {
 

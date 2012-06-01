@@ -1,33 +1,56 @@
 package titanium.android;
 
 
-/** The Titanium binding of android.R.  Note that this accesses Android system-wide resources, not your application's resources.  To access your application's resources, you want Titanium.App.Android.R. */
+/** The Titanium binding of the Android system-wide resources class. */
 @:native ("Titanium.Android.R")
 extern class R {
 
-	/** Animation resources, see http://developer.android.com/reference/android/R.anim.html */
+	/** Animation resources. See 
+R.anim 
+in the Android Developer Reference. */
 	public var anim(default,null):Dynamic;
-	/** Array resources, see http://developer.android.com/reference/android/R.array.html */
+	/** Array resources. See R.array
+in the Android Developer Reference. */
 	public var array(default,null):Dynamic;
-	/** Attribute resources, see http://developer.android.com/reference/android/R.attr.html */
+	/** Attribute resources. See 
+R.attr
+in the Android Developer Reference. */
 	public var attr(default,null):Dynamic;
-	/** Color resources, see http://developer.android.com/reference/android/R.color.html */
+	/** Color resources. See 
+R.color
+in the Android Developer Reference. */
 	public var color(default,null):Dynamic;
-	/** Dimension resources, see http://developer.android.com/reference/android/R.dimen.html */
+	/** Dimension resources.  See 
+http://developer.android.com/reference/android/R.dimen.html
+in the Android Developer Reference. */
 	public var dimen(default,null):Dynamic;
-	/** Drawable resources, see http://developer.android.com/reference/android/R.drawable.html */
+	/** Drawable resources. See 
+R.drawable
+in the Android Developer Reference. */
 	public var drawable(default,null):Dynamic;
-	/** ID resources, see http://developer.android.com/reference/android/R.id.html */
+	/** ID resources.  See 
+R.id
+in the Android Developer Reference. */
 	public var id(default,null):Dynamic;
-	/** Integer resources, see http://developer.android.com/reference/android/R.integer.html */
+	/** Integer resources. See 
+R.integer
+in the Android Developer Reference. */
 	public var integer(default,null):Dynamic;
-	/** Layout resources, see http://developer.android.com/reference/android/R.layout.html */
+	/** Layout resources. See 
+R.layout
+in the Android Developer Reference. */
 	public var layout(default,null):Dynamic;
-	/** String resources, see http://developer.android.com/reference/android/R.string.html */
+	/** String resources. See 
+R.string
+in the Android Developer Reference. */
 	public var string(default,null):Dynamic;
-	/** Style resources, see http://developer.android.com/reference/android/R.style.html */
+	/** Style resources. See 
+R.style
+in the Android Developer Reference. */
 	public var style(default,null):Dynamic;
-	/** Styleable reosurces, see http://developer.android.com/reference/android/R.styleable.html */
+	/** Styleable reosurces. See 
+R.styleable
+in the Android Developer Reference. */
 	public var styleable(default,null):Dynamic;
 
 	/** Adds the specified callback as an event listener for the named event. */

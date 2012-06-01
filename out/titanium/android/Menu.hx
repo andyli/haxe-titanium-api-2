@@ -4,42 +4,46 @@ import array<titanium.android.MenuItem>;
 import titanium.android.MenuItem;
 
 
-/** The Titanium binding of an Android Menu */
+/** The Titanium binding of an Android Options Menu. */
 @:native ("Titanium.Android.Menu")
 extern class Menu {
 
-	/** array of Titanium.Android.MenuItem */
+	/** Array of menu items in this menu. */
 	public var items(default,null):MenuItem>;
 
 	/** Adds the specified callback as an event listener for the named event. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** clear all items from the menu. You should release all references you have retained to Titanium.Android.MenuItem previously created. */
+	/** Clears all items from this menu. */
 	public function clear ():Void;
-	/** close the menu if visible */
+	/** Closes the menu, if visible. */
 	public function close ():Void;
-	/** creates a Titanium.Android.MenuItem from the passed creation options. */
+	/** Creates a Titanium.Android.MenuItem from the passed creation options. */
 	public function add (options:Dynamic):MenuItem;
-	/** enable or disable a group of Titanium.Android.MenuItem by groupId */
+	/** Enables or disables a group of menu items identified by a 
+groupId. */
 	public function setGroupEnabled (groupId:Float, enabled:Bool):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the items property. */
 	public function getItems ():Void;
-	/** locate a Titanium.Android.MenuItem */
+	/** Locates a MenuItem in this menu, by item ID or reference. */
 	public function findItem (item:Dynamic):MenuItem;
-	/** number of Titanium.Android.MenuItem in this menu */
+	/** Number of items in this menu. */
 	public function size ():Float;
-	/** query for any visible menu items */
-	public function hasVisibleItems ():Bool;
-	/** remove a specific Titanium.Android.MenuItem by the specified itemId */
+	/** Removes a specific MenuItem identified by its
+itemId. */
 	public function removeItem (itemId:Float):Void;
-	/** remove all Titanium.Android.MenuItem with the specified groupId */
+	/** Removes all menu items with the specified 
+groupId. */
 	public function removeGroup (groupId:Float):Void;
 	/** Removes the specified callback as an event listener for the named event. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** return the Titanium.Android.MenuItem at a specific index */
+	/** Returns the MenuItem at a specific index. */
 	public function getItem (index:Float):MenuItem;
-	/** show or hide a group of Titanium.Android.MenuItem by groupId */
+	/** Returns true if this menu has visible items. */
+	public function hasVisibleItems ():Bool;
+	/** Shows or hides a group of menu items identified by a
+groupId. */
 	public function setGroupVisible (groupId:Float, visible:Bool):Void;
 
 }

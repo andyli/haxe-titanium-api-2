@@ -3,7 +3,7 @@ package titanium.cloud;
 import titanium.CloudStatusesResponse;
 
 
-/** Provides methods for accessing ACS Statuses */
+/** Provides methods for accessing ACS Statuses. */
 @:native ("Titanium.Cloud.Statuses")
 extern class Statuses {
 

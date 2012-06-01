@@ -1,6 +1,7 @@
 package titanium.android;
 
 import titanium.android.PendingIntent;
+import titanium.android.RemoteViews;
 
 
 /** The Titanium binding of an 
@@ -10,6 +11,8 @@ extern class Notification {
 
 	/** A URL to the sound to play (supports both Android and Titanium URLs). */
 	public var sound:String;
+	/** Custom layout to display in the notification. */
+	public var contentView:RemoteViews;
 	/** Description text of the notification. */
 	public var contentText:String;
 	/** Notification icon, specified as an Android resource ID, or a local URL to a density-specific image. */
@@ -85,6 +88,8 @@ extern class Notification {
 	public function setContentText (contentText:String):Void;
 	/** Sets the value of the contentTitle property. */
 	public function setContentTitle (contentTitle:String):Void;
+	/** Sets the value of the contentView property. */
+	public function setContentView (contentView:RemoteViews):Void;
 	/** Sets the value of the defaults property. */
 	public function setDefaults (defaults:Float):Void;
 	/** Sets the value of the deleteIntent property. */

@@ -7,7 +7,8 @@ import titanium.ui.ios.TabbedBar;
 import titanium.ui.ios.Toolbar;
 
 
-/** Apple iOS specific UI capabilities.  All properties, methods and events in this namespace will only work on Apple iOS devices. */
+/** Apple iOS specific UI capabilities.  All properties, methods and events in this namespace will 
+only work on Apple iOS devices. */
 @:native ("Titanium.UI.iOS")
 extern class IOS {
 
@@ -29,19 +30,17 @@ appropriate for landscape orientations. */
 	/** Use with AdView.adSize to specify a banner ad size
 appropriate for portrait orientations. */
 	public static var AD_SIZE_PORTRAIT(default,null):String;
-	/** Use with Animation.curve to specify an
-animation that proceeds at a constant rate. */
+	/** Use with Animation.curve to specify an animation that proceeds 
+at a constant rate. */
 	public static var ANIMATION_CURVE_LINEAR(default,null):Float;
-	/** Use with Animation.curve to specify an
-animation that starts quickly, then slows down at the end
-of the animation. */
+	/** Use with Animation.curve to specify an animation that starts 
+quickly, then slows down at the end of the animation. */
 	public static var ANIMATION_CURVE_EASE_OUT(default,null):Float;
-	/** Use with Animation.curve to specify an
-animation that starts slowly and speeds up. */
+	/** Use with Animation.curve to specify an animation that starts 
+slowly and speeds up. */
 	public static var ANIMATION_CURVE_EASE_IN(default,null):Float;
-	/** Use with Animation.curve to specify an
-animation that starts slowly, and speeds up, then slows down at the end
-of the animation. */
+	/** Use with Animation.curve to specify an animation that starts 
+slowly, and speeds up, then slows down at the end of the animation. */
 	public static var ANIMATION_CURVE_EASE_IN_OUT(default,null):Float;
 	/** Use with MaskedImage.mode to specify a blend mode. */
 	public static var BLEND_MODE_CLEAR(default,null):Float;

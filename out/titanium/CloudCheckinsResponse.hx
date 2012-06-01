@@ -5,17 +5,17 @@ package titanium;
 @:native ("CloudCheckinsResponse")
 extern class CloudCheckinsResponse {
 
-	/** A dictionary object containing meta data, if any. */
-	public var meta:Dynamic;
-	/** Array of checkins objects, if any */
-	public var checkins:Array<Object>;
-	/** Error code, if any. */
+	/** Error code, if any returned. */
 	public var code:Float;
-	/** Error message, if any. */
+	/** Error message, if any returned. */
 	public var message:String;
-	/** Set to true if the request failed. */
+	/** Indicates whether the request failed. */
 	public var error:Bool;
-	/** Set to true if the request succeeded. */
+	/** Indicates whether the request succeeded. */
 	public var success:Bool;
+	/** Meta data, if any returned. */
+	public var meta:Dynamic;
+	/** Set of checkins objects, if any exist. */
+	public var checkins:Array<Dictionary>;
 
 }

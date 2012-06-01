@@ -78,15 +78,15 @@ extern class 3DMatrix {
 	public function getM44 ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** Returns a matrix constructed by combining two existing matrix. */
+	/** Returns a matrix constructed by combining two existing matrices. */
 	public function multiply (t2:3DMatrix):3DMatrix;
-	/** Returns a matrix constructed by inverting an existing matrix */
+	/** Returns a matrix constructed by inverting an existing matrix. */
 	public function invert ():Void;
-	/** Returns a matrix constructed by rotating an existing matrix */
+	/** Returns a matrix constructed by rotating an existing matrix. */
 	public function rotate (angle:Float, x:Float, y:Float, z:Float):3DMatrix;
-	/** Returns a matrix constructed by scaling an existing matrix */
+	/** Returns a matrix constructed by scaling an existing matrix. */
 	public function scale (sx:Float, sy:Float, sz:Float):3DMatrix;
-	/** Returns a matrix constructed by translating an existing matrix */
+	/** Returns a matrix constructed by translating an existing matrix. */
 	public function translate (tx:Float, ty:Float, tz:Float):3DMatrix;
 	/** Sets the value of the m11 property. */
 	public function setM11 (m11:Float):Void;

@@ -1,5 +1,6 @@
 package titanium;
 
+import array<titanium.media.Item>;
 import titanium.CameraOptionsType;
 import titanium.media.AudioPlayer;
 import titanium.media.AudioRecorder;
@@ -303,7 +304,7 @@ extern class Media {
 	/** Saves media to the device's photo gallery / camera roll. */
 	public static function saveToPhotoGallery (media:Dynamic, callbacks:Dynamic):Void;
 	/** Searches the music library for items matching the specified search predicates. */
-	public static function queryMusicLibrary (query:MediaQueryType):Array<MediaItemType>;
+	public static function queryMusicLibrary (query:MediaQueryType):Item>;
 	/** Sets the value of the audioSessionMode property. */
 	public static function setAudioSessionMode (audioSessionMode:Float):Void;
 	/** Sets the value of the availableCameraMediaTypes property. */
@@ -317,7 +318,7 @@ extern class Media {
 	/** Shows the camera. */
 	public static function showCamera (options:CameraOptionsType):Void;
 	/** Shows the music library and allows the user to select one or more tracks. */
-	public static function showMusicLibrary (options:MusicLibraryOptionsType):Void;
+	public static function openMusicLibrary (options:MusicLibraryOptionsType):Void;
 	/** Starts monitoring the microphone sound level. */
 	public static function startMicrophoneMonitor ():Void;
 	/** Stops monitoring the microphone sound level. */

@@ -1,48 +1,51 @@
 package titanium.media;
 
+import titanium.Blob;
 
-/** A representation of a media item returned by the music picker as part of the items array in the dictionary passed to its success function. */
+
+/** A representation of a media item returned by openMusicLibrary or queryMusicLibrary. */
 @:native ("Titanium.Media.Item")
 extern class Item {
 
-	/** a blob object containing the image for the item's artwork, or null if none */
-	public var artwork:Dynamic;
-	/** the album title of the item */
-	public var albumTitle:String;
-	/** the artist for the album of the item */
-	public var albumArtist:String;
-	/** the artist of the item */
-	public var artist:String;
-	/** the composer of the item */
-	public var composer:String;
-	/** the disc number of the item */
-	public var discNumber:Float;
-	/** the genre of the item */
-	public var genre:String;
-	/** the length (in seconds) of the item */
-	public var playbackDuration:Float;
-	/** the lyrics of the item */
-	public var lyrics:String;
-	/** the number of times the item has been played */
-	public var playCount:Float;
-	/** the number of times the item has been skipped */
-	public var skipCount:Float;
-	/** the number of tracks for the album of the item */
-	public var albumTrackCount:Float;
-	/** the rating of the item */
-	public var rating:Float;
-	/** the title of a podcast item.  Only for media types of Titanium.Media.MUSIC_MEDIA_TYPE_PODCAST. */
-	public var podcastTitle:String;
-	/** the title of the item */
-	public var title:String;
-	/** the total number of discs of the item */
-	public var discCount:Float;
-	/** the track number of the item */
-	public var albumTrackNumber:Float;
-	/** the type of the item */
-	public var mediaType:Float;
-	/** true if the item is part of a compilation album */
-	public var isCompilation:Bool;
+	/** Artist credited for the album containing this item. */
+	public var albumArtist(default,null):String;
+	/** Artist credited for this item. */
+	public var artist(default,null):String;
+	/** Composer of this item. */
+	public var composer(default,null):String;
+	/** Disc number for this item in the album. */
+	public var discNumber(default,null):Float;
+	/** Genre of this item. */
+	public var genre(default,null):String;
+	/** Image for the item's artwork as a Blob object,  or null if no artwork is
+available. */
+	public var artwork(default,null):Blob;
+	/** Length (in seconds) of this item. */
+	public var playbackDuration(default,null):Float;
+	/** Lyrics for this item. */
+	public var lyrics(default,null):String;
+	/** Number of times the item has been played. */
+	public var playCount(default,null):Float;
+	/** Number of times this item has been skipped. */
+	public var skipCount(default,null):Float;
+	/** Number of tracks for the album containing this item. */
+	public var albumTrackCount(default,null):Float;
+	/** Rating for this item. */
+	public var rating(default,null):Float;
+	/** The type of the media.  */
+	public var mediaType(default,null):Float;
+	/** Title of a podcast item. */
+	public var podcastTitle(default,null):String;
+	/** Title of the album containing this item. */
+	public var albumTitle(default,null):String;
+	/** Title of this item. */
+	public var title(default,null):String;
+	/** Total number of discs for the album containing this item. */
+	public var discCount(default,null):Float;
+	/** Track number for this item. */
+	public var albumTrackNumber(default,null):Float;
+	/** True if this item is part of a compilation album. */
+	public var isCompilation(default,null):Bool;
 
 	/** Adds the specified callback as an event listener for the named event. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
@@ -88,43 +91,5 @@ extern class Item {
 	public function getTitle ():Void;
 	/** Removes the specified callback as an event listener for the named event. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** Sets the value of the albumArtist property. */
-	public function setAlbumArtist (albumArtist:String):Void;
-	/** Sets the value of the albumTitle property. */
-	public function setAlbumTitle (albumTitle:String):Void;
-	/** Sets the value of the albumTrackCount property. */
-	public function setAlbumTrackCount (albumTrackCount:Float):Void;
-	/** Sets the value of the albumTrackNumber property. */
-	public function setAlbumTrackNumber (albumTrackNumber:Float):Void;
-	/** Sets the value of the artist property. */
-	public function setArtist (artist:String):Void;
-	/** Sets the value of the artwork property. */
-	public function setArtwork (artwork:Dynamic):Void;
-	/** Sets the value of the composer property. */
-	public function setComposer (composer:String):Void;
-	/** Sets the value of the discCount property. */
-	public function setDiscCount (discCount:Float):Void;
-	/** Sets the value of the discNumber property. */
-	public function setDiscNumber (discNumber:Float):Void;
-	/** Sets the value of the genre property. */
-	public function setGenre (genre:String):Void;
-	/** Sets the value of the isCompilation property. */
-	public function setIsCompilation (isCompilation:Bool):Void;
-	/** Sets the value of the lyrics property. */
-	public function setLyrics (lyrics:String):Void;
-	/** Sets the value of the mediaType property. */
-	public function setMediaType (mediaType:Float):Void;
-	/** Sets the value of the playbackDuration property. */
-	public function setPlaybackDuration (playbackDuration:Float):Void;
-	/** Sets the value of the playCount property. */
-	public function setPlayCount (playCount:Float):Void;
-	/** Sets the value of the podcastTitle property. */
-	public function setPodcastTitle (podcastTitle:String):Void;
-	/** Sets the value of the rating property. */
-	public function setRating (rating:Float):Void;
-	/** Sets the value of the skipCount property. */
-	public function setSkipCount (skipCount:Float):Void;
-	/** Sets the value of the title property. */
-	public function setTitle (title:String):Void;
 
 }

@@ -3,41 +3,56 @@ package titanium.android;
 import titanium.android.PendingIntent;
 
 
-/** The Titanium binding of Android RemoteViews. RemoteViews are an API for referencing and updating views that live in another process (i.e. in a Titanium.Android.Notification) */
+/** The Titanium binding of Android RemoteViews.  */
 @:native ("Titanium.Android.RemoteViews")
 extern class RemoteViews {
 
+	/** Android layout resource ID for the view to display. Required. */
+	public var layoutId:Float;
+	/** Package name that the resource ID lives in. Optional. */
+	public var packageName:String;
+
 	/** Adds the specified callback as an event listener for the named event. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** Call a method taking one boolean on a view in the layout for this RemoteViews. See Android's documentation for setBoolean */
+	/** Calls a method taking a single boolean argument on a view in the remote view
+hierarchy.  See Android's documentation for
+setBoolean. */
 	public function setBoolean (viewId:Float, methodName:String, value:Bool):Void;
-	/** Call a method taking one double on a view in the layout for this RemoteViews. See Android's documentation for setDouble */
+	/** Calls a method taking a single double argument on a view in the remote view
+hierarchy. */
 	public function setDouble (viewId:Float, methodName:String, value:Float):Void;
-	/** Call a method taking one int on a view in the layout for this RemoteViews. See Android's documentation for setInt */
+	/** Calls a method taking a single int argument on a view in the remote view hierarchy. */
 	public function setInt (viewId:Float, methodName:String, value:Float):Void;
-	/** Call a method taking one String on a view in the layout for this RemoteViews. See Android's documentation for setString */
+	/** Calls a method taking a single String argument on a view in the remote view
+hierarchy. */
 	public function setString (viewId:Float, methodName:String, value:String):Void;
-	/** Call a method taking one Uri on a view in the layout for this RemoteViews. See Android's documentation for setUri */
+	/** Calls a method taking one URI on a view in the remote view hierarchy. */
 	public function setUri (viewId:Float, methodName:String, value:String):Void;
 	/** Fires a synthesized event to any registered listeners. */
 	public function fireEvent (name:String, event:Dynamic):Void;
-	/** Launches a Titanium.Android.PendingIntent when the specified view is clicked. See Android's documentation for setOnClickPendingIntent */
+	/** Gets the value of the layoutId property. */
+	public function getLayoutId ():Void;
+	/** Gets the value of the packageName property. */
+	public function getPackageName ():Void;
+	/** Launches a Titanium.Android.PendingIntent when the specified view is clicked. */
 	public function setOnClickPendingIntent (viewId:Float, pendingIntent:PendingIntent):Void;
 	/** Removes the specified callback as an event listener for the named event. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
-	/** Sets a chronometer's base, format, and started flag. See Android's documentation for setChronometer */
+	/** Sets the base time, format string, and started flag for a chronometer
+in the remote view hierarchy. */
 	public function setChronometer (viewId:Float, base:Date, format:String, started:Bool):Void;
-	/** Sets an ImageView's source given a Resource ID. See Android's documentation for setImageViewResource */
-	public function setImageViewResource (viewId:Float, srcId:Float):Void;
-	/** Sets an ImageView's source given a URI (supports both Android and Titanium URLs). See Android's documentation for setImageViewUri */
+	/** Sets the image for an image view in the remote view hierarchy using a URI. */
 	public function setImageViewUri (viewId:Float, uri:String):Void;
-	/** Sets the progress, max value, and indeterminate flag of a ProgressBar. See Android's documentation for setProgressBar */
+	/** Sets the image for an image view in the remote view hierarchy using an Android drawable resource. */
+	public function setImageViewResource (viewId:Float, srcId:Float):Void;
+	/** Sets the progress, max value, and indeterminate flag of a progress bar in the
+remote view hierarchy. */
 	public function setProgressBar (viewId:Float, max:Float, progress:Float, indeterminate:Bool):Void;
-	/** Sets the text color of a view. See Android's documentation for setTextColor */
+	/** Sets the text color of a view in the remote view hierarchy. */
 	public function setTextColor (viewId:Float, color:Float):Void;
-	/** Sets the text of a TextView. See Android's documentation for setTextViewText */
+	/** Sets the text of a text view in the remote view hierarchy. */
 	public function setTextViewText (viewId:Float, text:String):Void;
-	/** Sets the visibility of a View. See Android's documentation for setViewVisibility */
+	/** Sets the visibility of a view in the remote view hierarchy. */
 	public function setViewVisibility (viewId:Float, visibility:Float):Void;
 
 }

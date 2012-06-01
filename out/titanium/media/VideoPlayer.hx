@@ -78,20 +78,20 @@ instead of creating a new session.  */
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
+	/** The bounding box of the view relative to its parent, in system units. */
+	public var rect(default,null):Dimension;
 	/** The currently playable duration of the movie, for progressively downloaded network content. */
 	public var playableDuration(default,null):Float;
 	/** The duration of the current movie in milliseconds, or 0.0 if not known. */
 	public var duration:Float;
 	/** The end time of movie playback, in milliseconds. */
 	public var endPlaybackTime:Float;
-	/** The frame of the view (position relative to parent bounds) in system units. */
-	public var rect(default,null):Dimension;
 	/** The playback type of the movie. */
 	public var sourceType:Float;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The start time of movie playback, in milliseconds. */
 	public var initialPlaybackTime:Float;
 	/** The style of the playback controls. */
@@ -126,7 +126,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */

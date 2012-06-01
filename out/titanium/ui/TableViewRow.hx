@@ -9,7 +9,7 @@ import titanium.Point;
 import titanium.ui.View;
 
 
-/** An individual row for a TableView. */
+/** A table view row is an individual item in a table, organized into table view sections. */
 @:native ("Titanium.UI.TableViewRow")
 extern class TableViewRow {
 
@@ -45,8 +45,20 @@ extern class TableViewRow {
 	public var color:String;
 	/** Determines keyboard behavior when this view is focused. */
 	public var softKeyboardOnFocus:Float;
-	/** Determines whether this row can be deleted when the table is in edit mode. */
+	/** Determines the rows' editable behavior, which allows them to be deleted by the user when the 
+table is in editing or moving mode. */
 	public var editable:Bool;
+	/** Determines the rows' moveable behavior, which allows them to be re-ordered by the user when 
+the table is in editing or moving mode. */
+	public var moveable:Bool;
+	/** Determines whether a system-provided arrow is displayed on the right-hand side of the row. */
+	public var hasChild:Bool;
+	/** Determines whether a system-provided checkmark is displayed on the right-hand side of 
+the row. */
+	public var hasCheck:Bool;
+	/** Determines whether a system-provided detail disclosure button is displayed on the right-hand 
+side of the row. */
+	public var hasDetail:Bool;
 	/** Disabled background color of the view, as a color name or hex triplet. */
 	public var backgroundDisabledColor:String;
 	/** Disabled background image for the view, specified as a local file path or URL. */
@@ -65,12 +77,6 @@ extern class TableViewRow {
 	public var indentionLevel:Float;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
-	/** Render a system provided arrow in the right image area of the row. */
-	public var hasChild:Bool;
-	/** Render a system-provided check mark in the right image area of the row. */
-	public var hasCheck:Bool;
-	/** Render a system-provided detail disclosure button in the right image area of the row. */
-	public var hasDetail:Bool;
 	/** Selected background color of the view, as a color name or hex triplet. */
 	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
@@ -82,14 +88,14 @@ extern class TableViewRow {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
 	/** Text to display on the row. */
 	public var title:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -114,7 +120,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -193,6 +199,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function getLeft ():Void;
 	/** Gets the value of the leftImage property. */
 	public function getLeftImage ():Void;
+	/** Gets the value of the moveable property. */
+	public function getMoveable ():Void;
 	/** Gets the value of the opacity property. */
 	public function getOpacity ():Void;
 	/** Gets the value of the rect property. */
@@ -304,6 +312,8 @@ layout pass after they have been updated. */
 	public function setLeft (left:Dynamic):Void;
 	/** Sets the value of the leftImage property. */
 	public function setLeftImage (leftImage:String):Void;
+	/** Sets the value of the moveable property. */
+	public function setMoveable (moveable:Bool):Void;
 	/** Sets the value of the opacity property. */
 	public function setOpacity (opacity:Float):Void;
 	/** Sets the value of the right property. */

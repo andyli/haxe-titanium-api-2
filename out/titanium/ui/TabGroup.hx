@@ -47,7 +47,7 @@ tab. */
 	public var activeTabBackgroundColor:String;
 	/** Default background disabled color for tabs, as a color name or hex triplet. */
 	public var tabsBackgroundDisabledColor:String;
-	/** Default background disabled color for the active tab. */
+	/** Default background disabled color for the active tab, as a color name or hex triplet. */
 	public var activeTabBackgroundDisabledColor:String;
 	/** Default background disabled image for tabs. */
 	public var tabsBackgroundDisabledImage:String;
@@ -104,14 +104,14 @@ screen. */
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
 	/** Tabs managed by the tab group. */
 	public var tabs:Tab>;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Title for the edit button on the More tab. */
@@ -140,7 +140,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var touchEnabled:Bool;
 	/** Width of the divider between tabs. */
 	public var tabDividerWidth:Dynamic;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */

@@ -8,7 +8,7 @@ import titanium.Point;
 import titanium.ui.View;
 
 
-/** The AdView is a view for display Apple iAds. The View is created by the method Titanium.UI.iOS.createAdView. */
+/** The AdView is a view for display Apple iAds. */
 @:native ("Titanium.UI.iOS.AdView")
 extern class AdView {
 
@@ -48,19 +48,19 @@ extern class AdView {
 	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
 	public var backgroundSelectedImage:String;
+	/** Size of the advertisement when minimized. */
+	public var adSize:String;
 	/** Size of the left end cap. */
 	public var backgroundLeftCap:Float;
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
-	/** The size of the advertisement when minimized. */
-	public var adSize:String;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -85,17 +85,17 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
-	/** A banner view action can cover your application's user interface. However, your application continues to run, and receives events normally. If your application receives an event that requires the user's attention, it can programmatically cancel the action and uncover its interface by calling cancelAction. Canceling actions frequently can cause a loss of revenue for your application. */
-	public function cancelAction ():Void;
 	/** Adds a child to this view's hierarchy. */
 	public function add (view:View):Void;
 	/** Adds the specified callback as an event listener for the named event. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Animates this view. */
 	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
+	/** Cancel a banner to uncover the user interface. */
+	public function cancelAction ():Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */

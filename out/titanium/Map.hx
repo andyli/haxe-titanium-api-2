@@ -17,6 +17,21 @@ Titanium.Map.Annotation.pincolor property. */
 	/** Color constant used to set a map annotation to red via the 
 Titanium.Map.Annotation.pincolor property. */
 	public static var ANNOTATION_RED(default,null):Float;
+	/** Used in the pinchangedragstate event 
+to indicate that the annotation is not being dragged. */
+	public static var ANNOTATION_DRAG_STATE_NONE(default,null):Float;
+	/** Used in the pinchangedragstate event 
+to indicate that the user canceled the drag action. */
+	public static var ANNOTATION_DRAG_STATE_CANCEL(default,null):Float;
+	/** Used in the pinchangedragstate event 
+to indicate that the user finished moving the annotation. */
+	public static var ANNOTATION_DRAG_STATE_END(default,null):Float;
+	/** Used in the pinchangedragstate event 
+to indicate that the user moved the annotation. */
+	public static var ANNOTATION_DRAG_STATE_DRAG(default,null):Float;
+	/** Used in the pinchangedragstate event 
+to indicate that the user started dragging the annotation. */
+	public static var ANNOTATION_DRAG_STATE_START(default,null):Float;
 	/** Used with mapType to display a satellite image of the area with road and road name information layered on top. */
 	public static var HYBRID_TYPE(default,null):Float;
 	/** Used with mapType to display a street map that shows the position of all roads and some road names. */

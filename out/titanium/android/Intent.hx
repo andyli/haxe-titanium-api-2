@@ -1,7 +1,5 @@
 package titanium.android;
 
-import titanium.Blob;
-
 
 /** The Titanium binding of an Android Intent. */
 @:native ("Titanium.Android.Intent")
@@ -15,7 +13,8 @@ extern class Intent {
 	public var packageName:String;
 	/** The Intent's Data URI. */
 	public var data(default,null):String;
-	/** The Java class name of the activity associated with this intent (packageName must also be set). */
+	/** The Java class name of the activity associated with this intent
+(packageName must also be set). */
 	public var className:String;
 	/** The MIME type for this Intent. */
 	public var type(default,null):String;
@@ -38,8 +37,6 @@ extern class Intent {
 	public function getLongExtra (name:String):Float;
 	/** Get a string property from this Intent. */
 	public function getStringExtra (name:String):String;
-	/** Get a Titanium.Blob property from this Intent */
-	public function getBlobExtra (name:String):Blob;
 	/** Get an int property from this Intent. */
 	public function getIntExtra (name:String):Float;
 	/** Get the Data URI from this Intent. */

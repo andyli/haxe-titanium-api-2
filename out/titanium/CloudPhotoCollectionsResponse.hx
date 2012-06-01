@@ -5,17 +5,17 @@ package titanium;
 @:native ("CloudPhotoCollectionsResponse")
 extern class CloudPhotoCollectionsResponse {
 
-	/** A dictionary object containing meta data, if any. */
-	public var meta:Dynamic;
-	/** Array of collections objects, if any */
-	public var collections:Array<Object>;
-	/** Error code, if any. */
+	/** Error code, if any returned. */
 	public var code:Float;
-	/** Error message, if any. */
+	/** Error message, if any returned. */
 	public var message:String;
-	/** Set to true if the request failed. */
+	/** Indicates whether the request failed. */
 	public var error:Bool;
-	/** Set to true if the request succeeded. */
+	/** Indicates whether the request succeeded. */
 	public var success:Bool;
+	/** Meta data, if any returned. */
+	public var meta:Dynamic;
+	/** Set of collections objects, if any exist. */
+	public var collections:Array<Dictionary>;
 
 }

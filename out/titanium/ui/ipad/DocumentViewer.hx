@@ -8,7 +8,8 @@ import titanium.Point;
 import titanium.ui.View;
 
 
-/** A DocumentViewer provides in-app support for managing user interactions with files in the local system. */
+/** A DocumentViewer provides in-app support for managing user interactions with files on the 
+local system.  */
 @:native ("Titanium.UI.iPad.DocumentViewer")
 extern class DocumentViewer {
 
@@ -53,12 +54,12 @@ extern class DocumentViewer {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -83,7 +84,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -92,8 +93,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Animates this view. */
 	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
-	/** change the url of the document viewer */
-	public function setUrl (url:String):Void;
+	/** Displays the document viewer over the current view. */
+	public function show (animated:Bool, view:Dynamic):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -181,6 +182,8 @@ layout pass after they have been updated. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
 	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
+	/** Sets the url of the document viewer. */
+	public function setUrl (url:String):Void;
 	/** Sets the value of the anchorPoint property. */
 	public function setAnchorPoint (anchorPoint:Point):Void;
 	/** Sets the value of the backgroundColor property. */
@@ -247,8 +250,6 @@ layout pass after they have been updated. */
 	public function setZIndex (zIndex:Float):Void;
 	/** Starts a batch update of this view's layout properties. */
 	public function startLayout ():Void;
-	/** to display the document viewer over the current view. */
-	public function show (animated:Bool, view:Dynamic):Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
 	public function convertPointToView (point:Point, destinationView:View):Point;

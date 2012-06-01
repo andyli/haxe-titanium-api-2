@@ -9,6 +9,8 @@ extern class Annotation {
 
 	/** Boolean to indicate whether the pin should animate when dropped. */
 	public var animate:Bool;
+	/** Determines whether the pin can be dragged by the user. */
+	public var draggable:Bool;
 	/** Image to use for the the pin. */
 	public var image:Dynamic;
 	/** Key in the locale file to use for the subtitle property. */
@@ -43,6 +45,8 @@ button constant. */
 	public function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the animate property. */
 	public function getAnimate ():Void;
+	/** Gets the value of the draggable property. */
+	public function getDraggable ():Void;
 	/** Gets the value of the image property. */
 	public function getImage ():Void;
 	/** Gets the value of the latitude property. */
@@ -71,6 +75,8 @@ button constant. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Sets the value of the animate property. */
 	public function setAnimate (animate:Bool):Void;
+	/** Sets the value of the draggable property. */
+	public function setDraggable (draggable:Bool):Void;
 	/** Sets the value of the image property. */
 	public function setImage (image:Dynamic):Void;
 	/** Sets the value of the latitude property. */

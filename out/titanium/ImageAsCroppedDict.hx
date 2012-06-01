@@ -1,17 +1,17 @@
 package titanium;
 
 
-/** Options for Titanium.Blob.imageAsCropped */
+/** Simple object used to specify options for imageAsCropped. */
 @:native ("ImageAsCroppedDict")
 extern class ImageAsCroppedDict {
 
-	/** The height to crop this image to. */
+	/** Height to crop this image to. */
 	public var height:Float;
-	/** The width to crop this image to. */
-	public var width:Float;
-	/** The x point within the image to crop. */
+	/** Left coordinate of the cropped rectangle within the source image. */
 	public var x:Float;
-	/** The y point within the image to crop. */
+	/** Top coordinate of the cropped rectangle within the source image. */
 	public var y:Float;
+	/** Width to crop this image to. */
+	public var width:Float;
 
 }

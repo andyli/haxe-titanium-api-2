@@ -10,21 +10,22 @@ extern class HTTPClient {
 
 	/** Absolute URL of the request. */
 	public var location(default,null):String;
-	/** All of the response headers as a single string, or an empty string if no headers are available. */
+	/** All of the response headers. */
 	public var allResponseHeaders(default,null):String;
-	/** boolean to indicate that the response was successful */
-	public var connected(default,null):Bool;
 	/** Connection type, normally either GET or POST. */
 	public var connectionType(default,null):String;
-	/** Controls how SSL certification validation is performed on connection. */
+	/** Determines how SSL certification validation is performed on connection. */
 	public var validatesSecureCertificate:Bool;
-	/** Controls whether or not HTTP responses are cached. */
+	/** Determines whether automatic automatic handling of HTTP redirects is enabled. */
+	public var autoRedirect:Bool;
+	/** Determines whether automatic encoding is enabled for the specified URL. */
+	public var autoEncodeUrl:Bool;
+	/** Determines whether HTTP responses are cached. */
 	public var cache:Bool;
 	/** Determines whether the client should attempt to keep a persistent connection. */
 	public var enableKeepAlive:Bool;
-	/** File to download contents to.  Can only be set after calling
-open. */
-	public var file:String;
+	/** Determines whether the request should include any cookies and HTTP authentication information. */
+	public var withCredentials:Bool;
 	/** Function to be called at regular intervals as the request data is being received. */
 	public var ondatastream:Dynamic->Dynamic;
 	/** Function to be called at regular intervals as the request data is being transmitted. */
@@ -37,17 +38,20 @@ open. */
 	public var onload:Dynamic->Dynamic;
 	/** Human-readable status message associated with the status code. */
 	public var statusText(default,null):String;
+	/** Indicates whether the response was successful. */
+	public var connected(default,null):Bool;
 	/** Ready state constant indicating that HTTPClient request has not been opened or sent. */
 	public var UNSENT(default,null):Float;
 	/** Ready state constant indicating that response data is being received from the remote server. */
 	public var LOADING(default,null):Float;
 	/** Ready state constant indicating that response headers have been received. */
 	public var HEADERS_RECEIVED(default,null):Float;
-	/** Ready state constant indicating that the connection has been opened, but the request has not yet been sent. */
+	/** Ready state constant indicating that the connection has been opened, but the request has 
+not yet been sent. */
 	public var OPENED(default,null):Float;
 	/** Ready state constant indicating that the request is complete. */
 	public var DONE(default,null):Float;
-	/** Response as text or null if an error was received or no data was returned. */
+	/** Response as text. */
 	public var responseText(default,null):String;
 	/** Response data as a Blob object. */
 	public var responseData(default,null):Blob;
@@ -55,17 +59,13 @@ open. */
 	public var status(default,null):Float;
 	/** Response object as an XML DOM Document object. */
 	public var responseXML(default,null):Document;
-	/** Set to false to disable automatic handling of HTTP redirects. */
-	public var autoRedirect:Bool;
-	/** Set to false to suppress URL-encoding of the specified URL. */
-	public var autoEncodeUrl:Bool;
 	/** Sets the TLS version to use for handshakes. */
 	public var tlsVersion:Float;
-	/** Tells the request to include any cookies and HTTP authentication information. */
-	public var withCredentials:Bool;
+	/** Target local file to receive data. */
+	public var file:String;
 	/** The current ready state of this HTTP request. */
 	public var readyState(default,null):Float;
-	/** Timeout in milliseconds when the connection should be aborted */
+	/** Timeout in milliseconds when the connection should be aborted. */
 	public var timeout:Float;
 
 	/** Adds the specified callback as an event listener for the named event. */
@@ -124,7 +124,7 @@ open. */
 	public function getValidatesSecureCertificate ():Void;
 	/** Gets the value of the withCredentials property. */
 	public function getWithCredentials ():Void;
-	/** Opens the request and readies the connection. */
+	/** Opens the request and prepares the connection. */
 	public function open (method:String, url:String, ?async:Bool):Void;
 	/** Removes the specified callback as an event listener for the named event. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;

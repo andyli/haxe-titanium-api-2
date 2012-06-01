@@ -7,7 +7,7 @@ import titanium.CloudCheckinsResponse;
 @:native ("Titanium.Cloud.Checkins")
 extern class Checkins {
 
-	/** Check in to a place or event */
+	/** Check in to a place or event. */
 	public static function create (parameters:Dynamic, _callback:CloudCheckinsResponse->Dynamic):Void;
 	/** Delete a checkin. */
 	public static function remove (parameters:Dynamic, _callback:CloudCheckinsResponse->Dynamic):Void;

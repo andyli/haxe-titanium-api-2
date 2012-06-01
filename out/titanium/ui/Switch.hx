@@ -35,10 +35,10 @@ extern class Switch {
 	public var color:String;
 	/** Current position of the view during an animation. */
 	public var animatedCenterPoint(default,null):Point;
-	/** Current switch value, true if the switch is on, and false if switch is off. */
-	public var value:Bool;
 	/** Determines keyboard behavior when this view is focused. */
 	public var softKeyboardOnFocus:Float;
+	/** Determines whether the switch is enabled. */
+	public var enabled:Bool;
 	/** Disabled background color of the view, as a color name or hex triplet. */
 	public var backgroundDisabledColor:String;
 	/** Disabled background image for the view, specified as a local file path or URL. */
@@ -49,46 +49,43 @@ extern class Switch {
 	public var backgroundFocusedImage:String;
 	/** Font to use for the switch text. */
 	public var font:Font;
+	/** Horizontal text alignment of the switch title. */
+	public var textAlign:Dynamic;
+	/** Indicates whether the switch has been turned on or off by the user. May also be set 
+programmatically. */
+	public var value:Bool;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
 	/** Selected background color of the view, as a color name or hex triplet. */
 	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
 	public var backgroundSelectedImage:String;
-	/** Set to true to enable the switch, false to disable the switch. */
-	public var enabled:Bool;
 	/** Size of the left end cap. */
 	public var backgroundLeftCap:Float;
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** Style of the switch, either checkbox or toggle button. */
+	/** Style of the switch. Enables either the toggle button (default) or checkbox. */
 	public var style:Float;
-	/** Text alignment, specified using one of the Titanium.UI text alignment constants: TEXT_ALIGNMENT_LEFT, TEXT_ALIGNMENT_CENTER, or TEXT_ALIGNMENT_RIGHT. */
-	public var textAlign:Dynamic;
-	/** Text to display when a toggle button-style switch is toggled off. */
-	public var titleOn:String;
-	/** Text to display when a toggle button-style switch is toggled on. */
-	public var titleOff:String;
-	/** text to display with checkbox. Used if style is Titanium.UI.Android.SWITCH_STYLE_CHECKBOX */
+	/** Text to display next to the switch, when the checkbox style is in use. */
 	public var title:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** Text to display on the switch in its "off" state, when the toggle button style is in use. */
+	public var titleOff:String;
+	/** Text to display on the switch in its "on" state, when the toggle button style is in use. */
+	public var titleOn:String;
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
 	public var backgroundRepeat:Bool;
 	/** Transformation matrix to apply to the view. */
 	public var transform:Dynamic;
-	/** Vertical alignment for the text field, specified using one of the 
-vertical alignment constants from Titanium.UI: 
-TEXT_VERTICAL_ALIGNMENT_BOTTOM, 
-TEXT_VERTICAL_ALIGNMENT_CENTER, or 
-TEXT_VERTICAL_ALIGNMENT_TOP. */
+	/** Vertical alignment for the text field. */
 	public var verticalAlign:Dynamic;
 	/** View height, in platform-specific units. */
 	public var height:Dynamic;
@@ -108,7 +105,7 @@ TEXT_VERTICAL_ALIGNMENT_TOP. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */

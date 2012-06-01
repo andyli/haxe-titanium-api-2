@@ -13,36 +13,23 @@ import titanium.ui.TableViewRow;
 import titanium.ui.View;
 
 
-/** A Table View allows you to create a scrollable table of content in a list-based fashion. */
+/** A table view is used to present information, organized in sections and rows, in a 
+vertically-scrolling view. */
 @:native ("Titanium.UI.TableView")
 extern class TableView {
 
 	/** A background gradient for the view. */
 	public var backgroundGradient:Gradient;
-	/** Allow the user to edit the table view (this must be true for swipe-to-delete). */
-	public var editable:Bool;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
 	public var anchorPoint:Point;
 	/** Array of objects (with title and index properties) to control the table view index. */
 	public var index:Array<TableViewIndexEntry>;
-	/** Array of objects to be used for the rows of the table view. */
-	public var data:Dynamic;
 	/** Array of this view's child views. */
 	public var children(default,null):View>;
 	/** Background color of the view, as a color name or hex triplet. */
 	public var backgroundColor:String;
 	/** Background image for the view, specified as a local file path or URL. */
 	public var backgroundImage:String;
-	/** Boolean to control the editing state of the table view. */
-	public var editing:Bool;
-	/** Boolean to control the moveable state of the table view. */
-	public var moving:Bool;
-	/** Boolean to control the visibility of the search field. */
-	public var searchHidden:Bool;
-	/** Boolean to indicate if the search should be case sensitive or case insensitive. */
-	public var filterCaseInsensitive:Bool;
-	/** Boolean to indicate whether or not the search field should hide on completion. */
-	public var hideSearchOnSelection:Bool;
 	/** Boolean value indicating whether the view is visible. */
 	public var visible:Bool;
 	/** Border color of the view, as a color name or hex triplet. */
@@ -57,6 +44,28 @@ extern class TableView {
 	public var rowHeight:Float;
 	/** Determines keyboard behavior when this view is focused. */
 	public var softKeyboardOnFocus:Float;
+	/** Determines the rows' default editable behavior, which allows them to be deleted by the user 
+when the table is in editing or moving mode. */
+	public var editable:Bool;
+	/** Determines the rows' default moveable behavior, which allows them to be re-ordered by the 
+user when the table is in editing or moving mode. */
+	public var moveable:Bool;
+	/** Determines whether row editing mode is active. */
+	public var editing:Bool;
+	/** Determines whether row moving mode is active. */
+	public var moving:Bool;
+	/** Determines whether the search field is visible. */
+	public var searchHidden:Bool;
+	/** Determines whether the search field should hide on completion. */
+	public var hideSearchOnSelection:Bool;
+	/** Determines whether the search is case insensitive. */
+	public var filterCaseInsensitive:Bool;
+	/** Determines whether this table view displays a vertical scroll indicator. */
+	public var showVerticalScrollIndicator:Bool;
+	/** Determines whether this table's rows can be selected while editing the table. */
+	public var allowsSelectionDuringEditing:Bool;
+	/** Determines whether this table's rows can be selected. */
+	public var allowsSelection:Bool;
 	/** Disabled background color of the view, as a color name or hex triplet. */
 	public var backgroundDisabledColor:String;
 	/** Disabled background image for the view, specified as a local file path or URL. */
@@ -75,12 +84,10 @@ extern class TableView {
 	public var minRowHeight:Float;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
+	/** Rows of the table view. */
+	public var data:Dynamic;
 	/** Search field to use for the table view. */
 	public var search:SearchBar;
-	/** Selected background color of the view, as a color name or hex triplet. */
-	public var backgroundSelectedColor:String;
-	/** Selected background image url for the view, specified as a local file path or URL. */
-	public var backgroundSelectedImage:String;
 	/** Separator color between rows, as a color name or hex triplet. */
 	public var separatorColor:String;
 	/** Separator style constant. */
@@ -90,9 +97,10 @@ extern class TableView {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** Style of the table view, specified using one of the constants from Titanium.UI.iPhone.TableViewStyle. */
+	/** Style of the table view, specified using one of the constants from 
+Titanium.UI.iPhone.TableViewStyle. */
 	public var style:Float;
 	/** Table view footer as a view that will be rendered instead of a label. */
 	public var footerView:View;
@@ -102,22 +110,21 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var headerView:View;
 	/** Table view header title. */
 	public var headerTitle:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
 	public var backgroundRepeat:Bool;
 	/** Transformation matrix to apply to the view. */
 	public var transform:Dynamic;
-	/** True if the rows can be selected while editing the table. */
-	public var allowsSelectionDuringEditing:Bool;
-	/** True if the rows can be selected. */
-	public var allowsSelection:Bool;
 	/** View height, in platform-specific units. */
 	public var height:Dynamic;
+	/** View positioned above the first row that is only revealed when the user drags the table 
+contents down. */
+	public var headerPullView:View;
 	/** View's bottom position, in platform-specific units. */
 	public var bottom:Dynamic;
 	/** View's center position, in the parent view's coordinates. */
@@ -128,15 +135,13 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var right:Dynamic;
 	/** View's width, in platform-specific units. */
 	public var width:Dynamic;
-	/** Whether table view displays vertical scroll indicator */
-	public var showVerticalScrollIndicator:Bool;
 	/** Whether to keep the device screen on. */
 	public var keepScreenOn:Bool;
 	/** Whether view should be focusable while navigating with the trackball. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -146,9 +151,9 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	/** Animates this view. */
 	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
 	/** Appends one or more rows to the table. */
-	public function appendRow (row:Dynamic, ?properties:TableViewAnimationProperties):Void;
+	public function appendRow (row:Dynamic, ?animation:TableViewAnimationProperties):Void;
 	/** Deletes an existing row. */
-	public function deleteRow (row:Float, ?properties:TableViewAnimationProperties):Void;
+	public function deleteRow (row:Float, ?animation:TableViewAnimationProperties):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -179,10 +184,6 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function getBackgroundLeftCap ():Void;
 	/** Gets the value of the backgroundRepeat property. */
 	public function getBackgroundRepeat ():Void;
-	/** Gets the value of the backgroundSelectedColor property. */
-	public function getBackgroundSelectedColor ():Void;
-	/** Gets the value of the backgroundSelectedImage property. */
-	public function getBackgroundSelectedImage ():Void;
 	/** Gets the value of the backgroundTopCap property. */
 	public function getBackgroundTopCap ():Void;
 	/** Gets the value of the borderColor property. */
@@ -213,6 +214,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function getFooterTitle ():Void;
 	/** Gets the value of the footerView property. */
 	public function getFooterView ():Void;
+	/** Gets the value of the headerPullView property. */
+	public function getHeaderPullView ():Void;
 	/** Gets the value of the headerTitle property. */
 	public function getHeaderTitle ():Void;
 	/** Gets the value of the headerView property. */
@@ -233,6 +236,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function getMaxRowHeight ():Void;
 	/** Gets the value of the minRowHeight property. */
 	public function getMinRowHeight ():Void;
+	/** Gets the value of the moveable property. */
+	public function getMoveable ():Void;
 	/** Gets the value of the moving property. */
 	public function getMoving ():Void;
 	/** Gets the value of the opacity property. */
@@ -276,9 +281,9 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	/** Hides this view. */
 	public function hide ():Void;
 	/** Inserts a row after another row. */
-	public function insertRowAfter (index:Float, row:Dynamic, ?properties:TableViewAnimationProperties):Void;
+	public function insertRowAfter (index:Float, row:Dynamic, ?animation:TableViewAnimationProperties):Void;
 	/** Inserts a row before another row. */
-	public function insertRowBefore (index:Float, row:Dynamic, ?properties:TableViewAnimationProperties):Void;
+	public function insertRowBefore (index:Float, row:Dynamic, ?animation:TableViewAnimationProperties):Void;
 	/** Makes this view visible. */
 	public function show ():Void;
 	/** Performs a batch update of all supplied layout properties and schedules a
@@ -294,14 +299,15 @@ layout pass after they have been updated. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
 	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
-	/** Scrolls the table to a specific top position where 0 is the topmost y position in the table view. */
-	public function scrollToTop (top:Float, ?properties:TableViewAnimationProperties):Void;
+	/** Scrolls the table to a specific top position where 0 is the topmost y position in the 
+table view. */
+	public function scrollToTop (top:Float, ?animation:TableViewAnimationProperties):Void;
 	/** Scrolls the table view to ensure that the specified row is on screen. */
-	public function scrollToIndex (index:Float, ?properties:TableViewAnimationProperties):Void;
+	public function scrollToIndex (index:Float, ?animation:TableViewAnimationProperties):Void;
 	/** Sets the data in the table. */
-	public function setData (data:Dynamic, properties:TableViewAnimationProperties):Void;
-	/** Sets the tableviews content insets. */
-	public function setContentInsets (edgeInsets:TableViewEdgeInsets, ?animated:TableViewContentInsetOption):Void;
+	public function setData (data:Dynamic, animation:TableViewAnimationProperties):Void;
+	/** Sets the value of the [Titanium.UI.TableView.headerPullView] property. */
+	public function setHeaderPullView (view:View):Void;
 	/** Sets the value of the allowsSelection property. */
 	public function setAllowsSelection (allowsSelection:Bool):Void;
 	/** Sets the value of the allowsSelectionDuringEditing property. */
@@ -326,10 +332,6 @@ layout pass after they have been updated. */
 	public function setBackgroundLeftCap (backgroundLeftCap:Float):Void;
 	/** Sets the value of the backgroundRepeat property. */
 	public function setBackgroundRepeat (backgroundRepeat:Bool):Void;
-	/** Sets the value of the backgroundSelectedColor property. */
-	public function setBackgroundSelectedColor (backgroundSelectedColor:String):Void;
-	/** Sets the value of the backgroundSelectedImage property. */
-	public function setBackgroundSelectedImage (backgroundSelectedImage:String):Void;
 	/** Sets the value of the backgroundTopCap property. */
 	public function setBackgroundTopCap (backgroundTopCap:Float):Void;
 	/** Sets the value of the borderColor property. */
@@ -376,6 +378,8 @@ layout pass after they have been updated. */
 	public function setMaxRowHeight (maxRowHeight:Float):Void;
 	/** Sets the value of the minRowHeight property. */
 	public function setMinRowHeight (minRowHeight:Float):Void;
+	/** Sets the value of the moveable property. */
+	public function setMoveable (moveable:Bool):Void;
 	/** Sets the value of the moving property. */
 	public function setMoving (moving:Bool):Void;
 	/** Sets the value of the opacity property. */
@@ -412,12 +416,14 @@ layout pass after they have been updated. */
 	public function setWidth (width:Dynamic):Void;
 	/** Sets the value of the zIndex property. */
 	public function setZIndex (zIndex:Float):Void;
+	/** Sets this tableview's content insets. */
+	public function setContentInsets (edgeInsets:TableViewEdgeInsets, ?animated:TableViewContentInsetOption):Void;
 	/** Starts a batch update of this view's layout properties. */
 	public function startLayout ():Void;
 	/** Translates a point from this view's coordinate system to another 
 view's coordinate system. */
 	public function convertPointToView (point:Point, destinationView:View):Point;
 	/** Updates an existing row, optionally with animation */
-	public function updateRow (index:Float, row:TableViewRow, properties:TableViewAnimationProperties):Void;
+	public function updateRow (index:Float, row:TableViewRow, animation:TableViewAnimationProperties):Void;
 
 }

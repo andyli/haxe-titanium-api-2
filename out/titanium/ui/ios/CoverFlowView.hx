@@ -8,7 +8,8 @@ import titanium.Point;
 import titanium.ui.View;
 
 
-/** The cover flow View is container for showing  animated, three dimensional images in a nice UI. */
+/** The cover flow view is a container showing animated three-dimensional images in a style 
+consistent with the cover flow presentation style used for iPod, iTunes, and file browsing. */
 @:native ("Titanium.UI.iOS.CoverFlowView")
 extern class CoverFlowView {
 
@@ -16,8 +17,6 @@ extern class CoverFlowView {
 	public var backgroundGradient:Gradient;
 	/** Anchor point where animation should occur, relative to the view's boundaries. */
 	public var anchorPoint:Point;
-	/** Array of images to display in the view. */
-	public var images:Dynamic;
 	/** Array of this view's child views. */
 	public var children(default,null):View>;
 	/** Background color of the view, as a color name or hex triplet. */
@@ -44,6 +43,8 @@ extern class CoverFlowView {
 	public var backgroundFocusedColor:String;
 	/** Focused background image for the view, specified as a local file path or URL. */
 	public var backgroundFocusedImage:String;
+	/** Images to display in the view. */
+	public var images:Dynamic;
 	/** Index to make selected. */
 	public var selected:Float;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
@@ -57,12 +58,12 @@ extern class CoverFlowView {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -87,7 +88,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */

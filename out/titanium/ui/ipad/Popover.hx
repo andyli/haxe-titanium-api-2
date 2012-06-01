@@ -42,10 +42,12 @@ extern class Popover {
 	public var backgroundFocusedColor:String;
 	/** Focused background image for the view, specified as a local file path or URL. */
 	public var backgroundFocusedImage:String;
+	/** Indicates the arrow direction of the popover. */
+	public var arrowDirection(default,null):Float;
+	/** Left button in the navigation area of the popover. */
+	public var leftNavButton:Dynamic;
 	/** Opacity of this view, from 0.0 (transparent) to 1.0 (opaque). */
 	public var opacity:Float;
-	/** return the arrow direction of the popover */
-	public var arrowDirection:Float;
 	/** Selected background color of the view, as a color name or hex triplet. */
 	public var backgroundSelectedColor:String;
 	/** Selected background image url for the view, specified as a local file path or URL. */
@@ -55,18 +57,16 @@ extern class Popover {
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
-	/** the left button in the nav area of the popover */
-	public var leftNavButton:Dynamic;
-	/** the title of the nav area of the popover */
-	public var title:String;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
+	/** Title of the navigation area of the popover. */
+	public var title:String;
 	/** Toggle for whether or not to tile a background across a view. */
 	public var backgroundRepeat:Bool;
 	/** Transformation matrix to apply to the view. */
@@ -89,7 +89,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -98,10 +98,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function addEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Animates this view. */
 	public function animate (obj:Dynamic, _callback:Dynamic->Dynamic):Void;
-	/** change the height of the popover */
+	/** Change the height of the popover. */
 	public function setHeight (height:Dynamic):Void;
-	/** change the width of the popover */
-	public function setWidth (width:Dynamic):Void;
 	/** Finishes a batch update of the View's layout properties and schedules a layout pass of the view tree. */
 	public function finishLayout ():Void;
 	/** Fires a synthesized event to any registered listeners. */
@@ -197,12 +195,12 @@ layout pass after they have been updated. */
 	public function removeEventListener (name:String, _callback:Dynamic->Dynamic):Void;
 	/** Returns an image of the rendered view, as a Blob. */
 	public function toImage (?_callback:Blob->Dynamic, ?honorScaleFactor:Bool):Blob;
-	/** set the passthrough views for the popover */
-	public function setPassthroughViews (passthroughViews:Array<Object>):Void;
+	/** Set the passthrough views for the popover. */
+	public function setPassthroughViews (passthroughViews:View>):Void;
+	/** Set the width of the popover */
+	public function setWidth (width:Dynamic):Void;
 	/** Sets the value of the anchorPoint property. */
 	public function setAnchorPoint (anchorPoint:Point):Void;
-	/** Sets the value of the arrowDirection property. */
-	public function setArrowDirection (arrowDirection:Float):Void;
 	/** Sets the value of the backgroundColor property. */
 	public function setBackgroundColor (backgroundColor:String):Void;
 	/** Sets the value of the backgroundDisabledColor property. */

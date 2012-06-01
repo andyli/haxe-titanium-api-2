@@ -5,6 +5,7 @@ import titanium.android.Intent;
 import titanium.android.Notification;
 import titanium.android.PendingIntent;
 import titanium.android.R;
+import titanium.android.RemoteViews;
 import titanium.android.Service;
 import titanium.ServiceIntentOptions;
 
@@ -344,8 +345,27 @@ Notification.defaults. */
 	/** Use the default vibration settings for a notification; see
 Notification.defaults. */
 	public static var DEFAULT_VIBRATE(default,null):Float;
-	/** Use with audioStreamType to request that the default stream type for notifications be used. */
+	/** Use with audioStreamType to
+request that the alarm stream type for notifications be used. */
+	public static var STREAM_ALARM(default,null):Float;
+	/** Use with audioStreamType to
+request that the music stream type for notifications be used. */
+	public static var STREAM_MUSIC(default,null):Float;
+	/** Use with audioStreamType to request that the 
+default stream type for notifications be used. */
 	public static var STREAM_DEFAULT(default,null):Float;
+	/** Use with audioStreamType to request that the 
+notification stream type for notifications be used. */
+	public static var STREAM_NOTIFICATION(default,null):Float;
+	/** Use with audioStreamType to request that the 
+ring stream type for notifications be used. */
+	public static var STREAM_RING(default,null):Float;
+	/** Use with audioStreamType to request that the 
+system stream type for notifications be used. */
+	public static var STREAM_SYSTEM(default,null):Float;
+	/** Use with audioStreamType to request that the 
+voice call stream type for notifications be used. */
+	public static var STREAM_VOICE_CALL(default,null):Float;
 	/** Use with requestedOrientation to
 specify a landscape screen orientation. */
 	public static var SCREEN_ORIENTATION_LANDSCAPE(default,null):Float;
@@ -397,6 +417,8 @@ for an intent. */
 	public static function createIntent (?parameters:Dynamic<Intent>):Intent;
 	/** Creates and returns an instance of Titanium.Android.Notification. */
 	public static function createNotification (?parameters:Dynamic<Notification>):Notification;
+	/** Creates and returns an instance of Titanium.Android.RemoteViews. */
+	public static function createRemoteViews (?parameters:Dynamic<RemoteViews>):RemoteViews;
 	/** Fires a synthesized event to any registered listeners. */
 	public static function fireEvent (name:String, event:Dynamic):Void;
 	/** Gets the value of the currentActivity property. */

@@ -40,6 +40,9 @@ extern class ScrollableView {
 	/** Determines whether scrolling is enabled on the Scrollable view.
 If this property is not set, scrolling is enabled. */
 	public var scrollingEnabled:Bool;
+	/** Determines whether the content which is being scrolled will be clipped to the
+bounding box of the view. */
+	public var clipViews:Bool;
 	/** Determines whether the paging control is visible. */
 	public var showPagingControl:Bool;
 	/** Determines whether view bouncing effect is disabled. */
@@ -74,12 +77,12 @@ If this property is not set, scrolling is enabled. */
 	/** Size of the top end cap. */
 	public var backgroundTopCap:Float;
 	/** Specifies how the view positions its children. 
-One of: 'absolute', 'vertical', or 'horizontal'. */
+One of: 'composite', 'vertical', or 'horizontal'. */
 	public var layout:String;
-	/** The bounds of the view in system units. x and y properties are always 0. */
-	public var size(default,null):Dimension;
-	/** The frame of the view (position relative to parent bounds) in system units. */
+	/** The bounding box of the view relative to its parent, in system units. */
 	public var rect(default,null):Dimension;
+	/** The size of the view in system units.  */
+	public var size(default,null):Dimension;
 	/** The view's top position. */
 	public var top:Dynamic;
 	/** Toggle for whether or not to tile a background across a view. */
@@ -104,7 +107,7 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public var focusable:Bool;
 	/** Whether view should receive touch events. */
 	public var touchEnabled:Bool;
-	/** Z index position relative to other sibling views. */
+	/** Z-index stack order position, relative to other sibling views. */
 	public var zIndex:Float;
 
 	/** Adds a child to this view's hierarchy. */
@@ -161,6 +164,8 @@ One of: 'absolute', 'vertical', or 'horizontal'. */
 	public function getCenter ():Void;
 	/** Gets the value of the children property. */
 	public function getChildren ():Void;
+	/** Gets the value of the clipViews property. */
+	public function getClipViews ():Void;
 	/** Gets the value of the currentPage property. */
 	public function getCurrentPage ():Void;
 	/** Gets the value of the disableBounce property. */
