@@ -55,6 +55,7 @@
     <Compile Include="..\buildhx\buildhx\writers\HaxeExternWriter.hx">
       <Link>buildhx\buildhx\writers\HaxeExternWriter.hx</Link>
     </Compile>
+    <Compile Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />
